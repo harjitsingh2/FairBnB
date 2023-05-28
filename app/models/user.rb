@@ -12,20 +12,20 @@ class User < ApplicationRecord
   validates :password, allow_nil: true, length: { minimum: 8 }
 
   # Associations
-  has_many :listings, 
-  foreign_key: :host_id,
-  class_name: :Listings,
-  dependent: :destroy
+  # has_many :listings, 
+  # foreign_key: :host_id,
+  # class_name: :Listings,
+  # dependent: :destroy
 
-  has_many :reservations,
-  foreign_key: :guest_id,
-  class_name: :Reservations,
-  dependent: :destroy
+  # has_many :reservations,
+  # foreign_key: :guest_id,
+  # class_name: :Reservations,
+  # dependent: :destroy
 
-  has_many :reviews,
-  foreign_key: :reviewer_id,
-  class_name: :Reviews,
-  dependent: :destroy 
+  # has_many :reviews,
+  # foreign_key: :reviewer_id,
+  # class_name: :Reviews,
+  # dependent: :destroy 
 
   # Methods
   
