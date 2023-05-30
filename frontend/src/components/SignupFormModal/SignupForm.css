@@ -1,8 +1,8 @@
-.loginForm {
+.signupForm {
     background-color: rgb(231, 110, 110);
     padding: 20%;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
- }
+}

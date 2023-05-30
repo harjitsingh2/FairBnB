@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
-import "./LoginForm.css";
+import "./SignupForm.css";
 
-function LoginForm() {
+function SignupForm() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ email, password }))
+    return dispatch(sessionActions.signup({ email, firstName, lastName, password }))
       .catch(async (res) => {
         let data;
         try {
@@ -29,17 +31,38 @@ function LoginForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="loginForm">
-      <h1>Log In</h1>
+      <form onSubmit={handleSubmit} className="signupForm">
+      <h1>Sign Up</h1>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
+        <br></br>
         <label>
           Email
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </label>
+        <br></br><br></br>
+        <label>
+          First Name
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
+        </label>
+        <br></br><br></br>
+        <label>
+          Last Name
+          <input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             required
           />
         </label>
@@ -60,4 +83,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default SignupForm;
