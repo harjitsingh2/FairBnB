@@ -9,7 +9,7 @@ import configureStore from './store';
 import csrfFetch from "./store/csrf";
 import * as sessionActions from './store/session';
 
-const store = configureStore();
+const store = configureStore( {ui: {modal: "no_modal"}});
 
 if (process.env.NODE_ENV !== "production") {
   window.store = store;

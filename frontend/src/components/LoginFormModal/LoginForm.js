@@ -1,21 +1,39 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./LoginForm.css";
 import DemoLogin from "./DemoLogin";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import * as uiActions from '../../store/ui';
+// import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 
-function LoginForm( {setToggleLogin } ) {
+function LoginForm( ) {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [validationErrors, setValidationErrors] = useState({});
+  const currentUser = useSelector((state) => state.session.user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+
+    const errors = validate();
+    const errorContent = Object.values(errors);
+    if(errorContent.length) return setValidationErrors(errors)
+    
+
+    const formInformation = {
+      email,
+      password
+    };
+
+    dispatch(sessionActions.login(formInformation));
+    setEmail('');
+    setPassword('');
+    setValidationErrors([]);
+
     return dispatch(sessionActions.login({ email, password }))
       .catch(async (res) => {
         let data;
@@ -31,12 +49,20 @@ function LoginForm( {setToggleLogin } ) {
       });
   };
 
+  if (currentUser) {
+    dispatch({type: uiActions.CLOSE_LOGIN_MODAL, payload: 'close'})
+  }
+
+  const closeLogin = () => {
+    dispatch({type: uiActions.CLOSE_LOGIN_MODAL, payload: 'close'})
+  }
+
   
   // Redirect page to Splash ? 
-  const handleClick = () => {
-    // <Redirect to='/' />
-    setToggleLogin(false)
-  }
+  // const handleClick = () => {
+  //   // <Redirect to='/' />
+  //   setToggleLogin(false)
+  // }
 
   // Frontend error handling
   const validate = () => {
@@ -59,28 +85,28 @@ function LoginForm( {setToggleLogin } ) {
     return errors;
   }
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const errors = validate();
-    const errorContent = Object.values(errors);
-    if(errorContent.length) return setValidationErrors(errors)
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  //   const errors = validate();
+  //   const errorContent = Object.values(errors);
+  //   if(errorContent.length) return setValidationErrors(errors)
     
 
-    const formInformation = {
-      email,
-      password
-    };
+  //   const formInformation = {
+  //     email,
+  //     password
+  //   };
 
-    dispatch(sessionActions.login(formInformation));
-    setEmail('');
-    setPassword('');
-    setValidationErrors([]);
-  };
+  //   dispatch(sessionActions.login(formInformation));
+  //   setEmail('');
+  //   setPassword('');
+  //   setValidationErrors([]);
+  // };
 
   return (
     <>
       <div className="loginForm">
-      <form onSubmit={handleSubmit && onSubmit} >
+      <form onSubmit={ handleSubmit } >
       <h2>Log In</h2>
       <br></br><br></br>
       <h1>Welcome to Fairbnb</h1>
@@ -123,7 +149,7 @@ function LoginForm( {setToggleLogin } ) {
         <button type="submit">Log In</button>
         <br></br><br></br>
       </form>
-        <DemoLogin onClick={handleClick}/>
+        <DemoLogin />
         {/* <DemoLogin handleclick={handleClick}/> */}
       </div>
     </>

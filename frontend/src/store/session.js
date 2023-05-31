@@ -1,7 +1,10 @@
+import * as uiActions from './ui'
 import csrfFetch from "./csrf.js";
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
+
+
 
 export const setCurrentUser = (user) => ({
   type: SET_CURRENT_USER,
@@ -30,6 +33,7 @@ export const login = ( user ) => async dispatch => {
   const data = await response.json();
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
+  // dispatch({type: , payload:})
   return response;
 };
 // export const login = ({ email, password }) => async dispatch => {

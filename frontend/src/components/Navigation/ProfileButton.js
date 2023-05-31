@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import * as uiActions from '../../store/ui';
 // import SignupFormModal from "../SignupFormModal";
 // import LoginFormModal from "../LoginFormModal";
 
-function ProfileButton({ setToggleLogin, setToggleSignup }) {
+function ProfileButton() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const currentUser = useSelector((state) => state.session.user);
@@ -31,6 +32,15 @@ function ProfileButton({ setToggleLogin, setToggleSignup }) {
     e.preventDefault();
     dispatch(sessionActions.logout());
   };
+
+  const openLogin = () => {
+    dispatch({type: uiActions.OPEN_LOGIN_MODAL, payload: 'open'})
+  }
+
+  const openSignup = () => {
+    dispatch({type: uiActions.OPEN_SIGNUP_MODAL, payload: 'open'})
+  }
+
   // const login = (e) => {
   //   e.preventDefault();
   //   dispatch(sessionActions.login());
@@ -65,9 +75,9 @@ function ProfileButton({ setToggleLogin, setToggleSignup }) {
         </button>
         {showMenu && (
           <ul className="profile-dropdown">
-            <li><button onClick={() => setToggleLogin(true)}>Login</button></li>
+            <li><button onClick={openLogin}>Login</button></li>
             <li>
-              <button onClick={() => setToggleSignup(true)}>Sign Up</button>
+              <button onClick={openSignup}>Sign Up</button>
             </li>
           </ul>
         )}

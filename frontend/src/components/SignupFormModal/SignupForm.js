@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./SignupForm.css";
+import * as uiActions from '../../store/ui';
+
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -11,10 +13,31 @@ function SignupForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [validationErrors, setValidationErrors] = useState({});
+  const currentUser = useSelector((state) => state.session.user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+
+    const errors = validate();
+    const errorContent = Object.values(errors);
+    if(errorContent.length) return setValidationErrors(errors)
+    
+
+    const formInformation = {
+      email,
+      password,
+      firstName,
+      lastName
+    };
+
+    // console.log(formInformation);
+    setEmail('');
+    setPassword('');
+    setFirstName('');
+    setLastName('');
+    setValidationErrors([]);
+
     return dispatch(sessionActions.signup({ email, first_name: firstName, last_name: lastName, password }))
       .catch(async (res) => {
         let data;
@@ -29,6 +52,11 @@ function SignupForm() {
         else setErrors([res.statusText]);
       });
   };
+
+  if (currentUser) {
+    dispatch({type: uiActions.CLOSE_SIGNUP_MODAL, payload: 'close'})
+  }
+
 
   // Frontend error handling
   const validate = () => {
@@ -59,31 +87,31 @@ function SignupForm() {
     return errors;
   }
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const errors = validate();
-    const errorContent = Object.values(errors);
-    if(errorContent.length) return setValidationErrors(errors)
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  //   const errors = validate();
+  //   const errorContent = Object.values(errors);
+  //   if(errorContent.length) return setValidationErrors(errors)
     
 
-    const formInformation = {
-      email,
-      password,
-      firstName,
-      lastName
-    };
+  //   const formInformation = {
+  //     email,
+  //     password,
+  //     firstName,
+  //     lastName
+  //   };
 
-    console.log(formInformation);
-    setEmail('');
-    setPassword('');
-    setFirstName('');
-    setLastName('');
-    setValidationErrors([]);
-  };
+  //   console.log(formInformation);
+  //   setEmail('');
+  //   setPassword('');
+  //   setFirstName('');
+  //   setLastName('');
+  //   setValidationErrors([]);
+  // };
 
   return (
     <>
-      <form onSubmit={handleSubmit && onSubmit} className="signupForm">
+      <form onSubmit={handleSubmit} className="signupForm">
       <h2>Sign Up</h2>
       <br></br><br></br>
       <h1>Welcome to Fairbnb</h1>

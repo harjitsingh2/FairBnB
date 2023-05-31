@@ -9,7 +9,7 @@ import './Navigation.css';
 import DemoLogin from '../LoginFormModal/DemoLogin';
 import logo from '../../image/Fairbnb-logo.png';
 
-function Navigation({setToggleLogin, setToggleSignup}) {
+function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
 
 
@@ -40,7 +40,9 @@ function Navigation({setToggleLogin, setToggleSignup}) {
           <li>
             <br></br><br></br>
             {/* {sessionLinks} */}
-            <ProfileButton setToggleLogin={setToggleLogin} setToggleSignup={setToggleSignup}/>
+            <ProfileButton />
+            <LoginFormModal />
+            <SignupFormModal />
             <br></br><br></br>
             <DemoLogin />
           </li>
