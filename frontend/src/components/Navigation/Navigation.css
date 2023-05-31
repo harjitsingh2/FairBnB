@@ -22,3 +22,14 @@
     text-align: right;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.logo {
+  flex: 1;
+  max-width: 200px; /* Adjust the maximum width as needed */
+}

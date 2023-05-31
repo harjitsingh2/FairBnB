@@ -34,17 +34,18 @@ function Navigation({setToggleLogin, setToggleSignup}) {
 
   return (
     <>
-      {/* <img src={logo} /> */}
-      <ul id="nav-list">
-        <li>
-          <NavLink exact to="/">Home</NavLink>
-          <br></br><br></br>
-          {/* {sessionLinks} */}
-          <ProfileButton setToggleLogin={setToggleLogin} setToggleSignup={setToggleSignup}/>
-          <br></br><br></br>
-          <DemoLogin />
-        </li>
-      </ul>
+      <div className='navbar'>
+      <NavLink exact to="/"><img src={logo} className='logo'/></NavLink>
+        <ul id="nav-list">
+          <li>
+            <br></br><br></br>
+            {/* {sessionLinks} */}
+            <ProfileButton setToggleLogin={setToggleLogin} setToggleSignup={setToggleSignup}/>
+            <br></br><br></br>
+            <DemoLogin />
+          </li>
+        </ul>
+      </div>
     </>
   );
 }

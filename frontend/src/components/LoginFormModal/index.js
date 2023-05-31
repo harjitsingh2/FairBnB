@@ -10,7 +10,7 @@ function LoginFormModal( {setToggleLogin }) {
       {/* <button onClick={() => setShowModal(true)}>Log In</button> */}
       {/* {showModal && ( */}
         <Modal onClose={() => setToggleLogin(false)}>
-          <LoginForm />
+          <LoginForm setToggleLogin={setToggleLogin}/>
         </Modal>
 
     </>

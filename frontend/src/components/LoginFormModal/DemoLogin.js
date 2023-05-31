@@ -32,7 +32,13 @@ function DemoLogin() {
 
   return (
     <>
-      <button id="demo-user" className="Login-button" onClick={() => login()}>Demo Login</button>
+      <button id="demo-user" className="Login-button" onClick={() => login()}
+      >Demo Login</button>
+      {/* <button id="demo-user" className="Login-button" onClick={() => {
+        login()
+        handleClick()
+      }
+      }>Demo Login</button> */}
     </>
   );
 }

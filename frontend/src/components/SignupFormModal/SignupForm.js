@@ -10,6 +10,7 @@ function SignupForm() {
   const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [validationErrors, setValidationErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,10 +30,64 @@ function SignupForm() {
       });
   };
 
+  // Frontend error handling
+  const validate = () => {
+    const errors = {};
+
+    if (!email) {
+      errors.Email = 'Please provide an Email';
+    } 
+
+    else if(!email.trim()
+               .match(/^(?!\.)[\w+\-.]+(?<!\.)@[\w-]+(\.[a-z\d-]+)*\.[a-z]+$/i)) 
+    {
+      errors.Email = 'Please provide a valid Email';
+    }
+
+    if (password.length < 8) {
+      errors.Password = 'Password must be at least 8 characters';
+    } 
+
+    if (firstName.length <= 0) {
+      errors.firstName = 'You must provide a first and last name';
+    } 
+
+    if (lastName.length <= 0) {
+      errors.lastName = 'You must provide a first and last name';
+    } 
+
+    return errors;
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const errors = validate();
+    const errorContent = Object.values(errors);
+    if(errorContent.length) return setValidationErrors(errors)
+    
+
+    const formInformation = {
+      email,
+      password,
+      firstName,
+      lastName
+    };
+
+    console.log(formInformation);
+    setEmail('');
+    setPassword('');
+    setFirstName('');
+    setLastName('');
+    setValidationErrors([]);
+  };
+
   return (
     <>
-      <form onSubmit={handleSubmit} className="signupForm">
-      <h1>Sign Up</h1>
+      <form onSubmit={handleSubmit && onSubmit} className="signupForm">
+      <h2>Sign Up</h2>
+      <br></br><br></br>
+      <h1>Welcome to Fairbnb</h1>
+      <br></br>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
@@ -47,6 +102,8 @@ function SignupForm() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          <br></br>
+          {validationErrors.Email && ( <div className='error-msg'> * {validationErrors.Email}</div> )}
         </label>
         <br></br><br></br>
         <label>
@@ -59,6 +116,8 @@ function SignupForm() {
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
+          <br></br>
+          {validationErrors.firstName && ( <div className='error-msg'> * {validationErrors.firstName}</div> )}
         </label>
         <br></br><br></br>
         <label>
@@ -71,6 +130,8 @@ function SignupForm() {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
+          <br></br>
+          {validationErrors.lastName && ( <div className='error-msg'> * {validationErrors.lastName}</div> )}
         </label>
         <br></br><br></br>
         <label>
@@ -83,9 +144,11 @@ function SignupForm() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <br></br>
+          {validationErrors.Password && ( <div className='error-msg'> * {validationErrors.Password}</div> )}
         </label>
         <br></br><br></br>
-        <button type="submit">Log In</button>
+        <button type="submit">Create Account</button>
       </form>
     </>
   );

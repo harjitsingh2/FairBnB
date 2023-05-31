@@ -16,20 +16,35 @@ ApplicationRecord.transaction do
     puts "Creating demo user..."
     User.create!(
       email: 'demo@mail.com', 
-      first_name: 'demo',
-      last_name: 'user',
+      first_name: 'Demo',
+      last_name: 'User',
       password: 'demopassword'
     )
+
+    puts "Creating additional users"
+    User.create!(
+      email: 'user1@mail.com', 
+      first_name: 'User',
+      last_name: 'One',
+      password: 'password1'
+    )
+
+    User.create!(
+      email: 'user2@mail.com', 
+      first_name: 'User',
+      last_name: 'Two',
+      password: 'password2'
+    )
   
-    puts "Creating random users"
-    5.times do 
-      User.create!({
-        email: Faker::Internet.unique.email,
-        first_name: Faker::Name.unique.first_name,
-        last_name: Faker::Name.unique.last_name,
-        password: 'fakepassword'
-      }) 
-    end
+    # puts "Creating random users"
+    # 5.times do 
+    #   User.create!({
+    #     email: Faker::Internet.unique.email,
+    #     first_name: Faker::Name.unique.first_name,
+    #     last_name: Faker::Name.unique.last_name,
+    #     password: 'fakepassword'
+    #   }) 
+    # end
   
     puts "Done!"
   end

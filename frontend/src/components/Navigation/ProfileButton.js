@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import SignupFormModal from "../SignupFormModal";
-import LoginFormModal from "../LoginFormModal";
+// import SignupFormModal from "../SignupFormModal";
+// import LoginFormModal from "../LoginFormModal";
 
 function ProfileButton({ setToggleLogin, setToggleSignup }) {
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ function ProfileButton({ setToggleLogin, setToggleSignup }) {
     return (
       <>
         <button onClick={openMenu}>
-          <i className="fa-solid fa-circle-user" size="xl" style={{color: "#ffc800",}}></i>
+          <i className="fa-solid fa-circle-user" size="2xl" style={{color: "#ffc800",}}></i>
         </button>
         {showMenu && (
           <ul className="profile-dropdown">
