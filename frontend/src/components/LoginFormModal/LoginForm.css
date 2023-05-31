@@ -6,3 +6,8 @@
     text-align: center;
     align-items: center;
  }
+
+ .user-input-field {
+    border-style: solid;
+    border-radius: 5px;
+}

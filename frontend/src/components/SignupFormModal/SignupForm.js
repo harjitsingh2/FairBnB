@@ -14,7 +14,7 @@ function SignupForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.signup({ email, firstName, lastName, password }))
+    return dispatch(sessionActions.signup({ email, first_name: firstName, last_name: lastName, password }))
       .catch(async (res) => {
         let data;
         try {
@@ -41,7 +41,9 @@ function SignupForm() {
           Email
           <input
             type="text"
+            className="user-input-field"
             value={email}
+            placeholder="Email Address"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -51,7 +53,9 @@ function SignupForm() {
           First Name
           <input
             type="text"
+            className="user-input-field"
             value={firstName}
+            placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
@@ -61,7 +65,9 @@ function SignupForm() {
           Last Name
           <input
             type="text"
+            className="user-input-field"
             value={lastName}
+            placeholder="Last Name"
             onChange={(e) => setLastName(e.target.value)}
             required
           />
@@ -71,7 +77,9 @@ function SignupForm() {
           Password
           <input
             type="password"
+            className="user-input-field"
             value={password}
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />

@@ -1,20 +1,19 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage";
-// import LoginFormPage from "./components/LoginFormPage";
-import Navigation from "./components/Navigation";
+import React, { useState } from "react";
+import { Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
+import SignupFormPage from "./components/SignupFormModal";
+import LoginFormPage from "./components/LoginFormModal";
+import Navigation from "./components/Navigation/index";
 
 function App() {
+  const [toggleLogin, setToggleLogin] = useState(false)
+  const [toggleSignup, setToggleSignup] = useState(false)
   return (
     <>
-      <Navigation />
+      <Navigation setToggleLogin={setToggleLogin} setToggleSignup={setToggleSignup}/>
+      {toggleSignup && (<SignupFormPage setToggleSignup={setToggleSignup} />)}
+      {toggleLogin && (<LoginFormPage setToggleLogin={setToggleLogin} />)}
         <Switch>
-          {/* <Route path="/login" >
-            <LoginFormPage />
-          </Route> */}
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
         </Switch>
     </>
   );
