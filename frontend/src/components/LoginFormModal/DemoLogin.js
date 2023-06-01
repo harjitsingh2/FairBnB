@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import "./LoginForm.css";
 
 
 function DemoLogin() {
@@ -32,7 +33,7 @@ function DemoLogin() {
 
   return (
     <>
-      <button id="demo-user" className="Login-button" onClick={() => login()}
+      <button id="demo-user" className="demo-login" onClick={() => login()}
       >Demo Login</button>
       {/* <button id="demo-user" className="Login-button" onClick={() => {
         login()

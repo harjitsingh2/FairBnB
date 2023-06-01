@@ -5,22 +5,35 @@
   justify-content: space-between;
   padding: 10px;
   background-color: #f5f5f5;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* .navbar :hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
 
 .logo {
   max-width: 150px;
 }
 
-.profile-button-container {
+/* .profile-button-container {
   position: relative;
-}
-
-.profile-button-container button {
   background: none;
   border: none;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
+
+.profile-button-container :hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: green;
+} */
+
+/* .profile-button-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+} */
 
 .profile-dropdown {
   list-style: none;
@@ -28,9 +41,16 @@
   margin: 0;
   position: relative;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: none;
   z-index: 1;
+  border-radius: 20px;
+}
+
+.profile-dropdown :hover {
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  background-color: rgb(216, 214, 214);
+  /* border-radius: 20px; */
+  cursor: pointer;
 }
 
 .profile-dropdown.open {
@@ -43,15 +63,12 @@
 }
 
 .profile-dropdown li button {
-  color: #333;
+  /* color: #333; */
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.profile-dropdown li button:hover {
-  background-color: #8a8686;
-}
 
 /* User button */
 .container {

@@ -9,7 +9,7 @@ function LoginFormModal() {
 
   return (
     <>
-        <ReactModal ariaHideApp={false} isOpen={ modal === "login"}>
+        <ReactModal dialogClassName="login-modal" ariaHideApp={false} isOpen={ modal === "login"}>
           <LoginForm />
         </ReactModal>
 

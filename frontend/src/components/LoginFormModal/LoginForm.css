@@ -1,4 +1,5 @@
-.loginForm {
+.loginForm,
+.login-modal {
     background-color: #fff;
     padding: 40px;
     border-radius: 8px;
@@ -19,50 +20,65 @@
     border: none;
     cursor: pointer;
     font-size: 20px;
+    font-weight: bold;
     color: #000;
 }
   
   
-.loginForm h2 {
+.loginForm h1 {
     font-size: 24px;
     font-weight: 600;
-    margin-bottom: 20px;
+}
+
+.loginForm h2 {
+    text-align: center;
+    font-weight: bold;
 }
   
 .loginForm label {
     display: block;
     text-align: left;
+    text-indent: 10px;
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding-top: 5px;
+    border-color: #000;
+    border-width: 2px;
 }
   
 .loginForm input[type="text"],
 .loginForm input[type="password"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    /* border: 1px solid #ddd;
+    border-radius: 4px; */
     font-size: 14px;
-    margin-bottom: 16px;
+    margin-bottom: 1px;
 }
   
 .loginForm button[type="submit"] {
     background-color: #f55656;
     color: #fff;
     border: none;
+    width: 100%;
     border-radius: 4px;
-    padding: 12px 24px;
+    /* padding: 12px 24px; */
+    padding-top: 2%;
+    padding-bottom: 2%;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+    text-align: center;
 }
   
 .loginForm button[type="submit"]:hover {
     background-color: #f43d3d;
 }
   
-.loginForm .closeButton {
+/* .loginForm .closeButton {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -72,5 +88,18 @@
     font-weight: bold;
     color: #888;
     cursor: pointer;
-}
+} */
   
+.demo-login {
+    background-color: #4e0ed8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer; 
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+}
