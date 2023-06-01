@@ -45,6 +45,63 @@ ApplicationRecord.transaction do
     #     password: 'fakepassword'
     #   }) 
     # end
+
+    puts "Creating listings"
+    Listing.create!(
+      address: "5924 Main St", 
+      apt_num: "", 
+      city: "New York", 
+      state: "NY", 
+      zip_code: "11122", 
+      title: "house", 
+      description: "a big house", 
+      category: "cabin", 
+      price: 120,
+      max_guests: 3,
+      num_bedrooms: 2, 
+      num_beds: 4, 
+      num_bathrooms: 2, 
+      kitchen: true, 
+      tv: false, 
+      washer_dryer: true, 
+      parking: false, 
+      air_conditioning: false, 
+      heating: true, 
+      pool: false, 
+      hot_tub: true, 
+      fire_pit: true, 
+      latitude: 25, 
+      longitude: 37, 
+      host_id: 2
+    )
+
+    Listing.create!(
+      address: "345 Broadway Ave", 
+      apt_num: "", 
+      city: "New York", 
+      state: "NY", 
+      zip_code: "11122", 
+      title: "cozy room", 
+      description: "room in times square", 
+      category: "room", 
+      price: 160,
+      max_guests: 2,
+      num_bedrooms: 1, 
+      num_beds: 1, 
+      num_bathrooms: 1, 
+      kitchen: false, 
+      tv: false, 
+      washer_dryer: false, 
+      parking: false, 
+      air_conditioning: false, 
+      heating: true, 
+      pool: false, 
+      hot_tub: false, 
+      fire_pit: false, 
+      latitude: 56, 
+      longitude: 39, 
+      host_id: 3
+    )
   
     puts "Done!"
   end
