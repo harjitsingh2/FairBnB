@@ -121,12 +121,12 @@ function LoginForm( ) {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
+              </label>
                 <br></br>
                 {validationErrors.Email && ( <div className='error-msg'> * {validationErrors.Email}</div> )}
-              </label>
             </div>
           
-            <br></br><br></br>
+            <br></br>
             <label>
               Password
               <input
@@ -137,9 +137,9 @@ function LoginForm( ) {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+            </label>
               <br></br>
               {validationErrors.Password && ( <div className='error-msg'> * {validationErrors.Password}</div> )}
-            </label>
             <br></br><br></br>
             <button className="login-button" type="submit">Log In</button>
             <br></br><br></br>

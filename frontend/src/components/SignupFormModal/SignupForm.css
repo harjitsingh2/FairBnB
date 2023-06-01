@@ -18,11 +18,13 @@
 }
 
 .signupForm h1 {
+    font-family: "AirbnbMed", sans-serif;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
 } 
   
 .signupForm h2 {
+    font-family: "AirbnbMed", sans-serif;
     text-align: center;
     font-weight: bold;
     margin: 0 auto;
@@ -51,7 +53,6 @@
 }
   
 .signupForm button[type="submit"] {
-    background-color: #f55656;
     color: #fff;
     border: none;
     width: 100%;
@@ -63,9 +64,5 @@
     font-weight: 600;
     cursor: pointer;
     text-align: center;
-}
-  
-.signupForm button[type="submit"]:hover {
-    background-color: #f43d3d;
 }
   

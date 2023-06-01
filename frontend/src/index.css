@@ -6,3 +6,17 @@
     text-align: right;
     
 } */
+
+@font-face {
+    font-family: "AirbnbLite";
+    src: url("../public/airbnb-font/AirbnbCereal_W_Lt.otf");
+}
+
+@font-face {
+    font-family: "AirbnbMed";
+    src: url("../public/airbnb-font/AirbnbCereal_W_Md.otf");
+}
+
+body {
+    font-family: "AirbnbLite", sans-serif;
+}

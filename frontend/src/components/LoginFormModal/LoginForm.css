@@ -46,11 +46,13 @@
   
   
 .loginForm h1 {
+    font-family: "AirbnbMed", sans-serif;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .loginForm h2 {
+    font-family: "AirbnbMed", sans-serif;
     text-align: center;
     font-weight: bold;
     margin: 0 auto;
@@ -93,15 +95,17 @@
     font-weight: 600;
     cursor: pointer;
     text-align: center;
+    background-image: linear-gradient(to right, #fc365b, #db1064, #bb1e59);
 }
   
 .login-button[type="submit"]:hover {
-    background-color: #f43d3d;
+    /* background-color: #f43d3d; */
+    background-image: linear-gradient(to right, #bb1e59 , #db1064, #fc365b);
 }
   
   
 .demo-login {
-    background-color: #4e0ed8;
+    background-image: linear-gradient(to right, #fc365b, #db1064, #bb1e59);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -112,4 +116,8 @@
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
+}
+
+.demo-login :hover {
+    background-image: linear-gradient(to left, #fc365b, #db1064, #bb1e59);
 }

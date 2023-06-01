@@ -136,9 +136,9 @@ function SignupForm() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+        </label>
           <br></br>
           {validationErrors.Email && ( <div className='error-msg'> * {validationErrors.Email}</div> )}
-        </label>
         <br></br><br></br>
         <label>
           First Name
@@ -150,9 +150,9 @@ function SignupForm() {
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
+        </label>
           <br></br>
           {validationErrors.firstName && ( <div className='error-msg'> * {validationErrors.firstName}</div> )}
-        </label>
         <br></br><br></br>
         <label>
           Last Name
@@ -164,9 +164,9 @@ function SignupForm() {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
+        </label>
           <br></br>
           {validationErrors.lastName && ( <div className='error-msg'> * {validationErrors.lastName}</div> )}
-        </label>
         <br></br><br></br>
         <label>
           Password
@@ -178,9 +178,9 @@ function SignupForm() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+        </label>
           <br></br>
           {validationErrors.Password && ( <div className='error-msg'> * {validationErrors.Password}</div> )}
-        </label>
         <br></br><br></br>
         <button className="login-button"type="submit">Create Account</button>
       </form>

@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
     before_action :require_logged_out, only: [:create]
     
     def create
-        debugger
+        # debugger
         @user = User.new(user_params)
 
         if @user.save
@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
             render :show
             # render json: @user 
         else
-            debugger
+            # debugger
             render json: @user.errors.full_messages, status: 422
         end
 
