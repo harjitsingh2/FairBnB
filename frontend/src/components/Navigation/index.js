@@ -1,45 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
-import * as sessionActions from '../../store/session';
 import './Navigation.css';
 import DemoLogin from '../LoginFormModal/DemoLogin';
 import logo from '../../image/Fairbnb-logo.png';
 
 function Navigation() {
-  const sessionUser = useSelector(state => state.session.user);
-
-
-  // let sessionLinks;
-  // if (sessionUser) { 
-  //   sessionLinks = (
-  //     <ProfileButton user={sessionUser} />
-  //   );
-  // } else {
-  //   sessionLinks = (
-  //     <div className='nav-buttons'>
-  //       <ProfileButton>
-
-  //         <LoginFormModal />
-  //         <br></br>
-  //         <SignupFormModal />
-  //         <DemoLogin />
-  //       </ProfileButton>
-  //     </div>
-  //   );
-  // }
 
   return (
     <>
       <div className='navbar'>
-      <NavLink exact to="/"><img src={logo} className='logo'/></NavLink>
+      <NavLink exact to="/"><img src={logo} className='logo' alt=''/></NavLink>
         <ul id="nav-list">
           <li>
             <br></br><br></br>
-            {/* {sessionLinks} */}
             <ProfileButton />
             <LoginFormModal />
             <SignupFormModal />

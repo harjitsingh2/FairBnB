@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as uiActions from '../../store/ui';
-// import SignupFormModal from "../SignupFormModal";
-// import LoginFormModal from "../LoginFormModal";
 
 function ProfileButton() {
   const dispatch = useDispatch();
@@ -41,14 +39,6 @@ function ProfileButton() {
     dispatch({type: uiActions.OPEN_SIGNUP_MODAL, payload: 'open'})
   }
 
-  // const login = (e) => {
-  //   e.preventDefault();
-  //   dispatch(sessionActions.login());
-  // };
-  // const signup = (e) => {
-  //   e.preventDefault();
-  //   dispatch(sessionActions.signup());
-  // };
 
   if (currentUser) {
 
@@ -81,14 +71,6 @@ function ProfileButton() {
             </li>
           </ul>
         )}
-        {/* {showMenu && (
-          <div>
-            <SignupFormModal />
-            <LoginFormModal />
-          </div>
-        )
-
-        } */}
     </>
     )
 

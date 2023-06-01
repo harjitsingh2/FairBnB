@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import "./SignupForm.css";
@@ -14,6 +14,7 @@ function SignupForm() {
   const [errors, setErrors] = useState([]);
   const [validationErrors, setValidationErrors] = useState({});
   const currentUser = useSelector((state) => state.session.user);
+  const modalRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +33,7 @@ function SignupForm() {
     };
 
     // console.log(formInformation);
+    dispatch(sessionActions.signup(formInformation));
     setEmail('');
     setPassword('');
     setFirstName('');
@@ -56,6 +58,19 @@ function SignupForm() {
   if (currentUser) {
     dispatch({type: uiActions.CLOSE_SIGNUP_MODAL, payload: 'close'})
   }
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        dispatch({ type: uiActions.CLOSE_LOGIN_MODAL, payload: "close" });
+      }
+    };
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dispatch]);
 
 
   // Frontend error handling
@@ -87,30 +102,15 @@ function SignupForm() {
     return errors;
   }
 
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   const errors = validate();
-  //   const errorContent = Object.values(errors);
-  //   if(errorContent.length) return setValidationErrors(errors)
-    
-
-  //   const formInformation = {
-  //     email,
-  //     password,
-  //     firstName,
-  //     lastName
-  //   };
-
-  //   console.log(formInformation);
-  //   setEmail('');
-  //   setPassword('');
-  //   setFirstName('');
-  //   setLastName('');
-  //   setValidationErrors([]);
-  // };
-
   return (
     <>
+      <div className="signupForm" ref={modalRef}>
+      <button
+        className="closeButton"
+        onClick={() => dispatch({ type: uiActions.CLOSE_LOGIN_MODAL })}
+        >
+        X
+      </button>
       <form onSubmit={handleSubmit} className="signupForm">
       <h2>Sign Up</h2>
       <br></br><br></br>
@@ -178,6 +178,7 @@ function SignupForm() {
         <br></br><br></br>
         <button type="submit">Create Account</button>
       </form>
+      </div>
     </>
   );
 }

@@ -1,28 +1,76 @@
 .signupForm {
-    background-color: rgb(255, 255, 255);
-    padding: 20%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    border-style: hidden;
-    border-radius: 10px;
- }
-
- .user-input-field {
-    border-style: solid;
-    border-color: blue;
-    border-radius: 5px;
-}
-
-h2 {
-    font-size: 20px;
-}
-
-h1 {
-    font-size: 30px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .error-msg {
     color: red;
-  }
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #000;
+}
+  
+  
+.signupForm h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+  
+.signupForm label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+  
+.signupForm input[type="text"],
+.signupForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+  
+.signupForm button[type="submit"] {
+    background-color: #f55656;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+  
+.signupForm button[type="submit"]:hover {
+    background-color: #f43d3d;
+}
+  
+.signupForm .closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+  
