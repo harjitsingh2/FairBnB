@@ -104,7 +104,7 @@ function LoginForm( ) {
       <br></br><br></br>
       <h1>Welcome to Fairbnb</h1>
       <br></br><br></br>
-        <ul>
+        <ul className="error-msg">
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
         <div className="input-box">

@@ -4,7 +4,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
-import DemoLogin from '../LoginFormModal/DemoLogin';
+// import DemoLogin from '../LoginFormModal/DemoLogin';
 import logo from '../../image/Fairbnb-logo.png';
 
 function Navigation() {
@@ -20,7 +20,7 @@ function Navigation() {
             <LoginFormModal />
             <SignupFormModal />
             <br></br><br></br>
-            <DemoLogin />
+            {/* <DemoLogin /> */}
           </li>
         </ul>
       </div>

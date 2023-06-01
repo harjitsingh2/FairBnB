@@ -8,7 +8,7 @@ function SignupFormModal() {
 
   return (
     <>
-        <ReactModal isOpen={ modal ==="signup" }>
+        <ReactModal ariaHideApp={false} isOpen={ modal ==="signup" }>
           <SignupForm />
         </ReactModal>
 
