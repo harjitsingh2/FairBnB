@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
     before_action :require_logged_out, only: [:create]
     
     def create
-        # debugger
+        debugger
         @user = User.new(user_params)
 
         if @user.save
@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
             render :show
             # render json: @user 
         else
+            debugger
             render json: @user.errors.full_messages, status: 422
         end
 
@@ -23,4 +24,7 @@ class Api::UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:email, :first_name, :last_name, :password)
     end
+    # def user_params
+    #     params.snake_case_params.require(:user).permit(:email, :first_name, :last_name, :password)
+    # end
 end

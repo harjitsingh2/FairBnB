@@ -2,13 +2,14 @@ import React from 'react';
 import SignupForm from './SignupForm';
 import ReactModal from 'react-modal';
 import { useSelector } from 'react-redux';
+import "../LoginFormModal/LoginForm.css";
 
 function SignupFormModal() {
   const modal = useSelector(state => state.ui.modal)
 
   return (
     <>
-        <ReactModal ariaHideApp={false} isOpen={ modal ==="signup" }>
+        <ReactModal className="login-modal" ariaHideApp={false} isOpen={ modal ==="signup" }>
           <SignupForm />
         </ReactModal>
 

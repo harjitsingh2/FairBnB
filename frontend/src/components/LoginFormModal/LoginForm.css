@@ -1,11 +1,34 @@
-.loginForm,
 .login-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 101;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc; 
+    padding: 20px;
+}
+
+.loginForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: auto;
     background-color: #fff;
-    padding: 40px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
     margin: 0 auto;
+    z-index: 102;
 }
 
 .error-msg {
@@ -13,13 +36,10 @@
 }
 
 .closeButton {
-    position: absolute;
-    top: 10px;
-    left: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #000;
 }
@@ -33,6 +53,7 @@
 .loginForm h2 {
     text-align: center;
     font-weight: bold;
+    margin: 0 auto;
 }
   
 .loginForm label {
@@ -59,7 +80,7 @@
     margin-bottom: 1px;
 }
   
-.loginForm button[type="submit"] {
+.login-button[type="submit"] {
     background-color: #f55656;
     color: #fff;
     border: none;
@@ -74,21 +95,10 @@
     text-align: center;
 }
   
-.loginForm button[type="submit"]:hover {
+.login-button[type="submit"]:hover {
     background-color: #f43d3d;
 }
   
-/* .loginForm .closeButton {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: #888;
-    cursor: pointer;
-} */
   
 .demo-login {
     background-color: #4e0ed8;

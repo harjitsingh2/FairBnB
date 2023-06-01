@@ -25,34 +25,38 @@ function SignupForm() {
     if(errorContent.length) return setValidationErrors(errors)
     
 
-    const formInformation = {
-      email,
-      password,
-      firstName,
-      lastName
-    };
+    // const formInformation = {
+    //   email,
+    //   password,
+    //   firstName,
+    //   lastName
+    // };
 
     // console.log(formInformation);
-    dispatch(sessionActions.signup(formInformation));
-    setEmail('');
-    setPassword('');
-    setFirstName('');
-    setLastName('');
-    setValidationErrors([]);
+    // dispatch(sessionActions.signup(formInformation));
+ 
 
-    return dispatch(sessionActions.signup({ email, first_name: firstName, last_name: lastName, password }))
+
+    dispatch(sessionActions.signup({ email, first_name: firstName, last_name: lastName, password }))
+      .then(res => {
+        setEmail('');
+        setPassword('');
+        setFirstName('');
+        setLastName('');
+        setValidationErrors([]);
+      })
       .catch(async (res) => {
-        let data;
-        try {
-          // .clone() essentially allows you to read the response body twice
-          data = await res.clone().json();
-        } catch {
-          data = await res.text(); // Will hit this case if, e.g., server is down
-        }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
+          let data;
+          try {
+            // .clone() essentially allows you to read the response body twice
+            data = await res.clone().json();
+          } catch {
+            data = await res.text(); // Will hit this case if, e.g., server is down
+          }
+          if (data?.errors) setErrors(data.errors);
+          else if (data) setErrors([data]);
+          else setErrors([res.statusText]);
+        });
   };
 
   if (currentUser) {
@@ -62,7 +66,7 @@ function SignupForm() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        dispatch({ type: uiActions.CLOSE_LOGIN_MODAL, payload: "close" });
+        dispatch({ type: uiActions.CLOSE_SIGNUP_MODAL, payload: "close" });
       }
     };
   
@@ -105,14 +109,16 @@ function SignupForm() {
   return (
     <>
       <div className="signupForm" ref={modalRef}>
+      <form onSubmit={handleSubmit} className="signupForm">
+      <div className="form-header">
       <button
         className="closeButton"
-        onClick={() => dispatch({ type: uiActions.CLOSE_LOGIN_MODAL })}
+        onClick={() => dispatch({ type: uiActions.CLOSE_SIGNUP_MODAL })}
         >
         X
       </button>
-      <form onSubmit={handleSubmit} className="signupForm">
       <h2>Sign Up</h2>
+      </div>
       <br></br><br></br>
       <h1>Welcome to Fairbnb</h1>
       <br></br>
@@ -176,7 +182,7 @@ function SignupForm() {
           {validationErrors.Password && ( <div className='error-msg'> * {validationErrors.Password}</div> )}
         </label>
         <br></br><br></br>
-        <button type="submit">Create Account</button>
+        <button className="login-button"type="submit">Create Account</button>
       </form>
       </div>
     </>

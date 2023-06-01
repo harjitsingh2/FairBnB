@@ -2,6 +2,7 @@ import React from 'react';
 import LoginForm from './LoginForm';
 import ReactModal from 'react-modal';
 import { useSelector } from 'react-redux';
+import "./LoginForm.css";
 
 function LoginFormModal() {
   const modal = useSelector(state => state.ui.modal)
@@ -9,7 +10,7 @@ function LoginFormModal() {
 
   return (
     <>
-        <ReactModal dialogClassName="login-modal" ariaHideApp={false} isOpen={ modal === "login"}>
+        <ReactModal className="login-modal" ariaHideApp={false} isOpen={ modal === "login"}>
           <LoginForm />
         </ReactModal>
 
