@@ -16,21 +16,6 @@ const ListingsIndexItem = ( props ) => {
         </div>
       )
     
-    // return (
-    //         <div className="listing-index-item">
-    //             <Link className='show-listing' to={`/listings/${listing.id}`}>
-    //                 <div id='listing-item'>
-    //                     <img className="listing-index-image" src={image} alt="" />
-    //                 </div>
-    //                 <div className='listing-info'>
-    //                     <div id='title'>{listing.title}</div>
-    //                     <div id='title'>{listing.city}, {listing.country}</div>
-    //                 </div>
-                    
-    //                 <div id='price'><div id='price-number'>${listing.price}</div>/Price</div>
-    //             </Link>
-    //         </div>
-    //     )
     
 }
 

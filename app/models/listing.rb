@@ -13,4 +13,8 @@ class Listing < ApplicationRecord
     foreign_key: :host_id,
     class_name: :User 
 
+    has_one_attached :photo
+
+    # has_many_attached :photos
+
 end
