@@ -60,12 +60,12 @@ const listingsReducer = (state = {}, action) => {
             newState[action.listing.id] = action.listing;
             return newState;
         case RECEIVE_LISTINGS:
-            debugger;
+            // debugger;
         //   return {...state, ...action.listings};
             action.payload.forEach(
                 listing => {newState[listing.id] = listing}
             )
-            debugger;
+            // debugger;
             return newState;
         default:
           return state;

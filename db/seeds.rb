@@ -36,15 +36,15 @@ ApplicationRecord.transaction do
       password: 'password2'
     )
   
-    # puts "Creating random users"
-    # 5.times do 
-    #   User.create!({
-    #     email: Faker::Internet.unique.email,
-    #     first_name: Faker::Name.unique.first_name,
-    #     last_name: Faker::Name.unique.last_name,
-    #     password: 'fakepassword'
-    #   }) 
-    # end
+    puts "Creating random users"
+    10.times do 
+      User.create!({
+        email: Faker::Internet.unique.email,
+        first_name: Faker::Name.unique.first_name,
+        last_name: Faker::Name.unique.last_name,
+        password: 'fakepassword'
+      }) 
+    end
 
     puts "Creating listings"
     Listing.create!(
@@ -101,6 +101,174 @@ ApplicationRecord.transaction do
       latitude: 56, 
       longitude: 39, 
       host_id: 3
+    )
+
+    Listing.create!(
+      address: "346 Broadway Ave", 
+      apt_num: "", 
+      city: "New York", 
+      state: "NY", 
+      zip_code: "11122", 
+      title: "cozy room", 
+      description: "room in times square", 
+      category: "room", 
+      price: 160,
+      max_guests: 2,
+      num_bedrooms: 1, 
+      num_beds: 1, 
+      num_bathrooms: 1, 
+      kitchen: false, 
+      tv: false, 
+      washer_dryer: false, 
+      parking: false, 
+      air_conditioning: false, 
+      heating: true, 
+      pool: false, 
+      hot_tub: false, 
+      fire_pit: false, 
+      latitude: 57, 
+      longitude: 39, 
+      host_id: 4
+    )
+
+    Listing.create!(
+      address: "347 Broadway Ave", 
+      apt_num: "", 
+      city: "New York", 
+      state: "NY", 
+      zip_code: "11122", 
+      title: "cozy room", 
+      description: "room in times square", 
+      category: "room", 
+      price: 160,
+      max_guests: 2,
+      num_bedrooms: 1, 
+      num_beds: 1, 
+      num_bathrooms: 1, 
+      kitchen: false, 
+      tv: false, 
+      washer_dryer: false, 
+      parking: false, 
+      air_conditioning: false, 
+      heating: true, 
+      pool: false, 
+      hot_tub: false, 
+      fire_pit: false, 
+      latitude: 56, 
+      longitude: 40, 
+      host_id: 5
+    )
+
+    Listing.create!(
+      address: "348 Broadway Ave", 
+      apt_num: "", 
+      city: "New York", 
+      state: "NY", 
+      zip_code: "11122", 
+      title: "cozy room", 
+      description: "room in times square", 
+      category: "room", 
+      price: 160,
+      max_guests: 2,
+      num_bedrooms: 1, 
+      num_beds: 1, 
+      num_bathrooms: 1, 
+      kitchen: false, 
+      tv: false, 
+      washer_dryer: false, 
+      parking: false, 
+      air_conditioning: false, 
+      heating: true, 
+      pool: false, 
+      hot_tub: false, 
+      fire_pit: false, 
+      latitude: 66, 
+      longitude: 39, 
+      host_id: 6
+    )
+
+    Listing.create!(
+      address: "349 Broadway Ave", 
+      apt_num: "", 
+      city: "New York", 
+      state: "NY", 
+      zip_code: "11122", 
+      title: "cozy room", 
+      description: "room in times square", 
+      category: "room", 
+      price: 160,
+      max_guests: 2,
+      num_bedrooms: 1, 
+      num_beds: 1, 
+      num_bathrooms: 1, 
+      kitchen: false, 
+      tv: false, 
+      washer_dryer: false, 
+      parking: false, 
+      air_conditioning: false, 
+      heating: true, 
+      pool: false, 
+      hot_tub: false, 
+      fire_pit: false, 
+      latitude: 50, 
+      longitude: 39, 
+      host_id: 7
+    )
+
+    Listing.create!(
+      address: "350 Broadway Ave", 
+      apt_num: "", 
+      city: "New York", 
+      state: "NY", 
+      zip_code: "11122", 
+      title: "cozy room", 
+      description: "room in times square", 
+      category: "room", 
+      price: 160,
+      max_guests: 2,
+      num_bedrooms: 1, 
+      num_beds: 1, 
+      num_bathrooms: 1, 
+      kitchen: false, 
+      tv: false, 
+      washer_dryer: false, 
+      parking: false, 
+      air_conditioning: false, 
+      heating: true, 
+      pool: false, 
+      hot_tub: false, 
+      fire_pit: false, 
+      latitude: 2, 
+      longitude: 39, 
+      host_id: 8
+    )
+
+    Listing.create!(
+      address: "3 Broadway Ave", 
+      apt_num: "", 
+      city: "New York", 
+      state: "NY", 
+      zip_code: "11122", 
+      title: "cozy room", 
+      description: "room in times square", 
+      category: "room", 
+      price: 160,
+      max_guests: 2,
+      num_bedrooms: 1, 
+      num_beds: 1, 
+      num_bathrooms: 1, 
+      kitchen: false, 
+      tv: false, 
+      washer_dryer: false, 
+      parking: false, 
+      air_conditioning: false, 
+      heating: true, 
+      pool: false, 
+      hot_tub: false, 
+      fire_pit: false, 
+      latitude: 1, 
+      longitude: 39, 
+      host_id: 9
     )
   
     puts "Done!"

@@ -17,10 +17,12 @@ const ListingsIndexPage = () => {
     }, [dispatch]);
   
     return (
-      <div>
+      <div className='listings-index'>
         <h1>Listings</h1>
         <p> Check out these listings </p>
-        {allListings}
+        <div className='listings'>
+          {allListings}
+        </div>
     </div>
     );
   };
