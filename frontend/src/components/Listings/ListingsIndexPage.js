@@ -18,12 +18,8 @@ const ListingsIndexPage = () => {
   
     return (
       <div className='listings-index'>
-        <h1>Listings</h1>
-        <p> Check out these listings </p>
-        <div className='listings'>
-          {allListings}
-        </div>
-    </div>
+        {allListings}
+      </div>
     );
   };
 

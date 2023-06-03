@@ -2,39 +2,46 @@ h1 {
     font-size: 100px;
 }
 
+
 .listings-index {
-    padding: 1%;
-    /* max-width: 1000px; */
-}
-
-.listing-pic {
-    max-width: 200px;
-    height: auto;
-}
-
-.listings {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
+    max-width: 100%;
+    margin-top: 20px;
     /* background-color: blue; */
 }
 
 .listing-index-item {
-    padding: 2%;
-    max-width: 200px;
+    /* padding: 2%; */
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 20%;
+    cursor: pointer;
+}
+
+.listing-pic {
+    /* max-width: 200px; */
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
 }
 
 .listing-area {
     font-family: "AirbnbMed" ;
 }
 
-.listings-index {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.listing-area, .listing-title, .listing-price-container {
+    padding: 5px;
+    padding-bottom: 0px;
+}
+
+.listing-price-container span {
+    font-family: "AirbnbMed";
 }
