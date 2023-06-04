@@ -66,3 +66,49 @@ h1 {
 /* .category-name {
     align-items: center;
 } */
+
+.listings-show {
+    padding: 40px;
+}
+
+.show-main-pic {
+    width: 500px;
+    height: auto;
+}
+
+.show-body-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.show-body-info {
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.show-body-reservation {
+    padding: 10%;
+}
+
+.show-body-info p {
+    border-style: dashed;
+    border-color: black;
+    background-color: aqua;
+}
+
+.show-body-info .main-features {
+    padding-bottom: 10px;
+    border-bottom: solid;
+}
+
+.show-body-info .description {
+    padding-bottom: 10px;
+    border-bottom: solid;
+}
+
+.show-body-info .amenities h2 {
+    font-family: "AirbnbMed";
+    font-size: larger;
+}
