@@ -6,6 +6,7 @@
   padding: 5px;
   background-color: #ffffff;
   border-bottom: 1px solid #a6a3a3; 
+  position: sticky 
 }
 
 /* .navbar :hover {

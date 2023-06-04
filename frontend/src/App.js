@@ -1,15 +1,23 @@
 import React from "react";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation/index";
 import ListingsIndexPage from "./components/Listings/ListingsIndexPage";
+import CategoryBar from "./components/Listings/CategoryBar";
+import ListingsShowPage from "./components/Listings/ListingsShowPage";
 
 function App() {
 
   return (
     <>
       <Navigation />
-      <ListingsIndexPage />
         <Switch>
+          <Route path="/" exact>
+            <CategoryBar />
+            <ListingsIndexPage />
+          </Route>
+          <Route path="/listings/:listingId">
+            <ListingsShowPage />
+          </Route>
         </Switch>
     </>
   );

@@ -35,7 +35,7 @@ export const getListings = (state) => {
 // Thunk Action Creators
 export const fetchListing = (listingId) => async dispatch => {
     const response = await csrfFetch(`/api/listings/${listingId}`);
-
+    // debugger 
     const data = await response.json();
     dispatch(receiveListing(data));
     // return response;
@@ -57,7 +57,8 @@ const listingsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_LISTING:
-            newState[action.listing.id] = action.listing;
+            // debugger 
+            newState[action.payload.listing.id] = action.payload.listing;
             return newState;
         case RECEIVE_LISTINGS:
             // debugger;

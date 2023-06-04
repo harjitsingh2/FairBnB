@@ -12,7 +12,6 @@ h1 {
     gap: 40px;
     max-width: 100%;
     margin-top: 20px;
-    /* background-color: blue; */
 }
 
 .listing-index-item {
@@ -45,3 +44,25 @@ h1 {
 .listing-price-container span {
     font-family: "AirbnbMed";
 }
+
+.category-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category-icon {
+    max-width: 60px;
+    height: auto;
+    padding: 2%;
+    cursor: pointer;
+    /* align-items: center; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+}
+
+/* .category-name {
+    align-items: center;
+} */
