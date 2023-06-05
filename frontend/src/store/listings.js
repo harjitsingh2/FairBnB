@@ -56,6 +56,14 @@ export const fetchListings = () => async (dispatch) => {
     // return response;
 }
 
+export const filteredListings = (category) => state => {
+    let filteredListings = Object.values(state.listings).filter(
+        (listing) => listing.category === category
+      );
+    
+      return filteredListings;
+}
+
 
 // Listings Reducer
 

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import beachfront from '../../image/categories/beachfront.png'
 import cabin from '../../image/categories/cabin.png';
 import camping from '../../image/categories/camping.png'
@@ -10,20 +10,35 @@ import treehouse from '../../image/categories/treehouse.png'
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { receiveFilteredListings } from "../../store/listings";
+import { applyCategoryFilter, removeCategoryFilter } from "../../store/listings";
+import { useHistory } from "react-router-dom/";
 
 const CategoryBar = () => {
     const dispatch = useDispatch();
     const listing = useSelector((state) => state.listings);
-    // const { category } = useParams();
+    const { category } = useParams();
     const { filters } = useSelector((state) => state.listings);
+    const history = useHistory();
 
+    let filteredListings = listing;
 
     const handleCategoryClick = (selectedCategory) => {
-        const filteredListings = Object.values(listing).filter(
-          (listing) => listing.category === selectedCategory
-        );
-        dispatch(receiveFilteredListings(filteredListings));
-      };
+        // filteredListings = Object.values(listing).filter(
+        //   (listing) => listing.category === selectedCategory
+        // );
+        // dispatch(useParams(filteredListings));
+        history.push(`/listings/filter/${selectedCategory}`)
+    };
+    
+    // useEffect(() => {
+    // }, [filteredListings])
+    
+    // const handleCategoryClick = (selectedCategory) => {
+    //     const filteredListings = Object.values(listing).filter(
+    //       (listing) => listing.category === selectedCategory
+    //     );
+    //     dispatch(receiveFilteredListings(filteredListings));
+    //   };
 
 
 

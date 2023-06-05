@@ -1,25 +1,30 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getListings, fetchListings } from '../../store/listings';
+import { getListings, fetchListings, filteredListings } from '../../store/listings';
 import ListingsIndexItem from './ListingsIndexItem';
 import './ListingsIndex.css'
+import { useParams } from 'react-router-dom/';
 
 const ListingsIndexPage = () => {
     const dispatch = useDispatch();
     const listings = useSelector(getListings);
-    
+    const {category} = useParams();
 
+    let filteredCategoryListings = null;
+
+    filteredCategoryListings = useSelector(filteredListings(category));
+    // debugger
     // const allListings = listings.map(listing => {
     //   return <ListingsIndexItem key={listing.id} listing={listing} />
     // })
   
     useEffect(() => {
       dispatch(fetchListings());
-    }, [dispatch]);
+    }, [dispatch, category]);
   
     return (
       <div className='listings-index'>
-        {listings.map((listing) => (
+        {(category ? filteredCategoryListings : listings).map((listing) => (
         <ListingsIndexItem key={listing.id} listing={listing} />
       ))}
       </div>

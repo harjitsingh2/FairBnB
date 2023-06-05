@@ -15,11 +15,12 @@ function App() {
             <CategoryBar />
             <ListingsIndexPage />
           </Route>
-          <Route path="/listings/:listingId">
+          <Route path="/listings/:listingId" exact>
             <ListingsShowPage />
           </Route>
-          <Route path="/listings/:category">
-            <ListingsShowPage />
+          <Route path="/listings/filter/:category" exact>
+            <CategoryBar />
+            <ListingsIndexPage />
           </Route>
         </Switch>
     </>
