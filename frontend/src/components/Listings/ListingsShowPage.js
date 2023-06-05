@@ -53,7 +53,7 @@ const ListingsShowPage = ( ) => {
             <div className="show-body-container">
                 <div className="show-body-info">
                     <div className="host-information">
-                        <p>Hosted by {host.firstName}</p>
+                        <h2>Hosted by {host.firstName}</h2>
                     </div>
                     <div className="main-features">
                         <span>{listing.maxGuests} guests | </span>

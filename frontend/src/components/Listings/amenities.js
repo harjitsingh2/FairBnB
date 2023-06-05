@@ -10,6 +10,7 @@ import heating from '../../image/amenities/heating.png'
 import pool from '../../image/amenities/pool.png'
 import tub from '../../image/amenities/hot-tub.png'
 import firepit from '../../image/amenities/fire-pit.png'
+import './ListingsShow.css';
 
 
 
@@ -24,7 +25,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={kitchen} alt="" />
-                    <span>Kitchen</span>
+                    <span className="amenity-name">Kitchen</span>
                     </div>
                 </div>
                 )}
@@ -34,7 +35,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={wifi} alt="" />
-                    <span>Wifi</span>
+                    <span className="amenity-name">Wifi</span>
                     </div>
                 </div>
                 )}
@@ -44,7 +45,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={tv} alt="" />
-                    <span>TV</span>
+                    <span className="amenity-name">TV</span>
                     </div>
                 </div>
                 )}
@@ -54,7 +55,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={washer} alt="" />
-                    <span>Washer Dryer</span>
+                    <span className="amenity-name">Washer Dryer</span>
                     </div>
                 </div>
                 )}
@@ -64,7 +65,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={parking} alt="" />
-                    <span>Parking</span>
+                    <span className="amenity-name">Parking</span>
                     </div>
                 </div>
                 )}
@@ -74,7 +75,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={ac} alt="" />
-                    <span>Air Conditioning</span>
+                    <span className="amenity-name">Air Conditioning</span>
                     </div>
                 </div>
                 )}
@@ -84,7 +85,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={heating} alt="" />
-                    <span>Heating</span>
+                    <span className="amenity-name">Heating</span>
                     </div>
                 </div>
                 )}
@@ -94,7 +95,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={pool} alt="" />
-                    <span>Pool</span>
+                    <span className="amenity-name">Pool</span>
                     </div>
                 </div>
                 )}
@@ -104,7 +105,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={tub} alt="" />
-                    <span>Hot Tub</span>
+                    <span className="amenity-name">Hot Tub</span>
                     </div>
                 </div>
                 )}
@@ -114,7 +115,7 @@ const Amenities = () => {
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={firepit} alt="" />
-                    <span>Fire Pit</span>
+                    <span className="amenity-name">Fire Pit</span>
                     </div>
                 </div>
                 )}
