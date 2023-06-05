@@ -3,6 +3,7 @@ import csrfFetch from "./csrf.js";
 // Action Constants
 const RECEIVE_LISTING = 'listings/RECEIVE_LISTING';
 const RECEIVE_LISTINGS = 'listings/RECEIVE_LISTINGS';
+const RECEIVE_FILTERED_LISTINGS = 'listings/RECEIVE_FILTERED_LISTINGS';
 
 // Action Creators
 export const receiveListing = (listing) => ({
@@ -14,6 +15,12 @@ export const receiveListings = (listings) => ({
     type: RECEIVE_LISTINGS,
     payload: listings 
 })
+
+export const receiveFilteredListings = (listings) => ({
+    type: RECEIVE_FILTERED_LISTINGS,
+    payload: listings
+});
+
 
 // Selectors 
 export const getListing = (listingId) => (state) => {
@@ -51,6 +58,7 @@ export const fetchListings = () => async (dispatch) => {
 
 
 // Listings Reducer
+
 const listingsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {...state};
@@ -67,6 +75,12 @@ const listingsReducer = (state = {}, action) => {
                 listing => {newState[listing.id] = listing}
             )
             // debugger;
+            return newState;
+        case RECEIVE_FILTERED_LISTINGS:
+            newState = {}; 
+            action.payload.forEach((listing) => {
+                newState[listing.id] = listing;
+            });
             return newState;
         default:
           return state;

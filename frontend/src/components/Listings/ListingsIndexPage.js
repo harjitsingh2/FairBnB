@@ -9,9 +9,9 @@ const ListingsIndexPage = () => {
     const listings = useSelector(getListings);
     
 
-    const allListings = listings.map(listing => {
-      return <ListingsIndexItem key={listing.id} listing={listing} />
-    })
+    // const allListings = listings.map(listing => {
+    //   return <ListingsIndexItem key={listing.id} listing={listing} />
+    // })
   
     useEffect(() => {
       dispatch(fetchListings());
@@ -19,7 +19,9 @@ const ListingsIndexPage = () => {
   
     return (
       <div className='listings-index'>
-        {allListings}
+        {listings.map((listing) => (
+        <ListingsIndexItem key={listing.id} listing={listing} />
+      ))}
       </div>
     );
   };
