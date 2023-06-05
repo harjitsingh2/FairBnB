@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-ApplicationRecord.transaction do 
+require "open-uri"
+require "aws-sdk-s3"
+
+# ApplicationRecord.transaction do 
     puts "Destroying old tables..."
     User.destroy_all
   
@@ -14,7 +17,7 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('users')
   
     puts "Creating demo user..."
-    User.create!(
+    user0 = User.create!(
       email: 'demo@mail.com', 
       first_name: 'Demo',
       last_name: 'User',
@@ -22,56 +25,56 @@ ApplicationRecord.transaction do
     )
 
     puts "Creating additional users"
-    User.create!(
+    user1 = User.create!(
       email: 'user1@mail.com',
       first_name: 'User',
       last_name: 'One',
       password: 'password1'
     )
     
-    User.create!(
+    user2 = User.create!(
       email: 'user2@mail.com',
       first_name: 'John',
       last_name: 'Doe',
       password: 'password2'
     )
     
-    User.create!(
+    user3 = User.create!(
       email: 'user3@mail.com',
       first_name: 'Emily',
       last_name: 'Smith',
       password: 'password3'
     )
     
-    User.create!(
+    user4 = User.create!(
       email: 'user4@mail.com',
       first_name: 'Alex',
       last_name: 'Johnson',
       password: 'password4'
     )
     
-    User.create!(
+    user5 = User.create!(
       email: 'user5@mail.com',
       first_name: 'Sophia',
       last_name: 'Brown',
       password: 'password5'
     )
     
-    User.create!(
+    user6 = User.create!(
       email: 'user6@mail.com',
       first_name: 'Daniel',
       last_name: 'Lee',
       password: 'password6'
     )
     
-    User.create!(
+    user7 = User.create!(
       email: 'user7@mail.com',
       first_name: 'Olivia',
       last_name: 'Martinez',
       password: 'password7'
     )
     
-    User.create!(
+    user8 = User.create!(
       email: 'user8@mail.com',
       first_name: 'Michael',
       last_name: 'Taylor',
@@ -91,7 +94,66 @@ ApplicationRecord.transaction do
 
     puts "Creating listings"
     
-    Listing.create!(
+    listing1 = Listing.create!(
+      address: "789 Beachfront Blvd",
+      apt_num: "",
+      city: "Miami",
+      state: "FL",
+      zip_code: "33131",
+      title: "Stunning Beachfront Villa",
+      description: "Wake up to breathtaking ocean views in our beachfront villa.",
+      category: "beachfront",
+      price: 350,
+      max_guests: 6,
+      num_bedrooms: 3,
+      num_beds: 4,
+      num_bathrooms: 2,
+      kitchen: true,
+      wifi: true,
+      tv: true,
+      washer_dryer: true,
+      parking: true,
+      air_conditioning: true,
+      heating: false,
+      pool: true,
+      hot_tub: false,
+      fire_pit: true,
+      latitude: 25.7617,
+      longitude: -80.1918,
+      host_id: 3
+    )
+
+    listing2 = Listing.create!(
+      address: "456 Cabin Retreat Rd",
+      apt_num: "",
+      city: "Cabintown",
+      state: "Minnesota",
+      zip_code: "12345",
+      title: "Rustic Cabin Getaway",
+      description: "Escape to a cozy cabin in the serene countryside of the Midwest.",
+      category: "cabin",
+      price: 180,
+      max_guests: 4,
+      num_bedrooms: 2,
+      num_beds: 3,
+      num_bathrooms: 1,
+      kitchen: true,
+      wifi: false,
+      tv: false,
+      washer_dryer: true,
+      parking: true,
+      air_conditioning: true,
+      heating: true,
+      pool: false,
+      hot_tub: false,
+      fire_pit: true,
+      latitude: 39.1234,
+      longitude: -91.5678,
+      host_id: 2
+    )
+  
+
+    listing3 = Listing.create!(
       address: "5924 Main St",
       apt_num: "",
       city: "Silver Springs",
@@ -120,48 +182,19 @@ ApplicationRecord.transaction do
       host_id: 1
     )
 
-    Listing.create!(
-      address: "456 Cabin Retreat Rd",
+    listing4 = Listing.create!(
+      address: "369 City St",
       apt_num: "",
-      city: "Cabintown",
-      state: "Minnesota",
-      zip_code: "12345",
-      title: "Rustic Cabin Getaway",
-      description: "Escape to a cozy cabin in the serene countryside of the Midwest.",
-      category: "cabin",
-      price: 180,
+      city: "Chicago",
+      state: "IL",
+      zip_code: "60601",
+      title: "Modern City Loft",
+      description: "Stay in the heart of the city in our sleek and modern loft. This modern city loft is just minutes away from Downtown Chicago and all of the restaurants and shops that come with it. Enjoy Chicago's rich history, take a ghost tour, or take a ride in a boat.",
+      category: "city",
+      price: 200,
       max_guests: 4,
       num_bedrooms: 2,
-      num_beds: 3,
-      num_bathrooms: 1,
-      kitchen: true,
-      wifi: false,
-      tv: false,
-      washer_dryer: true,
-      parking: true,
-      air_conditioning: true,
-      heating: true,
-      pool: false,
-      hot_tub: false,
-      fire_pit: true,
-      latitude: 39.1234,
-      longitude: -91.5678,
-      host_id: 2
-    )
-    
-    Listing.create!(
-      address: "789 Beachfront Blvd",
-      apt_num: "",
-      city: "Miami",
-      state: "FL",
-      zip_code: "33131",
-      title: "Stunning Beachfront Villa",
-      description: "Wake up to breathtaking ocean views in our beachfront villa.",
-      category: "beachfront",
-      price: 350,
-      max_guests: 6,
-      num_bedrooms: 3,
-      num_beds: 4,
+      num_beds: 2,
       num_bathrooms: 2,
       kitchen: true,
       wifi: true,
@@ -169,45 +202,17 @@ ApplicationRecord.transaction do
       washer_dryer: true,
       parking: true,
       air_conditioning: true,
-      heating: false,
-      pool: true,
-      hot_tub: false,
-      fire_pit: true,
-      latitude: 25.7617,
-      longitude: -80.1918,
-      host_id: 3
-    )
-    
-    Listing.create!(
-      address: "987 Mansion Ave",
-      apt_num: "",
-      city: "San Francisco",
-      state: "CA",
-      zip_code: "94102",
-      title: "Grand Historic Mansion",
-      description: "Experience the grandeur of a meticulously restored historic mansion.",
-      category: "mansion",
-      price: 500,
-      max_guests: 10,
-      num_bedrooms: 5,
-      num_beds: 8,
-      num_bathrooms: 5,
-      kitchen: true,
-      wifi: true,
-      tv: true,
-      washer_dryer: true,
-      parking: true,
-      air_conditioning: true,
       heating: true,
-      pool: false,
+      pool: true,
       hot_tub: true,
       fire_pit: false,
-      latitude: 37.7749,
-      longitude: -122.4194,
-      host_id: 4
+      latitude: 41.8781,
+      longitude: -87.6298,
+      host_id: 7
     )
+   
     
-    Listing.create!(
+    listing5 = Listing.create!(
       address: "246 Countryside Ln",
       apt_num: "",
       city: "Austin",
@@ -236,7 +241,37 @@ ApplicationRecord.transaction do
       host_id: 5
     )
     
-    Listing.create!(
+
+    listing6 = Listing.create!(
+      address: "987 Mansion Ave",
+      apt_num: "",
+      city: "San Francisco",
+      state: "CA",
+      zip_code: "94102",
+      title: "Grand Historic Mansion",
+      description: "Experience the grandeur of a meticulously restored historic mansion.",
+      category: "mansion",
+      price: 500,
+      max_guests: 10,
+      num_bedrooms: 5,
+      num_beds: 8,
+      num_bathrooms: 5,
+      kitchen: true,
+      wifi: true,
+      tv: true,
+      washer_dryer: true,
+      parking: true,
+      air_conditioning: true,
+      heating: true,
+      pool: false,
+      hot_tub: true,
+      fire_pit: false,
+      latitude: 37.7749,
+      longitude: -122.4194,
+      host_id: 4
+    )
+
+    listing7 = Listing.create!(
       address: "135 Tiny Home St",
       apt_num: "",
       city: "Portland",
@@ -265,36 +300,7 @@ ApplicationRecord.transaction do
       host_id: 6
     )
     
-    Listing.create!(
-      address: "369 City St",
-      apt_num: "",
-      city: "Chicago",
-      state: "IL",
-      zip_code: "60601",
-      title: "Modern City Loft",
-      description: "Stay in the heart of the city in our sleek and modern loft. This modern city loft is just minutes away from Downtown Chicago and all of the restaurants and shops that come with it. Enjoy Chicago's rich history, take a ghost tour, or take a ride in a boat.",
-      category: "city",
-      price: 200,
-      max_guests: 4,
-      num_bedrooms: 2,
-      num_beds: 2,
-      num_bathrooms: 2,
-      kitchen: true,
-      wifi: true,
-      tv: true,
-      washer_dryer: true,
-      parking: true,
-      air_conditioning: true,
-      heating: true,
-      pool: true,
-      hot_tub: true,
-      fire_pit: false,
-      latitude: 41.8781,
-      longitude: -87.6298,
-      host_id: 7
-    )
-    
-    Listing.create!(
+    listing8 = Listing.create!(
       address: "789 Treehouse Ln",
       apt_num: "",
       city: "Seattle",
@@ -322,8 +328,18 @@ ApplicationRecord.transaction do
       longitude: -122.3321,
       host_id: 8
     )
-    
+
+    puts "Attaching Pictures"
+
     
   
     puts "Done!"
-  end
+  # end
+
+    listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_1.webp"), filename: 'listing1_1.webp')
+    listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_2.webp"), filename: 'listing1_2.webp')
+    listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_3.webp"), filename: 'listing1_3.webp')
+    listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_4.webp"), filename: 'listing1_4.webp')
+    listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_5.webp"), filename: 'listing1_5.webp')
+    
+    

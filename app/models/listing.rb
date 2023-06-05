@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
     
-    CATEGORIES = [ "cabin", "camping", "beachfront", "mansion", "countryside", "tiny home", "city", "treehouse"]
+    CATEGORIES = [ "beachfront", "cabin", "camping", "city", "countryside",  "mansion", "tiny home",  "treehouse"]
 
     # Validations 
     validates :address, :city, :state, :zip_code, :title, :description, :category, :price, :max_guests, :num_bedrooms, :num_beds, :num_bathrooms, :latitude, :longitude, :host_id, presence: true 
@@ -13,8 +13,8 @@ class Listing < ApplicationRecord
     foreign_key: :host_id,
     class_name: :User 
 
-    has_one_attached :photo
+    # has_one_attached :photo
 
-    # has_many_attached :photos
+    has_many_attached :photos
 
 end
