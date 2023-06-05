@@ -32,11 +32,14 @@ const ListingsShowPage = ( ) => {
         })
     }, [dispatch])
 
-    if (!listing) {
+    const host = useSelector((state) => Object.values(state.host).find((host) => host.id === listing.hostId));
+
+    if (!listing || !host) {
         return (
             <div>Page does not exist</div>
         )
     }
+
     
     return (
         <div className="listings-show">
@@ -50,7 +53,7 @@ const ListingsShowPage = ( ) => {
             <div className="show-body-container">
                 <div className="show-body-info">
                     <div className="host-information">
-                        <p>Host information</p>
+                        <p>Hosted by {host.firstName}</p>
                     </div>
                     <div className="main-features">
                         <span>{listing.maxGuests} guests | </span>
