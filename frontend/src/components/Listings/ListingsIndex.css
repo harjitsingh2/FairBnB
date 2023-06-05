@@ -162,3 +162,15 @@ h1 {
     margin-top: 10px;
     border: 1px solid black;
 }
+
+@media (max-width: 768px) {
+    .listing-index-item {
+      max-width: 45%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .listing-index-item {
+      max-width: 100%;
+    }
+  }

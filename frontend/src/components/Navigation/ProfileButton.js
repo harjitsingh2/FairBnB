@@ -48,6 +48,10 @@ function ProfileButton() {
   const toggleMenu = (e) => {
     setShowMenu((prevState) => !prevState);
   };
+
+  const handleButtonClick = (link) => {
+    window.open(link, "_blank");
+  };
   
 
 
@@ -133,6 +137,14 @@ function ProfileButton() {
           </li>
           <li>
             <button onClick={openSignup}>Sign Up</button>
+          </li>
+          <li>
+            <button onClick={() => window.open("https://github.com/harjitsingh2", "_blank")}>GitHub</button>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/harjitsingh2/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
           </li>
         </ul>
       </>

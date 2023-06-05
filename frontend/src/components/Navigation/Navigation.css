@@ -16,6 +16,8 @@
 .logo {
   max-width: 200px;
   height: auto;
+  display: flex;
+  align-items: center;
 }
 
 /* .profile-button-container {
@@ -115,4 +117,18 @@
   padding: 8px;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.navbar .personal-links {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 50px;
+}
+
+.threeicons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }

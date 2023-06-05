@@ -12,7 +12,15 @@ function Navigation() {
   return (
     <>
       <div className='navbar'>
-      <NavLink exact to="/"><img src={logo} className='logo' alt=''/></NavLink>
+      <div className='threeicons'>
+
+        <NavLink exact to="/"><img src={logo} className='logo' alt=''/></NavLink>
+        <div className='personal-links'>
+          <a href="https://github.com/harjitsingh2"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/harjitsingh2/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      
         <ul id="nav-list">
           <li>
             <br></br><br></br>
