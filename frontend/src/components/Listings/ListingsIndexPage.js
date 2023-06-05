@@ -7,6 +7,7 @@ import './ListingsIndex.css'
 const ListingsIndexPage = () => {
     const dispatch = useDispatch();
     const listings = useSelector(getListings);
+    
 
     const allListings = listings.map(listing => {
       return <ListingsIndexItem key={listing.id} listing={listing} />

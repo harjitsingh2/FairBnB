@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import beachfront from '../../image/categories/beachfront.png'
 import cabin from '../../image/categories/cabin.png';
 import camping from '../../image/categories/camping.png'
@@ -11,10 +11,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from 'react-router-dom';
 
 const CategoryBar = () => {
-    // const listings = useSelector((state) => state.listings);
-    // const { category } = useParams();
+    const listing = useSelector((state) => state.listings);
+    const { category } = useParams();
     const dispatch = useDispatch();
-    
     
 
     return (
