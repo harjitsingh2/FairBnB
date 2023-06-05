@@ -21,7 +21,6 @@ function ProfileButton() {
       setShowMenu(false);
     };
 
-    // document.addEventListener('click', closeMenu);
 
     if (showMenu) {
       document.addEventListener('click', closeMenu);
@@ -54,48 +53,10 @@ function ProfileButton() {
   };
   
 
-
-  // if (currentUser) {
-
-  //   return (
-  //     <>
-  //       <button onClick={openMenu}>
-  //         <i className="fa-solid fa-circle-user" size="2xl" style={{color: "#ffc800",}}></i>
-  //       </button>
-  //       {showMenu && (
-  //         <ul className="profile-dropdown">
-  //           <li>Welcome, {currentUser.firstName}!</li>
-  //           <li>
-  //             <button onClick={logout}>Log Out</button>
-  //           </li>
-  //         </ul>
-  //       )}
-  //     </>
-  //   );
-  // } else {
-  //   return (
-  //     <>
-  //       <button onClick={openMenu}>
-  //       <i className="fa-solid fa-circle-user" size="xl" style={{color: "#5e646e",}}></i>
-  //       </button>
-  //       {showMenu && (
-  //         <ul className="profile-dropdown">
-  //           <li><button onClick={openLogin}>Login</button></li>
-  //           <li>
-  //             <button onClick={openSignup}>Sign Up</button>
-  //           </li>
-  //         </ul>
-  //       )}
-  //   </>
-  //   )
-
-  // }
-
   if (currentUser) {
     return (
       <>
         <button onClick={toggleMenu}>
-          {/* <i className="fa-solid fa-circle-user" size="2xl" style={{ color: "#ffc800" }}></i> */}
           <div className="container"> 
             <div className="rounded-icon-button"> 
               <div className="hamburger-button">

@@ -6,7 +6,9 @@
   padding: 5px;
   background-color: #ffffff;
   border-bottom: 1px solid #a6a3a3; 
-  position: sticky 
+  position: fixed;
+  position: sticky;
+  margin: 20px;
 }
 
 /* .navbar :hover {
@@ -14,10 +16,11 @@
 } */
 
 .logo {
-  max-width: 200px;
+  max-width: 100px;
   height: auto;
   display: flex;
   align-items: center;
+  margin-left: 20px;
 }
 
 /* .profile-button-container {
@@ -122,13 +125,14 @@
 .navbar .personal-links {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  font-size: 50px;
+  gap: 20px;
+  font-size: 60px;
 }
 
 .threeicons {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 10px;
 
 }

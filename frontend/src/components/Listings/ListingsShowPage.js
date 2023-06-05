@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchListing } from "../../store/listings";
 import image from '../../image/image.webp';
 import Amenities from "./amenities";
+import './ListingsShow.css';
 
 const ListingsShowPage = ( ) => {
     const dispatch = useDispatch();
@@ -48,7 +49,9 @@ const ListingsShowPage = ( ) => {
             </div>
             <div className="show-body-container">
                 <div className="show-body-info">
-                    <p>Host information</p>
+                    <div className="host-information">
+                        <p>Host information</p>
+                    </div>
                     <div className="main-features">
                         <span>{listing.maxGuests} guests | </span>
                         <span>{listing.numBedrooms} bedrooms | </span>
