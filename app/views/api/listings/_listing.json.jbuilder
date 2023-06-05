@@ -12,6 +12,7 @@ json.num_bedrooms listing.num_bedrooms
 json.num_beds listing.num_beds
 json.num_bathrooms listing.num_bathrooms
 json.kitchen listing.kitchen
+json.wifi listing.wifi
 json.tv listing.tv
 json.washer_dryer listing.washer_dryer
 json.parking listing.parking

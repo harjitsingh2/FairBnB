@@ -18,6 +18,9 @@ function App() {
           <Route path="/listings/:listingId">
             <ListingsShowPage />
           </Route>
+          <Route path="/listings/:category">
+            <ListingsShowPage />
+          </Route>
         </Switch>
     </>
   );

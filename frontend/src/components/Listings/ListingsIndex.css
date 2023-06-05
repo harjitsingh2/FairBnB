@@ -71,18 +71,25 @@ h1 {
     padding: 40px;
 }
 
+.listing-title-show {
+    font-size: 26px;
+    font-family: "AirbnbMed";
+}
+
 .show-main-pic {
     width: 500px;
     height: auto;
+    margin-top:24px ;
 }
 
 .show-body-container {
     display: flex;
     flex-direction: row;
+    margin-top: 48px;
 }
 
 .show-body-info {
-    padding: 10%;
+    /* padding: 10%; */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -90,17 +97,17 @@ h1 {
 
 .show-body-reservation {
     padding: 10%;
+    border: 1px solid rgb(255, 0, 123) 
 }
 
 .show-body-info p {
-    border-style: dashed;
-    border-color: black;
-    background-color: aqua;
+    border: 1px solid aqua 
 }
 
 .show-body-info .main-features {
     padding-bottom: 10px;
     border-bottom: solid;
+    font-size: 16px;
 }
 
 .show-body-info .description {
@@ -110,5 +117,48 @@ h1 {
 
 .show-body-info .amenities h2 {
     font-family: "AirbnbMed";
-    font-size: larger;
+    font-size: 22px;
+}
+
+.amenities-container {
+    height: 100%;
+   }
+   
+.amenities-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+   
+.amenity-column {
+    display: flex;
+    width: 50%;
+    height: 50px;
+    box-sizing: border-box;
+    margin-right: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+   
+.amenity-item{
+    display: flex;
+    align-items: center;
+}
+   
+.amenity-column img {
+    width: 24px;
+    height: 24px;
+    margin-left: 0;
+    margin-right: 16px;
+}
+
+.show-reviews-container {
+    margin-top: 10px;
+    border: 1px solid black;
+}
+
+
+.show-map-container {
+    margin-top: 10px;
+    border: 1px solid black;
 }

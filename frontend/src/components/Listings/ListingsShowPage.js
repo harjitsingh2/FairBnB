@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchListing } from "../../store/listings";
-import image from '../../image/image.webp'
+import image from '../../image/image.webp';
+import Amenities from "./amenities";
 
 const ListingsShowPage = ( ) => {
     const dispatch = useDispatch();
@@ -57,10 +58,7 @@ const ListingsShowPage = ( ) => {
                     <div className="description">{listing.description}</div>
                     <div className="amenities">
                         <h2>What this place offers</h2>
-                        <ul>Amenity 1</ul>
-                        <ul>Amenity 2</ul>
-                        <ul>Amenity 3</ul>
-                        <ul>Amenity 4</ul>
+                        <Amenities />
                     </div>
                     <p>Calendar</p>
                 </div>

@@ -23,4 +23,6 @@ const ListingsIndexPage = () => {
     );
   };
 
+
+
 export default ListingsIndexPage;

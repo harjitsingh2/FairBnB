@@ -8,7 +8,7 @@ const ListingsIndexItem = ( props ) => {
 
 
     return (
-        <div className="listing-index-item">
+        <div className="listing-index-item" key={listing.id}>
             <Link to={`/listings/${listing.id}`}>
                 <div><img src={image} className="listing-pic" alt="" /></div>
                 <br></br>
