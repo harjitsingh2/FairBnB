@@ -3,7 +3,6 @@ import csrfFetch from "./csrf.js";
 // Action Constants
 const RECEIVE_LISTING = 'listings/RECEIVE_LISTING';
 const RECEIVE_LISTINGS = 'listings/RECEIVE_LISTINGS';
-const RECEIVE_FILTERED_LISTINGS = 'listings/RECEIVE_FILTERED_LISTINGS';
 
 // Action Creators
 export const receiveListing = (listing) => ({
@@ -15,11 +14,6 @@ export const receiveListings = (listings) => ({
     type: RECEIVE_LISTINGS,
     payload: listings 
 })
-
-export const receiveFilteredListings = (listings) => ({
-    type: RECEIVE_FILTERED_LISTINGS,
-    payload: listings
-});
 
 
 // Selectors 
@@ -39,6 +33,14 @@ export const getListings = (state) => {
     }
 }
 
+export const filteredListings = (category) => state => {
+    let filteredListings = Object.values(state.listings).filter(
+        (listing) => listing.category === category
+      );
+    
+      return filteredListings;
+}
+
 // Thunk Action Creators
 export const fetchListing = (listingId) => async dispatch => {
     const response = await csrfFetch(`/api/listings/${listingId}`);
@@ -56,13 +58,6 @@ export const fetchListings = () => async (dispatch) => {
     // return response;
 }
 
-export const filteredListings = (category) => state => {
-    let filteredListings = Object.values(state.listings).filter(
-        (listing) => listing.category === category
-      );
-    
-      return filteredListings;
-}
 
 
 // Listings Reducer
@@ -78,17 +73,10 @@ const listingsReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_LISTINGS:
             // debugger;
-        //   return {...state, ...action.listings};
             action.payload.forEach(
                 listing => {newState[listing.id] = listing}
             )
             // debugger;
-            return newState;
-        case RECEIVE_FILTERED_LISTINGS:
-            newState = {}; 
-            action.payload.forEach((listing) => {
-                newState[listing.id] = listing;
-            });
             return newState;
         default:
           return state;

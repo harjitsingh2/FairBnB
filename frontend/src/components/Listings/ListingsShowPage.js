@@ -26,7 +26,7 @@ const ListingsShowPage = ( ) => {
             else if (data) setErrors([data]);
             else setErrors([response.statusText]);
 
-            console.log(listing.id)
+            // console.log(listing.id)
             return data;
         })
     }, [dispatch])

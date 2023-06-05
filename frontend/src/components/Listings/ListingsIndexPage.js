@@ -13,10 +13,6 @@ const ListingsIndexPage = () => {
     let filteredCategoryListings = null;
 
     filteredCategoryListings = useSelector(filteredListings(category));
-    // debugger
-    // const allListings = listings.map(listing => {
-    //   return <ListingsIndexItem key={listing.id} listing={listing} />
-    // })
   
     useEffect(() => {
       dispatch(fetchListings());
