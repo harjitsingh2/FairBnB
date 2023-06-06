@@ -50,12 +50,16 @@ const ListingsShowPage = ( ) => {
             <div className="show-pic-container">
                 <div className="show-main-pic">
                     <img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } className="show-main-pic" alt="" />
+                    {/* <img src={"https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_1.webp"} className="show-main-pic" alt="" /> */}
                 </div>
                 <div className="show-side-pics">
-                    <img src={image} alt="" />
-                    <img src={image} alt="" />
-                    <img src={image} alt="" className="image4" />
-                    <img src={image} alt="" className="image5" />
+                    {/* <img src={image} alt="" /> */}
+                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[1] : image } alt="" />
+                    {/* <img src={ "https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_2.webp" } alt="" /> */}
+                    {/* <img src={"https://fairbnb1-dev.s3.amazonaws.com/vjyhxttt6mph69s5ga76l3vn7bvs?response-content-disposition=attachment%3B%20filename%3D%22listing1_3.webp%22%3B%20filename%2A%3DUTF-8%27%27listing1_3.webp&response-content-type=image%2Fwebp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYCX53W5JQIZJEMME%2F20230606%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230606T181916Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a951e2951cb750ab3234479723335e5c2951a3e1095be87423dba40ecf1844a4" } alt="" /> */}
+                    {/* <img src={image} alt="" /> */}
+                    {/* <img src={image} alt="" className="image4" />
+                    <img src={image} alt="" className="image5" /> */}
                 </div>
             </div>
             <div className="show-body-container">

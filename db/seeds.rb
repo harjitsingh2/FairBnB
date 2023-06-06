@@ -9,7 +9,7 @@
 require "open-uri"
 require "aws-sdk-s3"
 
-ApplicationRecord.transaction do 
+# ApplicationRecord.transaction do 
     puts "Destroying old tables..."
     User.destroy_all
   
@@ -338,7 +338,7 @@ ApplicationRecord.transaction do
     listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_5.webp"), filename: 'listing1_5.webp')
   
     puts "Done!"
-  end
+  # end
 
 
     
