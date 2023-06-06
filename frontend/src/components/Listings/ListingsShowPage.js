@@ -53,10 +53,19 @@ const ListingsShowPage = ( ) => {
                     {/* <img src={"https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_1.webp"} className="show-main-pic" alt="" /> */}
                 </div>
                 <div className="show-side-pics">
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[1] : image } alt="" />
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[2] : image } alt="" />
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[3] : image } alt="" />
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[4] : image } alt="" />
+                    <div className="side-pic-container">
+                        <img src={listing.photoUrls.length > 0 ? listing.photoUrls[1] : image } alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={listing.photoUrls.length > 0 ? listing.photoUrls[2] : image } alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={listing.photoUrls.length > 0 ? listing.photoUrls[3] : image } alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={listing.photoUrls.length > 0 ? listing.photoUrls[4] : image } alt="" className="side-pic"/>
+                    </div>
+                    
 
                 </div>
             </div>
