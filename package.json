@@ -1,5 +1,31 @@
 {
   "dependencies": {
     "react-modal": "^3.16.1"
-  }
+  },
+  "name": "fairbnb",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "directories": {
+    "lib": "lib",
+  "engines": {
+    "node": "16.x"
+    }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harjitsingh2/Fairbnb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harjitsingh2/Fairbnb/issues"
+  },
+  "homepage": "https://github.com/harjitsingh2/Fairbnb#readme"
+  
 }
+
