@@ -48,7 +48,15 @@ const ListingsShowPage = ( ) => {
                 <p>{listing.city}, {listing.state}</p>
             </div>
             <div className="show-pic-container">
-                <div><img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } className="show-main-pic" alt="" /></div>
+                <div className="show-main-pic">
+                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } className="show-main-pic" alt="" />
+                </div>
+                <div className="show-side-pics">
+                    <img src={image} alt="" />
+                    <img src={image} alt="" />
+                    <img src={image} alt="" className="image4" />
+                    <img src={image} alt="" className="image5" />
+                </div>
             </div>
             <div className="show-body-container">
                 <div className="show-body-info">

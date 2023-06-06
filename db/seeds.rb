@@ -9,7 +9,7 @@
 require "open-uri"
 require "aws-sdk-s3"
 
-# ApplicationRecord.transaction do 
+ApplicationRecord.transaction do 
     puts "Destroying old tables..."
     User.destroy_all
   
@@ -245,7 +245,7 @@ require "aws-sdk-s3"
     listing6 = Listing.create!(
       address: "987 Mansion Ave",
       apt_num: "",
-      city: "San Francisco",
+      city: "Los Angeles",
       state: "CA",
       zip_code: "94102",
       title: "Grand Historic Mansion",
@@ -331,15 +331,15 @@ require "aws-sdk-s3"
 
     puts "Attaching Pictures"
 
-    
-  
-    puts "Done!"
-  # end
-
     listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_1.webp"), filename: 'listing1_1.webp')
     listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_2.webp"), filename: 'listing1_2.webp')
     listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_3.webp"), filename: 'listing1_3.webp')
     listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_4.webp"), filename: 'listing1_4.webp')
     listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_5.webp"), filename: 'listing1_5.webp')
+  
+    puts "Done!"
+  end
+
+
     
     
