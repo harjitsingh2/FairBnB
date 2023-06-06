@@ -41,7 +41,7 @@
     margin-top: 48px;
     column-gap: 15px;
     row-gap: 15px;
-    align-items: start;
+    align-items: flex-start;
     /* border-top-right-radius: 20px;
     border-bottom-right-radius: 20px; */
     /* overflow:hidden */
