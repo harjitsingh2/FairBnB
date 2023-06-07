@@ -40,6 +40,31 @@ const ListingsShowPage = ( ) => {
         )
     }
 
+    let listingType;
+    // if (listing.category === 'beachfront') {
+    //     listingType = 'Beachfront House';
+    // }   else {
+    //     listingType = (listing.category.charAt(0).toUpperCase() + listing.category.slice(1));
+    // }
+
+    switch (listing.category) {
+        case 'beachfront':
+            listingType = 'Beachfront House';
+            break;
+        case 'city':
+            listingType = 'City Apartment';
+            break;
+        case 'countryside':
+            listingType = 'Countryside Home';
+            break;
+        case 'tiny home':
+            listingType = 'Tiny Home';
+            break;
+        default:
+            listingType = (listing.category.charAt(0).toUpperCase() + listing.category.slice(1));
+    }
+
+
     
     return (
         <div className="listings-show">
@@ -53,17 +78,26 @@ const ListingsShowPage = ( ) => {
                     {/* <img src={"https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_1.webp"} className="show-main-pic" alt="" /> */}
                 </div>
                 <div className="show-side-pics">
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[1] : image } alt="" />
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[2] : image } alt="" />
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[3] : image } alt="" />
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[4] : image } alt="" />
+                    <div className="side-pic-container">
+                        <img src={listing.photoUrls.length > 0 ? listing.photoUrls[1] : image } alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={listing.photoUrls.length > 0 ? listing.photoUrls[2] : image } alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={listing.photoUrls.length > 0 ? listing.photoUrls[3] : image } alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={listing.photoUrls.length > 0 ? listing.photoUrls[4] : image } alt="" className="side-pic"/>
+                    </div>
+                    
 
                 </div>
             </div>
             <div className="show-body-container">
                 <div className="show-body-info">
                     <div className="host-information">
-                        <h2>Hosted by {host.firstName}</h2>
+                        <h2>{listingType} hosted by {host.firstName}</h2>
                     </div>
                     <div className="main-features">
                         <span>{listing.maxGuests} guests | </span>

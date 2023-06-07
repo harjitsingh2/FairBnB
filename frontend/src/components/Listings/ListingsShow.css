@@ -1,6 +1,8 @@
 
 .listings-show {
     padding: 40px;
+    margin-left: 10%;
+    width: fit-content;
 }
 
 .listing-title-show {
@@ -33,28 +35,39 @@
 }
 
 .show-side-pics {
-    width: 350px;
-    height: auto;
+    width: 495px;
+    height: 495px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 48px;
     column-gap: 15px;
     row-gap: 15px;
-    align-items: start;
-    /* border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px; */
-    /* overflow:hidden */
-}
-
-.image4 {
+    /* align-items: flex-start; */
     border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow:hidden
 }
 
-.image5 {
-    border-bottom-right-radius: 20px;
-    /* overflow: hidden; */
+.side-pic-container {
+    width: 240px;
+    height: 240px;
 }
+
+.side-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .image4 {
+    border-top-right-radius: 20px;
+} */
+
+/* .image5 {
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+} */
 
 
 /* .show-pic-container {

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c86219b4.css",
+    "main.js": "/static/js/main.22b0762c.js",
+    "static/media/image.webp": "/static/media/image.d48c14e5b16e22f052a9.webp",
+    "static/media/AirbnbCereal_W_Md.otf": "/static/media/AirbnbCereal_W_Md.81798c6cdace650a8c1a.otf",
+    "static/media/AirbnbCereal_W_Lt.otf": "/static/media/AirbnbCereal_W_Lt.6cb70d2c3d67dfe9b7fc.otf",
+    "static/media/Fairbnb-logo.png": "/static/media/Fairbnb-logo.c94d1ea713c3dac79b76.png",
+    "static/media/treehouse.png": "/static/media/treehouse.655bf56f4e35cfa31b95.png",
+    "static/media/beachfront.png": "/static/media/beachfront.5b91fd7c055c71381488.png",
+    "static/media/cabin.png": "/static/media/cabin.f22bb708ba374518fc88.png",
+    "static/media/camping.png": "/static/media/camping.33b882f13fac73720400.png",
+    "static/media/mansion.png": "/static/media/mansion.923f55b643aba6f42e29.png",
+    "static/media/countryside.png": "/static/media/countryside.742fd1222dcc63eb1150.png",
+    "static/media/tiny-home.png": "/static/media/tiny-home.8ca9925982d789add283.png",
+    "index.html": "/index.html",
+    "main.c86219b4.css.map": "/static/css/main.c86219b4.css.map",
+    "main.22b0762c.js.map": "/static/js/main.22b0762c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c86219b4.css",
+    "static/js/main.22b0762c.js"
+  ]
+}

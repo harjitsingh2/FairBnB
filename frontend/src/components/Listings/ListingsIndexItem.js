@@ -10,9 +10,9 @@ const ListingsIndexItem = ( props ) => {
     return (
         <div className="listing-index-item" key={listing.id}>
             <Link to={`/listings/${listing.id}`}>
-                <div>
+                <div className='index-image-container'>
                     {/* <img src={image} className="listing-pic" alt="" /> */}
-                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } alt="" />
+                    <img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } alt="" className='listing-pic' />
                 </div>
                 <br></br>
                 <div className="listing-area">{listing.city}, {listing.state}</div>
