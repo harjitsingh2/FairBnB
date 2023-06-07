@@ -19,9 +19,12 @@ const CategoryBar = () => {
     return (
         <div className="category-bar">
 
-            <div className="category-icon" id="beachfront" onClick={() => handleCategoryClick('beachfront')}>
-                <img src={beachfront} />
-                <span className="category-name">Beachfront</span>
+            {/* <div className="category-icon-container"> */}
+
+                <div className="category-icon" id="beachfront" onClick={() => handleCategoryClick('beachfront')}>
+                    <img src={beachfront} />
+                    <span className="category-name">Beachfront</span>
+                {/* </div> */}
             </div>
             <div className="category-icon" id="cabin" onClick={() => handleCategoryClick('cabin')}>
                 {/* <a href="https://www.flaticon.com/free-icons/cabin" title="cabin icons"><img src={cabin} /></a> */}
