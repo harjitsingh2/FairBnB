@@ -40,6 +40,31 @@ const ListingsShowPage = ( ) => {
         )
     }
 
+    let listingType;
+    // if (listing.category === 'beachfront') {
+    //     listingType = 'Beachfront House';
+    // }   else {
+    //     listingType = (listing.category.charAt(0).toUpperCase() + listing.category.slice(1));
+    // }
+
+    switch (listing.category) {
+        case 'beachfront':
+            listingType = 'Beachfront House';
+            break;
+        case 'city':
+            listingType = 'City Apartment';
+            break;
+        case 'countryside':
+            listingType = 'Countryside Home';
+            break;
+        case 'tiny home':
+            listingType = 'Tiny Home';
+            break;
+        default:
+            listingType = (listing.category.charAt(0).toUpperCase() + listing.category.slice(1));
+    }
+
+
     
     return (
         <div className="listings-show">
@@ -72,7 +97,7 @@ const ListingsShowPage = ( ) => {
             <div className="show-body-container">
                 <div className="show-body-info">
                     <div className="host-information">
-                        <h2>Hosted by {host.firstName}</h2>
+                        <h2>{listingType} hosted by {host.firstName}</h2>
                     </div>
                     <div className="main-features">
                         <span>{listing.maxGuests} guests | </span>

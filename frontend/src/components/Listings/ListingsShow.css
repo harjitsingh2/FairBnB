@@ -1,6 +1,8 @@
 
 .listings-show {
     padding: 40px;
+    margin-left: 10%;
+    width: fit-content;
 }
 
 .listing-title-show {
