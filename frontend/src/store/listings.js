@@ -1,5 +1,6 @@
 import csrfFetch from "./csrf.js";
 
+// Old code: 
 // // Action Constants
 // const RECEIVE_LISTING = 'listings/RECEIVE_LISTING';
 // const RECEIVE_LISTINGS = 'listings/RECEIVE_LISTINGS';
@@ -85,7 +86,7 @@ import csrfFetch from "./csrf.js";
 
 // export default listingsReducer;
 
- // Jiamin's recommendation
+ // New code:
 
 import { receiveHost } from "./host.js";
 
