@@ -22,7 +22,7 @@ export const removeReservation = (reservationId) => ({
 });
 
 // Thunk Action Creators
-export const createReservation = (reservationData) => async (dispatch) => {
+export const createReservation = (reservation) => async (dispatch) => {
 
   const response = await csrfFetch(`/api/reservations`, 
   {
