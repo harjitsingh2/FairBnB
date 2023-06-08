@@ -378,6 +378,55 @@ require "aws-sdk-s3"
     listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_3.webp"), filename: 'listing8_3.webp')
     listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_4.webp"), filename: 'listing8_4.webp')
     listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_5.webp"), filename: 'listing8_5.webp')
+
+    puts "Creating Reservations"
+
+    reservation1 = Reservation.create!(
+      listing_id: 8,
+      guest_id: 7,
+      num_guests: 1,
+      total_price: 150,
+      start_date: Date.new(2023, 7, 1),
+      end_date: Date.new(2023, 7, 2)
+    )
+
+    reservation2 = Reservation.create!(
+      listing_id: 7,
+      guest_id: 1,
+      num_guests: 2,
+      total_price: 160,
+      start_date: Date.new(2023, 7, 1),
+      end_date: Date.new(2023, 7, 3)
+    )
+
+    reservation3 = Reservation.create!(
+      listing_id: 6,
+      guest_id: 1,
+      num_guests: 8,
+      total_price: 1000,
+      start_date: Date.new(2023, 7, 4),
+      end_date: Date.new(2023, 7, 6)
+    )
+
+    reservation4 = Reservation.create!(
+      listing_id: 5,
+      guest_id: 2,
+      num_guests: 3,
+      total_price: 540,
+      start_date: Date.new(2023, 7, 7),
+      end_date: Date.new(2023, 7, 10)
+    )
+
+    reservation5 = Reservation.create!(
+      listing_id: 3,
+      guest_id: 1,
+      num_guests: 2,
+      total_price: 300,
+      start_date: Date.new(2023, 8, 1),
+      end_date: Date.new(2023, 8, 6)
+      # start_date: "2023/08/01",
+      # end_date: "2023/08/06"
+    )
   
     puts "Done!"
   # end
