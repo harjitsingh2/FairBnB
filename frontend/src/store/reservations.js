@@ -11,17 +11,40 @@ export const receiveReservation = (reservation) => ({
   payload: reservation
 });
 
-export const receiveReservations = (reservations) => ({
-  type: RECEIVE_RESERVATIONS,
-  payload: reservations
-});
+export const receiveReservations = (reservations) => {
+    // debugger
+    return {  
+        type: RECEIVE_RESERVATIONS,
+        payload: reservations
+    }
+};
 
 export const removeReservation = (reservationId) => ({
   type: REMOVE_RESERVATION,
   payload: reservationId
 });
 
+
+// Selectors
+export const getReservation = (reservationId) => (state) => state.reservations ? state.reservations[reservationId] : null;
+
+export const getReservations = (state) => state.reservations ? Object.values(state.reservations) : [];
+
 // Thunk Action Creators
+
+export const fetchReservation = (reservationId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/reservations/${reservationId}`);
+    const data = await response.json();
+    dispatch(receiveReservation(data.reservation))
+}
+
+export const fetchReservations = () => async (dispatch) => {
+    // debugger
+    const response = await csrfFetch('/api/reservations');
+    const data = await response.json();
+    dispatch(receiveReservations(data.reservations))
+}
+
 export const createReservation = (reservation) => async (dispatch) => {
 
   const response = await csrfFetch(`/api/reservations`, 
@@ -84,8 +107,10 @@ const reservationsReducer = (state = {}, action) => {
             newState[action.payload.id] = action.payload 
             return newState;
         case RECEIVE_RESERVATIONS:
-            action.payload.forEach(reservation => {newState[reservation.id] = reservation})
-            return newState
+            // debugger 
+            // action.payload.forEach(reservation => {newState[reservation.id] = reservation})
+            // return newState
+            return { ...newState, ...action.reservations }
         case REMOVE_RESERVATION:
             delete newState[action.payload.id];
             return newState;

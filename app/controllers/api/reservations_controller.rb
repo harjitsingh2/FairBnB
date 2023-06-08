@@ -1,7 +1,7 @@
 class Api::ReservationsController < ApplicationController
     
     def index
-        @reservations = current_user.reservations
+        @reservations = Reservation.all.where(guest_id: current_user.id) 
         render :index 
     end
 

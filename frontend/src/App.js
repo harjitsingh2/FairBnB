@@ -4,7 +4,8 @@ import Navigation from "./components/Navigation/index";
 import ListingsIndexPage from "./components/Listings/ListingsIndexPage";
 import CategoryBar from "./components/Listings/CategoryBar";
 import ListingsShowPage from "./components/Listings/ListingsShowPage";
-// import ReservationForm from "./components/Reservations/ReservationForm";
+// import ReservationsIndexItem from "./components/Reservations/ReservationsIndexItem";
+import ReservationsIndex from "./components/Reservations/ReservationsIndex";
 
 function App() {
 
@@ -23,9 +24,10 @@ function App() {
             <CategoryBar />
             <ListingsIndexPage />
           </Route>
-          {/* <Route path="/user/:reservations" exact>
+          <Route path="/user/:reservations" exact>
+            {/* <ReservationsIndexItem /> */}
             <ReservationsIndex />
-          </Route> */}
+          </Route>
         </Switch>
     </>
   );

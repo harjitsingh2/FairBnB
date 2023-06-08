@@ -5,3 +5,13 @@ json.reservations do
         end
     end
 end
+
+# listing = @reservation.listing
+
+# json.listings do 
+#     @listings.each do |listing|
+#         json.set! listing.id do          
+#             json.extract! listing, :id, :address, :apt_num, :city, :state, :zip_code, :title, :description
+#         end
+#     end
+# end
