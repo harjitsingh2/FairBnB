@@ -14,12 +14,13 @@ class Api::ReservationsController < ApplicationController
     end
 
     def create 
-        listing = Listing.find_by(id: params[:listing_id])
+        # debugger
+        listing = Listing.find_by(id: reservation_params[:listing_id])
 
         # Check if listing exists
         if listing 
             @reservation = Reservation.new(reservation_params)
-            @reservation.listing_id = listing_id 
+            @reservation.listing_id = listing.id 
             @reservation.guest_id = current_user.id 
 
             # Try to save reservation
@@ -64,6 +65,6 @@ class Api::ReservationsController < ApplicationController
     
     private
     def reservation_params
-        params.require(:reservation).permit(:total_price, :num_guests, :start_date, :end_date)
+        params.require(:reservation).permit(:total_price, :num_guests, :start_date, :end_date, :listing_id, :guest_id)
     end
 end

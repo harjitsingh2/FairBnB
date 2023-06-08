@@ -75,7 +75,8 @@
     padding: 12px;
     font-weight: bold;
     color: #fff;
-    background-color: #ff5a5f;
+    /* background-color: #ff5a5f; */
+    background-image: linear-gradient(to right, #fc365b, #db1064, #bb1e59);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -83,11 +84,20 @@
 }
   
 .reservation-form .reservation-button:hover {
-    background-color: #e81123;
+    /* background-color: #e81123; */
+    background-image: linear-gradient(to right, #bb1e59 , #db1064, #fc365b);
 }
   
 .reservation-form .reservation-button:focus {
     outline: none;
+}
+
+.reservation-price span {
+    font-family: "AirbnbMed";
+}
+
+.log-in-reservation {
+    text-align: center;
 }
   
 /* adjust styling for smaller screens   */

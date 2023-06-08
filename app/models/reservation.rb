@@ -2,14 +2,14 @@ class Reservation < ApplicationRecord
     before_validation :calculate_total_price
     
     # Validations
-    validates :listing_id, :guest_id, :num_guests, :total_price, :start_date, :end_date
+    validates :listing_id, :guest_id, :num_guests, :total_price, :start_date, :end_date, presence: true 
 
     # Custom Validations
     validate :valid_reservation_date 
     validate :reservations_do_not_overlap 
 
     # Associations
-    belongs_to :listing 
+    belongs_to :listing, 
         class_name: :Listing,
         foreign_key: :listing_id 
 
@@ -47,5 +47,5 @@ class Reservation < ApplicationRecord
 
         errors.add(:base, "The requested dates for your reservation conflict with an existing reservation")
     end
-    
+
 end

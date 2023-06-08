@@ -13,7 +13,7 @@ const CategoryBar = () => {
     const history = useHistory();
 
     const handleCategoryClick = (selectedCategory) => {
-        history.push(`/listings/filter/${selectedCategory}`)
+        history.push(`/listings/category/${selectedCategory}`)
     };
     
     return (

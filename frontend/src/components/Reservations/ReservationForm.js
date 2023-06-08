@@ -40,7 +40,7 @@ function ReservationForm() {
         return;
     }
 
-    history.push('/user/trips')
+    history.push('/user/reservations')
     let totalPrice = numNights * listing.price;
     return dispatch(createReservation({ listingId, guestId, numGuests, totalPrice, startDate, endDate }))
       .catch(async (response) => {
@@ -135,9 +135,16 @@ function ReservationForm() {
     );
   } else {
     return (
-      <div>
-        <div>You must be logged in to make a reservation</div>
-      </div>
+        <div className='log-in-reservation'>
+            <div className='reservation-price'>
+                <span>${listing.price}</span> per night 
+            </div>
+            <br></br><br></br>
+            <div>
+                <div>You must be logged in to make a reservation</div>
+            </div> 
+        </div>
+
     )
   }
 
