@@ -1,8 +1,7 @@
-
+import './ReservationForm.css';
 
 import React, { useEffect, useState } from "react";
 import * as sessionActions from "../../store/session";
-// import { formatDistanceStrict, formatDistance } from 'date-fns'
 
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min";
@@ -31,18 +30,16 @@ function ReservationForm() {
   const [errors, setErrors] = useState([]);
 
 
-//   function diffDays() {
-//     return formatDistanceStrict(new Date(startDate), new Date(endDate), {unit: 'day'})
-//   }
-
-//   function numDays() {
-//     return diffDays().split(' ')[0]
-//   }
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setErrors([]);
+
+    if (isPastDate(startDate) || isPastDate(endDate)) {
+        setErrors(["Please select future dates."]);
+        return;
+    }
+
     history.push('/user/trips')
     let totalPrice = numNights * listing.price;
     return dispatch(createReservation({ listingId, guestId, numGuests, totalPrice, startDate, endDate }))
@@ -61,6 +58,11 @@ function ReservationForm() {
 
   const currentDate = new Date()
 
+  const isPastDate = (date) => {
+    const selectedDate = new Date(date);
+    return selectedDate < currentDate;
+  };
+  
   useEffect(() => {
     const totalNights = moment(endDate).diff(startDate, 'days')
     setNumNights(totalNights)
@@ -72,7 +74,7 @@ function ReservationForm() {
         <div>           
             <form className="reservation-form" onSubmit={handleSubmit}>
                 <ul>
-                <div>
+                <div className='reservation-price'>
                     <span>${listing.price}</span> per night 
                 </div>
                 <br/>
@@ -112,7 +114,8 @@ function ReservationForm() {
                     <div>
                     ${listing.price} x {numNights} nights
                     </div>
-                    <div>
+                    <br></br>
+                    <div className='total-cost'>
                     Total Cost: ${listing.price * numNights}
                     </div>
                 </ul>
