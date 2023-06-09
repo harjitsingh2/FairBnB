@@ -65,24 +65,6 @@ import image from '../../image/image.webp'
 const ReservationsIndexItem = ({ reservation }) => {
     const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
     const listing = useSelector(getListing(listingId));
-  
-    // return (
-    //   <div className="reservation-index-item">
-    //     <div className="reservation-info">
-    //       {listing && <p>{listing.title}</p>}
-    //       <p>{listing.address} {listing.city}, {listing.state}</p>
-    //       <p>Start Date: {startDate}</p>
-    //       <p>End Date: {endDate}</p>
-    //       <p>Number of Guests: {numGuests}</p>
-    //       <p>Total Price: {totalPrice}</p>
-    //       <div className='index-image-container'>
-    //             <img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } alt="" className='listing-pic' />
-    //         </div>
-    //       {/* <p>{listing.description}</p> */}
-    //     </div>
-    //   </div>
-    // );
-
 
     return (
         <div className="reservation-index-item">
@@ -109,19 +91,19 @@ const ReservationsIndexItem = ({ reservation }) => {
                 )}
             </div>
             <div className="index-image-container">
-                    <img
-                        // src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
-                        src={image}
+                    {listing && (
+                        <img
+                        src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
+                        // src={image}
                         alt=""
                         className="listing-pic"
                     />
+                    )}
             </div>
         </div>
     );
 };
       
-    
 
-  
 
 export default ReservationsIndexItem;
