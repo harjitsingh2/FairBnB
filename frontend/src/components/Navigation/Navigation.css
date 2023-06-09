@@ -12,6 +12,7 @@
   margin: 20px;
   padding-left: 50px;
   padding-right: 50px;
+  z-index: 100;
 }
 
 /* .navbar :hover {
@@ -53,7 +54,7 @@
   position: absolute;
   background-color: #fff;
   display: none;
-  z-index: 10;
+  z-index: 2;
   border-radius: 20px;
   /* position: absolute;
 	top: 40px;
