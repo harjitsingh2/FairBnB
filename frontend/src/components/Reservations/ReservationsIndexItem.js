@@ -60,24 +60,68 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getListing } from '../../store/listings';
 import './ReservationsIndex.css';
+import image from '../../image/image.webp'
 
 const ReservationsIndexItem = ({ reservation }) => {
     const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
     const listing = useSelector(getListing(listingId));
   
+    // return (
+    //   <div className="reservation-index-item">
+    //     <div className="reservation-info">
+    //       {listing && <p>{listing.title}</p>}
+    //       <p>{listing.address} {listing.city}, {listing.state}</p>
+    //       <p>Start Date: {startDate}</p>
+    //       <p>End Date: {endDate}</p>
+    //       <p>Number of Guests: {numGuests}</p>
+    //       <p>Total Price: {totalPrice}</p>
+    //       <div className='index-image-container'>
+    //             <img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } alt="" className='listing-pic' />
+    //         </div>
+    //       {/* <p>{listing.description}</p> */}
+    //     </div>
+    //   </div>
+    // );
+
+
     return (
-      <div className="reservation-index-item">
-        <div className="reservation-info">
-          <p>Start Date: {startDate}</p>
-          <p>End Date: {endDate}</p>
-          <p>Number of Guests: {numGuests}</p>
-          <p>Total Price: {totalPrice}</p>
-          {listing && <p>Listing Information: {listing.title}</p>}
-          {/* <p>{listing.description}</p> */}
+        <div className="reservation-index-item">
+            <div className="reservation-info">
+                {listing && (
+                <>
+                    <h2>{listing.title}</h2>
+                    <p className="location">
+                    {listing.address}, {listing.city}, {listing.state}
+                    </p>
+                    <p className="date">
+                    <span>Start Date:</span> {startDate}
+                    </p>
+                    <p className="date">
+                    <span>End Date:</span> {endDate}
+                    </p>
+                    <p>
+                    <span>Number of Guests:</span> {numGuests}
+                    </p>
+                    <p>
+                    <span>Total Price:</span> ${totalPrice}
+                    </p>
+                </>
+                )}
+            </div>
+            <div className="index-image-container">
+                    <img
+                        // src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
+                        src={image}
+                        alt=""
+                        className="listing-pic"
+                    />
+            </div>
         </div>
-      </div>
     );
-  };
+};
+      
+    
+
   
 
 export default ReservationsIndexItem;

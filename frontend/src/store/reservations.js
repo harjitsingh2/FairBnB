@@ -12,7 +12,7 @@ export const receiveReservation = (reservation) => ({
 });
 
 export const receiveReservations = (reservations) => {
-    debugger
+    // debugger
     return {  
         type: RECEIVE_RESERVATIONS,
         payload: reservations
@@ -29,7 +29,7 @@ export const removeReservation = (reservationId) => ({
 export const getReservation = (reservationId) => (state) => state.reservations ? state.reservations[reservationId] : null;
 
 export const getReservations = (state) => {
-    debugger
+    // debugger
     return state.reservations ? Object.values(state.reservations) : [];
 }
 // Thunk Action Creators
