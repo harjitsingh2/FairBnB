@@ -380,7 +380,7 @@ require "aws-sdk-s3"
       air_conditioning: true,
       heating: true,
       pool: false,
-      hot_tub: false,
+      hot_tub: true,
       fire_pit: true,
       latitude: 35.5272,
       longitude: -82.5705,
@@ -612,6 +612,56 @@ require "aws-sdk-s3"
     # listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_3.webp"), filename: 'listing8_3.webp')
     # listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_4.webp"), filename: 'listing8_4.webp')
     # listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_5.webp"), filename: 'listing8_5.webp')
+
+    # listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_1.webp"), filename: 'listing9_1.webp')
+    # listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_2.webp"), filename: 'listing9_2.webp')
+    # listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_3.webp"), filename: 'listing9_3.webp')
+    # listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_4.webp"), filename: 'listing9_4.webp')
+    # listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_5.webp"), filename: 'listing9_5.webp')
+    
+    # listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_1.webp"), filename: 'listing10_1.webp')
+    # listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_2.webp"), filename: 'listing10_2.webp')
+    # listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_3.webp"), filename: 'listing10_3.webp')
+    # listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_4.webp"), filename: 'listing10_4.webp')
+    # listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_5.webp"), filename: 'listing10_5.webp')
+
+    # listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_1.webp"), filename: 'listing11_1.webp')
+    # listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_2.webp"), filename: 'listing11_2.webp')
+    # listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_3.webp"), filename: 'listing11_3.webp')
+    # listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_4.webp"), filename: 'listing11_4.webp')
+    # listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_5.webp"), filename: 'listing11_5.webp')
+
+    # listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_1.webp"), filename: 'listing12_1.webp')
+    # listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_2.webp"), filename: 'listing12_2.webp')
+    # listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_3.webp"), filename: 'listing12_3.webp')
+    # listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_4.webp"), filename: 'listing12_4.webp')
+    # listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_5.webp"), filename: 'listing12_5.webp')
+
+    # listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_1.webp"), filename: 'listing13_1.webp')
+    # listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_2.webp"), filename: 'listing13_2.webp')
+    # listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_3.webp"), filename: 'listing13_3.webp')
+    # listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_4.webp"), filename: 'listing13_4.webp')
+    # listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_5.webp"), filename: 'listing13_5.webp')
+
+    # listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_1.webp"), filename: 'listing14_1.webp')
+    # listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_2.webp"), filename: 'listing14_2.webp')
+    # listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_3.webp"), filename: 'listing14_3.webp')
+    # listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_4.webp"), filename: 'listing14_4.webp')
+    # listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_5.webp"), filename: 'listing14_5.webp')
+
+    # listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_1.webp"), filename: 'listing15_1.webp')
+    # listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_2.webp"), filename: 'listing15_2.webp')
+    # listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_3.webp"), filename: 'listing15_3.webp')
+    # listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_4.webp"), filename: 'listing15_4.webp')
+    # listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_5.webp"), filename: 'listing15_5.webp')
+
+    # listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_1.webp"), filename: 'listing16_1.webp')
+    # listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_2.webp"), filename: 'listing16_2.webp')
+    # listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_3.webp"), filename: 'listing16_3.webp')
+    # listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_4.webp"), filename: 'listing16_4.webp')
+    # listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_5.webp"), filename: 'listing16_5.webp')
+
+
 
     puts "Creating Reservations"
 
