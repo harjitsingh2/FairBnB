@@ -12,7 +12,7 @@ export const receiveReservation = (reservation) => ({
 });
 
 export const receiveReservations = (reservations) => {
-    // debugger
+    debugger
     return {  
         type: RECEIVE_RESERVATIONS,
         payload: reservations
@@ -28,8 +28,10 @@ export const removeReservation = (reservationId) => ({
 // Selectors
 export const getReservation = (reservationId) => (state) => state.reservations ? state.reservations[reservationId] : null;
 
-export const getReservations = (state) => state.reservations ? Object.values(state.reservations) : [];
-
+export const getReservations = (state) => {
+    debugger
+    return state.reservations ? Object.values(state.reservations) : [];
+}
 // Thunk Action Creators
 
 export const fetchReservation = (reservationId) => async (dispatch) => {
@@ -46,6 +48,7 @@ export const fetchReservation = (reservationId) => async (dispatch) => {
 // }
 
 export const fetchReservations = () => async (dispatch) => {
+    // debugger
     const response = await csrfFetch('/api/reservations');
     if (response.ok) {
       const data = await response.json();
@@ -117,9 +120,9 @@ const reservationsReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_RESERVATIONS:
             // debugger 
-            // action.payload.forEach(reservation => {newState[reservation.id] = reservation})
+            // Object.keys(action.payload).forEach(reservation => {newState[reservation] = action.payload[reservation]})
             // return newState
-            return { ...newState, ...action.reservations }
+            return { ...newState, ...action.payload }
         case REMOVE_RESERVATION:
             delete newState[action.payload.id];
             return newState;

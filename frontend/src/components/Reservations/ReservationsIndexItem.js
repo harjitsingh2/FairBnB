@@ -59,6 +59,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getListing } from '../../store/listings';
+import './ReservationsIndex.css';
 
 const ReservationsIndexItem = ({ reservation }) => {
     const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
@@ -72,6 +73,7 @@ const ReservationsIndexItem = ({ reservation }) => {
           <p>Number of Guests: {numGuests}</p>
           <p>Total Price: {totalPrice}</p>
           {listing && <p>Listing Information: {listing.title}</p>}
+          {/* <p>{listing.description}</p> */}
         </div>
       </div>
     );

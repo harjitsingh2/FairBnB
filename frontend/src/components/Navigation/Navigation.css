@@ -56,22 +56,11 @@
   display: none;
   z-index: 2;
   border-radius: 20px;
-  /* position: absolute;
-	top: 40px;
-	right: 80px;
-	box-sizing: border-box;
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.12);
-	border-radius: 12px;
-	margin-top: 34px;
-	padding: 8px 0px;
-	min-width: 240px;
-	background-color: white;
-	display:block; */
 }
 
 .profile-dropdown :hover {
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  background-color: rgb(193, 190, 190);
+  background-color: rgb(216, 211, 211);
   /* border-radius: 20px; */
   cursor: pointer;
 
@@ -81,14 +70,13 @@
   /* display: flex;
   flex-direction: column; */
   position: absolute;
-	top: 40px;
-	right: 80px;
+	top: 80px;
+	right: 60px;
 	box-sizing: border-box;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-	border-radius: 12px;
-	margin-top: 34px;
-	padding: 8px 0px;
+	border-radius: 15px;
 	min-width: 240px;
+	margin-top: 30px;
 	background-color: white;
 	display:block;
   z-index: 500;
@@ -117,6 +105,7 @@
   border-color: gray;
   border-width: 1px;
   padding: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 
 
@@ -130,6 +119,7 @@
   cursor: pointer;
   padding: 0;
   margin: 0 8px;
+  font-size: 25px;
 }
 
 .user-button i,
