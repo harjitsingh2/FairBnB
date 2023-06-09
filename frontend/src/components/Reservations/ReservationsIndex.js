@@ -15,18 +15,18 @@ const ReservationsIndex = () => {
         dispatch(fetchReservations())
     }, [dispatch])
 
-    const reservationItems = reservations.map((reservation) => {
-        return <ReservationsIndexItem key={reservation.id} reservation={reservation}/>
+    const reservationItems = reservations.map((reservation) => (
+        <ReservationsIndexItem key={reservation.id} reservation={reservation}/>
 
-    })
+    ))
 
 
     return (
         <div className='reservations-index'>
             <h1>Reservations</h1>
             <div>
-                {/* {reservationItems} */}
-                <ReservationsIndexItem />
+                {reservationItems}
+                {/* <ReservationsIndexItem /> */}
                 <p>hello</p>
             </div>
 

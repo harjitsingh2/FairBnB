@@ -19,7 +19,6 @@
 .show-pic-container {
     display: flex;
     flex-direction: row;
-    /* align-items: flex-start; */
     height: 530px;
     column-gap: 15px;
     margin-bottom: 20px;
@@ -43,7 +42,6 @@
     margin-top: 48px;
     column-gap: 15px;
     row-gap: 15px;
-    /* align-items: flex-start; */
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     overflow:hidden
@@ -76,12 +74,12 @@
 }
 
 .show-body-info {
-    /* padding: 10%; */
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 800px;
 }
+
 
 
 .show-body-container p {
@@ -107,7 +105,6 @@
 
 
 .amenities-container {
-    /* height: 250px; */ /* this actually allows it to limit the size so it wrap */
     display: flex;
     flex-direction: column;
     row-gap: 3px;
@@ -170,4 +167,4 @@
     .listing-index-item {
       max-width: 100%;
     }
-  }
+  } 

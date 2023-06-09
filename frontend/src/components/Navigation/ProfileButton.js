@@ -70,7 +70,7 @@ function ProfileButton() {
         </button>
         <ul className={`profile-dropdown ${showMenu ? 'open' : ''}`}>
           <li>Welcome, {currentUser.firstName}!</li>
-          <li>
+          <li onClick={logout}>
             <button onClick={logout}>Log Out</button>
           </li>
         </ul>
@@ -93,16 +93,16 @@ function ProfileButton() {
           </div> 
         </button>
         <ul className={`profile-dropdown ${showMenu ? 'open' : ''}`}>
-          <li>
-            <button onClick={openLogin}>Login</button>
+          <li onClick={openLogin}>
+            <div onClick={openLogin}>Login</div>
           </li>
-          <li>
-            <button onClick={openSignup}>Sign Up</button>
+          <li onClick={openSignup}>
+            <div onClick={openSignup}>Sign Up</div>
           </li>
-          <li>
-            <button onClick={() => window.open("https://github.com/harjitsingh2", "_blank")}>GitHub</button>
+          <li onClick={() => window.open("https://github.com/harjitsingh2", "_blank")}>
+            <div onClick={() => window.open("https://github.com/harjitsingh2", "_blank")}>GitHub</div>
           </li>
-          <li>
+          <li onClick={() => window.open("https://www.linkedin.com/in/harjitsingh2/", "_blank")}>
             <a href="https://www.linkedin.com/in/harjitsingh2/" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
