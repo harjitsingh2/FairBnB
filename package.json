@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "moment": "^2.29.4",
     "react-modal": "^3.16.1"
   },
   "name": "fairbnb",
@@ -7,11 +8,10 @@
   "version": "1.0.0",
   "directories": {
     "lib": "lib",
-  "engines": {
-    "node": "16.x"
+    "engines": {
+      "node": "16.x"
     }
   },
-  "devDependencies": {},
   "scripts": {
     "build": "npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -26,6 +26,4 @@
     "url": "https://github.com/harjitsingh2/Fairbnb/issues"
   },
   "homepage": "https://github.com/harjitsingh2/Fairbnb#readme"
-  
 }
-

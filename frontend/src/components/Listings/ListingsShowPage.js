@@ -5,6 +5,7 @@ import { fetchListing } from "../../store/listings";
 import image from '../../image/image.webp';
 import Amenities from "./amenities";
 import './ListingsShow.css';
+import ReservationForm from "../Reservations/ReservationForm";
 
 const ListingsShowPage = ( ) => {
     const dispatch = useDispatch();
@@ -110,12 +111,13 @@ const ListingsShowPage = ( ) => {
                         <h2>What this place offers</h2>
                         <Amenities />
                     </div>
-                    <p>Calendar</p>
+                    {/* <p>Calendar</p> */}
                 </div>
                 <div className="show-body-reservation">
-                    <p>Reservation Component</p>
+                    <ReservationForm />
                 </div>
             </div>
+            <br></br>
             <div className="show-reviews-container">
                 <p>Reviews Component</p>
             </div>

@@ -82,15 +82,15 @@ require "aws-sdk-s3"
     )
     
   
-    # puts "Creating random users"
-    # 10.times do 
-    #   User.create!({
-    #     email: Faker::Internet.unique.email,
-    #     first_name: Faker::Name.unique.first_name,
-    #     last_name: Faker::Name.unique.last_name,
-    #     password: 'fakepassword'
-    #   }) 
-    # end
+    puts "Creating random users"
+    10.times do 
+      User.create!({
+        email: Faker::Internet.unique.email,
+        first_name: Faker::Name.unique.first_name,
+        last_name: Faker::Name.unique.last_name,
+        password: 'fakepassword'
+      }) 
+    end
 
     puts "Creating listings"
     
@@ -329,6 +329,240 @@ require "aws-sdk-s3"
       host_id: 8
     )
 
+    listing9 = Listing.create!(
+      address: "123 Oceanfront Ave",
+      apt_num: "",
+      city: "Malibu",
+      state: "CA",
+      zip_code: "90265",
+      title: "Luxurious Beachfront Villa",
+      description: "Experience luxury living with direct beach access at our stunning beachfront villa.",
+      category: "beachfront",
+      price: 500,
+      max_guests: 8,
+      num_bedrooms: 4,
+      num_beds: 6,
+      num_bathrooms: 4,
+      kitchen: true,
+      wifi: true,
+      tv: true,
+      washer_dryer: true,
+      parking: true,
+      air_conditioning: true,
+      heating: true,
+      pool: true,
+      hot_tub: true,
+      fire_pit: true,
+      latitude: 34.0307,
+      longitude: -118.7798,
+      host_id: 9
+    )
+    
+    listing10 = Listing.create!(
+      address: "456 Mountain Retreat Rd",
+      apt_num: "",
+      city: "Asheville",
+      state: "NC",
+      zip_code: "28803",
+      title: "Rustic Mountain Cabin",
+      description: "Escape to a cozy cabin nestled in the breathtaking mountains of Asheville.",
+      category: "cabin",
+      price: 200,
+      max_guests: 4,
+      num_bedrooms: 2,
+      num_beds: 3,
+      num_bathrooms: 1,
+      kitchen: true,
+      wifi: false,
+      tv: false,
+      washer_dryer: true,
+      parking: true,
+      air_conditioning: true,
+      heating: true,
+      pool: false,
+      hot_tub: true,
+      fire_pit: true,
+      latitude: 35.5272,
+      longitude: -82.5705,
+      host_id: 10
+    )
+
+    listing11 = Listing.create!(
+      address: "789 Campsite Rd",
+      apt_num: "",
+      city: "Yellowstone National Park",
+      state: "WY",
+      zip_code: "82190",
+      title: "Scenic Camping Experience",
+      description: "Immerse yourself in the beauty of nature with a camping adventure near Yellowstone National Park.",
+      category: "camping",
+      price: 80,
+      max_guests: 2,
+      num_bedrooms: 1,
+      num_beds: 0,
+      num_bathrooms: 1,
+      kitchen: false,
+      wifi: false,
+      tv: false,
+      washer_dryer: false,
+      parking: true,
+      air_conditioning: false,
+      heating: false,
+      pool: false,
+      hot_tub: false,
+      fire_pit: true,
+      latitude: 44.4279,
+      longitude: -110.5885,
+      host_id: 11
+    )
+
+    listing12 = Listing.create!(
+      address: "369 Downtown Blvd",
+      apt_num: "",
+      city: "New York",
+      state: "NY",
+      zip_code: "10001",
+      title: "Modern City Apartment",
+      description: "Stay in a sleek and modern apartment in the heart of vibrant New York City.",
+      category: "city",
+      price: 300,
+      max_guests: 2,
+      num_bedrooms: 1,
+      num_beds: 1,
+      num_bathrooms: 1,
+      kitchen: true,
+      wifi: true,
+      tv: true,
+      washer_dryer: true,
+      parking: false,
+      air_conditioning: true,
+      heating: true,
+      pool: false,
+      hot_tub: false,
+      fire_pit: false,
+      latitude: 40.7421,
+      longitude: -74.0060,
+      host_id: 12
+    )
+    
+    listing13 = Listing.create!(
+      address: "456 Countryside Lane",
+      apt_num: "",
+      city: "Sedona",
+      state: "AZ",
+      zip_code: "86336",
+      title: "Tranquil Countryside Retreat",
+      description: "Escape the hustle and bustle and unwind in the serene countryside of Sedona.",
+      category: "countryside",
+      price: 150,
+      max_guests: 6,
+      num_bedrooms: 3,
+      num_beds: 4,
+      num_bathrooms: 2,
+      kitchen: true,
+      wifi: true,
+      tv: true,
+      washer_dryer: true,
+      parking: true,
+      air_conditioning: true,
+      heating: true,
+      pool: false,
+      hot_tub: false,
+      fire_pit: true,
+      latitude: 34.8697,
+      longitude: -111.7601,
+      host_id: 13
+    )
+    
+    listing14 = Listing.create!(
+      address: "123 Mansion Ave",
+      apt_num: "",
+      city: "Beverly Hills",
+      state: "CA",
+      zip_code: "90210",
+      title: "Luxurious Mansion",
+      description: "Live like royalty in a breathtaking mansion located in the prestigious neighborhood of Beverly Hills.",
+      category: "mansion",
+      price: 2000,
+      max_guests: 12,
+      num_bedrooms: 6,
+      num_beds: 8,
+      num_bathrooms: 7,
+      kitchen: true,
+      wifi: true,
+      tv: true,
+      washer_dryer: true,
+      parking: true,
+      air_conditioning: true,
+      heating: true,
+      pool: true,
+      hot_tub: true,
+      fire_pit: true,
+      latitude: 34.0900,
+      longitude: -118.4069,
+      host_id: 14
+    )
+    
+    listing15 = Listing.create!(
+      address: "789 Tiny Home Ln",
+      apt_num: "",
+      city: "Portland",
+      state: "OR",
+      zip_code: "97201",
+      title: "Charming Tiny Home",
+      description: "Experience minimalist living in a cozy and charming tiny home in the heart of Portland.",
+      category: "tiny home",
+      price: 100,
+      max_guests: 2,
+      num_bedrooms: 1,
+      num_beds: 1,
+      num_bathrooms: 1,
+      kitchen: true,
+      wifi: true,
+      tv: false,
+      washer_dryer: false,
+      parking: true,
+      air_conditioning: false,
+      heating: true,
+      pool: false,
+      hot_tub: false,
+      fire_pit: false,
+      latitude: 45.5231,
+      longitude: -122.6765,
+      host_id: 15
+    )
+    
+    listing16 = Listing.create!(
+      address: "456 Treehouse Rd",
+      apt_num: "",
+      city: "Seattle",
+      state: "WA",
+      zip_code: "98101",
+      title: "Enchanting Treehouse Retreat",
+      description: "Escape to a magical treehouse retreat surrounded by nature and tranquility.",
+      category: "treehouse",
+      price: 250,
+      max_guests: 2,
+      num_bedrooms: 1,
+      num_beds: 1,
+      num_bathrooms: 1,
+      kitchen: true,
+      wifi: true,
+      tv: false,
+      washer_dryer: false,
+      parking: true,
+      air_conditioning: false,
+      heating: true,
+      pool: false,
+      hot_tub: false,
+      fire_pit: true,
+      latitude: 47.6062,
+      longitude: -122.3321,
+      host_id: 16
+    )
+    
+
+
     puts "Attaching Pictures"
 
     listing1.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_1.webp"), filename: 'listing1_1.webp')
@@ -378,6 +612,105 @@ require "aws-sdk-s3"
     listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_3.webp"), filename: 'listing8_3.webp')
     listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_4.webp"), filename: 'listing8_4.webp')
     listing8.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing8_5.webp"), filename: 'listing8_5.webp')
+
+    listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_1.webp"), filename: 'listing9_1.webp')
+    listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_2.webp"), filename: 'listing9_2.webp')
+    listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_3.webp"), filename: 'listing9_3.webp')
+    listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_4.webp"), filename: 'listing9_4.webp')
+    listing9.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing9_5.webp"), filename: 'listing9_5.webp')
+    
+    listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_1.webp"), filename: 'listing10_1.webp')
+    listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_2.webp"), filename: 'listing10_2.webp')
+    listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_3.webp"), filename: 'listing10_3.webp')
+    listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_4.webp"), filename: 'listing10_4.webp')
+    listing10.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing10_5.webp"), filename: 'listing10_5.webp')
+
+    listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_1.webp"), filename: 'listing11_1.webp')
+    listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_2.webp"), filename: 'listing11_2.webp')
+    listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_3.webp"), filename: 'listing11_3.webp')
+    listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_4.webp"), filename: 'listing11_4.webp')
+    listing11.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing11_5.webp"), filename: 'listing11_5.webp')
+
+    listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_1.webp"), filename: 'listing12_1.webp')
+    listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_2.webp"), filename: 'listing12_2.webp')
+    listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_3.webp"), filename: 'listing12_3.webp')
+    listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_4.webp"), filename: 'listing12_4.webp')
+    listing12.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing12_5.webp"), filename: 'listing12_5.webp')
+
+    listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_1.jpeg"), filename: 'listing13_1.jpeg')
+    listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_2.jpeg"), filename: 'listing13_2.jpeg')
+    listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_3.jpeg"), filename: 'listing13_3.jpeg')
+    listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_4.jpeg"), filename: 'listing13_4.jpeg')
+    listing13.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing13_5.jpeg"), filename: 'listing13_5.jpeg')
+
+    listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_1.webp"), filename: 'listing14_1.webp')
+    listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_2.webp"), filename: 'listing14_2.webp')
+    listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_3.webp"), filename: 'listing14_3.webp')
+    listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_4.webp"), filename: 'listing14_4.webp')
+    listing14.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing14_5.webp"), filename: 'listing14_5.webp')
+
+    listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_1.webp"), filename: 'listing15_1.webp')
+    listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_2.webp"), filename: 'listing15_2.webp')
+    listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_3.webp"), filename: 'listing15_3.webp')
+    listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_4.webp"), filename: 'listing15_4.webp')
+    listing15.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing15_5.webp"), filename: 'listing15_5.webp')
+
+    listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_1.webp"), filename: 'listing16_1.webp')
+    listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_2.webp"), filename: 'listing16_2.webp')
+    listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_3.webp"), filename: 'listing16_3.webp')
+    listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_4.webp"), filename: 'listing16_4.webp')
+    listing16.photos.attach(io: URI.open("https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing16_5.webp"), filename: 'listing16_5.webp')
+
+
+
+    puts "Creating Reservations"
+
+    reservation1 = Reservation.create!(
+      listing_id: 8,
+      guest_id: 7,
+      num_guests: 1,
+      total_price: 150,
+      start_date: Date.new(2023, 7, 1),
+      end_date: Date.new(2023, 7, 2)
+    )
+
+    reservation2 = Reservation.create!(
+      listing_id: 7,
+      guest_id: 1,
+      num_guests: 2,
+      total_price: 160,
+      start_date: Date.new(2023, 7, 1),
+      end_date: Date.new(2023, 7, 3)
+    )
+
+    reservation3 = Reservation.create!(
+      listing_id: 6,
+      guest_id: 1,
+      num_guests: 8,
+      total_price: 1000,
+      start_date: Date.new(2023, 7, 4),
+      end_date: Date.new(2023, 7, 6)
+    )
+
+    reservation4 = Reservation.create!(
+      listing_id: 5,
+      guest_id: 2,
+      num_guests: 3,
+      total_price: 540,
+      start_date: Date.new(2023, 7, 7),
+      end_date: Date.new(2023, 7, 10)
+    )
+
+    reservation5 = Reservation.create!(
+      listing_id: 3,
+      guest_id: 1,
+      num_guests: 2,
+      total_price: 300,
+      start_date: Date.new(2023, 8, 1),
+      end_date: Date.new(2023, 8, 6)
+      # start_date: "2023/08/01",
+      # end_date: "2023/08/06"
+    )
   
     puts "Done!"
   # end

@@ -4,12 +4,14 @@ import session from './session'
 import ui from './ui';
 import listings from './listings';
 import host from './host';
+import reservations from './reservations';
 
 const rootReducer = combineReducers({
   session,
   ui,
   listings,
-  host
+  host,
+  reservations
 });
 
 let enhancer;

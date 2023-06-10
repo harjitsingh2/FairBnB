@@ -1,0 +1,109 @@
+.reservation-form {
+    max-width: 100%;
+    /* margin: 0 auto; */
+    /* margin-right: 0px; */
+    margin-left: 60px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align-content: end; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  
+.reservation-form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reservation-form span {
+    font-family: "AirbnbMed";
+}
+  
+.reservation-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+  
+.reservation-form input[type="date"],
+.reservation-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+.reservation-form .dates-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+  
+.reservation-form .dates-container > div {
+    flex-basis: 48%;
+}
+  
+.reservation-form .guests {
+    margin-bottom: 16px;
+}
+  
+.reservation-form .reservation-price {
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.total-cost {
+    font-family: "AirbnbMed";
+}
+  
+.reservation-form .form-errors {
+    color: red;
+    margin-bottom: 16px;
+}
+  
+.reservation-form .reservation-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    color: #fff;
+    /* background-color: #ff5a5f; */
+    background-image: linear-gradient(to right, #fc365b, #db1064, #bb1e59);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+  
+.reservation-form .reservation-button:hover {
+    /* background-color: #e81123; */
+    background-image: linear-gradient(to right, #bb1e59 , #db1064, #fc365b);
+}
+  
+.reservation-form .reservation-button:focus {
+    outline: none;
+}
+
+.reservation-price span {
+    font-family: "AirbnbMed";
+}
+
+.log-in-reservation {
+    text-align: center;
+}
+  
+/* adjust styling for smaller screens   */
+@media (max-width: 600px) {
+    .reservation-form {
+        max-width: 100%;
+    }
+}
+  

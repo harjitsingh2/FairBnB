@@ -1,19 +1,20 @@
 import React from "react";
-import beachfront from '../../image/categories/beachfront.png'
+import beachfront from '../../image/categories/beachfront.png';
 import cabin from '../../image/categories/cabin.png';
-import camping from '../../image/categories/camping.png'
-import city from '../../image/categories/city.png'
-import countryside from '../../image/categories/countryside.png'
-import mansion from '../../image/categories/mansion.png'
-import tinyhome from '../../image/categories/tiny-home.png'
-import treehouse from '../../image/categories/treehouse.png'
+import camping from '../../image/categories/camping.png';
+import city from '../../image/categories/city.png';
+import countryside from '../../image/categories/countryside.png';
+import mansion from '../../image/categories/mansion.png';
+import tinyhome from '../../image/categories/tiny-home.png';
+import treehouse from '../../image/categories/treehouse.png';
 import { useHistory } from "react-router-dom/";
+import './ListingsIndex.css';
 
 const CategoryBar = () => {
     const history = useHistory();
 
     const handleCategoryClick = (selectedCategory) => {
-        history.push(`/listings/filter/${selectedCategory}`)
+        history.push(`/listings/category/${selectedCategory}`)
     };
     
     return (
