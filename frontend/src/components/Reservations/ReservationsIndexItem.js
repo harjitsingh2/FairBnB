@@ -87,6 +87,8 @@ const ReservationsIndexItem = ({ reservation }) => {
                     <p>
                     <span>Total Price:</span> ${totalPrice}
                     </p>
+                    <button type="submit" className='reservation-button'>Edit Reservation</button>
+                    <button type="submit" className='reservation-button'>Delete Reservation</button>
                 </>
                 )}
             </div>
