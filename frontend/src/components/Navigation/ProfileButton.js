@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as uiActions from '../../store/ui';
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 function ProfileButton() {
   const dispatch = useDispatch();
@@ -70,6 +71,10 @@ function ProfileButton() {
         </button>
         <ul className={`profile-dropdown ${showMenu ? 'open' : ''}`}>
           <li>Welcome, {currentUser.firstName}!</li>
+          <li>
+            <Link to={'/user/reservations'}>My Trips</Link>
+            
+          </li>
           <li onClick={logout}>
             <button onClick={logout}>Log Out</button>
           </li>
