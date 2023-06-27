@@ -70,10 +70,9 @@ function ProfileButton() {
           </div> 
         </button>
         <ul className={`profile-dropdown ${showMenu ? 'open' : ''}`}>
-          <li>Welcome, {currentUser.firstName}!</li>
-          <li>
-            <Link to={'/user/reservations'}>My Trips</Link>
-            
+          <li id="welcome-user">Welcome, {currentUser.firstName}!</li>
+          <li onClick={() => window.location.href='/user/reservations'}>My Trips           
+          {/* <li onClick={<Link to={'/user/reservations'}></Link>}>My Trips            */}
           </li>
           <li onClick={logout}>
             <button onClick={logout}>Log Out</button>
