@@ -2,17 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as uiActions from '../../store/ui';
-import { Link } from "react-router-dom/cjs/react-router-dom";
 
 function ProfileButton() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const currentUser = useSelector((state) => state.session.user);
   
-  const openMenu = () => {
-    // if (showMenu) return;
-    setShowMenu(true);
-  };
+  // const openMenu = () => {
+  //   // if (showMenu) return;
+  //   setShowMenu(true);
+  // };
   
   // updated useEffect
   useEffect(() => {
@@ -49,16 +48,16 @@ function ProfileButton() {
     setShowMenu((prevState) => !prevState);
   };
 
-  const handleButtonClick = (link) => {
-    window.open(link, "_blank");
-  };
+  // const handleButtonClick = (link) => {
+  //   window.open(link, "_blank");
+  // };
   
 
   if (currentUser) {
     return (
       <>
         <button onClick={toggleMenu}>
-          <div className="container"> 
+          <div className="user-container"> 
             <div className="rounded-icon-button"> 
               <div className="hamburger-button">
                 <i className="fas fa-bars"></i>
@@ -71,8 +70,7 @@ function ProfileButton() {
         </button>
         <ul className={`profile-dropdown ${showMenu ? 'open' : ''}`}>
           <li id="welcome-user">Welcome, {currentUser.firstName}!</li>
-          <li onClick={() => window.location.href='/user/reservations'}>My Trips           
-          {/* <li onClick={<Link to={'/user/reservations'}></Link>}>My Trips            */}
+          <li onClick={() => window.location.href='/user/reservations'}>My Trips
           </li>
           <li onClick={logout}>
             <button onClick={logout}>Log Out</button>
@@ -84,8 +82,7 @@ function ProfileButton() {
     return (
       <>
         <button onClick={toggleMenu}>
-          {/* <i className="fa-solid fa-circle-user" size="xl" style={{ color: "#5e646e" }}></i> */}
-          <div className="container"> 
+          <div className="user-container"> 
             <div className="rounded-icon-button"> 
               <div className="hamburger-button">
                 <i className="fas fa-bars"></i>
