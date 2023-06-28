@@ -61,6 +61,7 @@ import { useSelector } from 'react-redux';
 import { getListing } from '../../store/listings';
 import './ReservationsIndex.css';
 import image from '../../image/image.webp'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const ReservationsIndexItem = ({ reservation }) => {
     const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
@@ -87,7 +88,9 @@ const ReservationsIndexItem = ({ reservation }) => {
                     <p>
                     <span>Total Price:</span> ${totalPrice}
                     </p>
-                    <button type="submit" className='reservation-button'>Edit Reservation</button>
+                    <Link to={`reservations/${reservation.id}#edit`}>
+                        <button type="submit" className='reservation-button'>Edit Reservation</button>
+                    </Link>
                     <button type="submit" className='reservation-button'>Delete Reservation</button>
                 </>
                 )}

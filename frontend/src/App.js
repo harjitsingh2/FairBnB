@@ -6,6 +6,7 @@ import CategoryBar from "./components/Listings/CategoryBar";
 import ListingsShowPage from "./components/Listings/ListingsShowPage";
 // import ReservationsIndexItem from "./components/Reservations/ReservationsIndexItem";
 import ReservationsIndex from "./components/Reservations/ReservationsIndex";
+import UpdateReservation from "./components/Reservations/UpdateReservation";
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
           <Route path="/user/:reservations" exact>
             {/* <ReservationsIndexItem /> */}
             <ReservationsIndex />
+          </Route>
+          <Route path="/user/reservations/:reservationId" exact>
+            <UpdateReservation />
           </Route>
         </Switch>
     </>
