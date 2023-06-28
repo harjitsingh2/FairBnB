@@ -73,10 +73,31 @@ const ListingsShowPage = ( ) => {
                 <h1 className="listing-title-show">{listing.title}</h1>
                 <p>{listing.city}, {listing.state}</p>
             </div>
+             
             <div className="show-pic-container">
                 <div className="show-main-pic">
+                    <img src={image} className="show-main-pic" alt="" />
+                </div>
+                <div className="show-side-pics">
+                    <div className="side-pic-container">
+                        <img src={image} alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={image} alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={ image } alt="" className="side-pic"/>
+                    </div>
+                    <div className="side-pic-container">
+                        <img src={ image } alt="" className="side-pic"/>
+                    </div>
+                    
+
+                </div>
+            </div>
+            {/* <div className="show-pic-container">
+                <div className="show-main-pic">
                     <img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } className="show-main-pic" alt="" />
-                    {/* <img src={"https://fairbnb1-seeds.s3.amazonaws.com/listings-images/listing1_1.webp"} className="show-main-pic" alt="" /> */}
                 </div>
                 <div className="show-side-pics">
                     <div className="side-pic-container">
@@ -94,7 +115,7 @@ const ListingsShowPage = ( ) => {
                     
 
                 </div>
-            </div>
+            </div> */}
             <div className="show-body-container">
                 <div className="show-body-info">
                     <div className="host-information">
