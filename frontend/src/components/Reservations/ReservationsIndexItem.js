@@ -95,8 +95,8 @@ const ReservationsIndexItem = ({ reservation }) => {
             <div className="index-image-container">
                     {listing && (
                         <img
-                        src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
-                        // src={image}
+                        // src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
+                        src={image}
                         alt=""
                         className="listing-pic"
                     />
