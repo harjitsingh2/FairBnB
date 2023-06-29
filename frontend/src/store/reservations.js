@@ -78,7 +78,6 @@ export const createReservation = (reservation) => async (dispatch) => {
 export const updateReservation = (reservation) => async (dispatch) => {
 
     const response = await csrfFetch(`/api/reservations/${reservation.id}`, 
-    // const response = await csrfFetch(`/api/reservations`, 
     {
         method: "PATCH",
         body: JSON.stringify({reservation: reservation})

@@ -1,53 +1,322 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { getListing } from '../../store/listings';
-import { getReservation } from '../../store/reservations';
-import './ReservationsIndex.css';
-import image from '../../image/image.webp'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+// import React, { useState, useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getListing } from '../../store/listings';
+// import { getReservation, updateReservation } from '../../store/reservations';
+// import './ReservationsIndex.css';
+// import image from '../../image/image.webp'
+// import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+// import moment from 'moment';
+// import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
-const UpdateReservation = () => {
-    const {reservationId} = useParams();
-    const reservation = useSelector(getReservation(reservationId))
-    const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
-    const listing = useSelector(getListing(listingId));
+// const UpdateReservation = () => {
+//     const {reservationId} = useParams();
+//     const reservation = useSelector(getReservation(reservationId))
+//     // const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
+//     const { listingId } = useParams();
+//     const listing = useSelector(getListing(listingId));
+//     const dispatch = useDispatch();
+//     const history = useHistory();
+//     const currentUser = useSelector(state => state.session.user);
 
-    return (
-        <div className="reservation-index-item">
-            <div className="reservation-info">
-                {listing && (
-                <>
-                    <h2>{listing.title}</h2>
-                    <p className="location">
-                    {listing.address}, {listing.city}, {listing.state}
-                    </p>
-                    <p className="date">
-                    <span>Start Date:</span> {startDate}
-                    </p>
-                    <p className="date">
-                    <span>End Date:</span> {endDate}
-                    </p>
-                    <p>
-                    <span>Number of Guests:</span> {numGuests}
-                    </p>
-                    <p>
-                    <span>Total Price:</span> ${totalPrice}
-                    </p>
-                </>
-                )}
-            </div>
-            <div className="index-image-container">
-                    {listing && (
-                        <img
-                        // src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
-                        src={image}
-                        alt=""
-                        className="listing-pic"
-                    />
-                    )}
-            </div>
-        </div>
+//     let guestId
+  
+//     if (currentUser !== null) {
+//       guestId = currentUser.id
+//     }
+
+//     // let price = listing.price
+//     const [startDate, setStartDate] = useState("");
+//     const [endDate, setEndDate] = useState("");
+//     const [numGuests, setNumGuests] = useState(1);
+//     const [numNights, setNumNights] = useState(1);
+//     const [errors, setErrors] = useState([]);
+
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+    
+//         setErrors([]);
+    
+//         if (isPastDate(startDate) || isPastDate(endDate)) {
+//             setErrors(["Please select future dates."]);
+//             return;
+//         }
+    
+//         history.push('/user/reservations')
+//         let totalPrice = numNights * listing.price;
+//         return dispatch(updateReservation({ listingId, guestId, numGuests, totalPrice, startDate, endDate }))
+//           .catch(async (response) => {
+//             let data;
+//             try {
+//               data = await response.clone().json();
+//             } catch {
+//               data = await response.text();
+//             }
+//             if (data?.errors) setErrors(data.errors);
+//             else if (data) setErrors([data]);
+//             else setErrors([response.statusText]);
+//           });
+//       };
+    
+//       const currentDate = new Date()
+    
+//       const isPastDate = (date) => {
+//         const selectedDate = new Date(date);
+//         return selectedDate < currentDate;
+//       };
+      
+//       useEffect(() => {
+//         const totalNights = moment(endDate).diff(startDate, 'days')
+//         setNumNights(totalNights)
+//       })
+
+
+//     return (
+//         <div className="reservation-index-item">
+//             <div className="reservation-info">
+//                 {listing && (
+//                 <>
+//                     <h2>{listing.title}</h2>
+//                     <p className="location">
+//                     {listing.address}, {listing.city}, {listing.state}
+//                     </p>
+//                     <p className="date">
+//                     <span>Start Date:</span> {startDate}
+//                     </p>
+//                     <p className="date">
+//                     <span>End Date:</span> {endDate}
+//                     </p>
+//                     <p>
+//                     <span>Number of Guests:</span> {numGuests}
+//                     </p>
+//                     <p>
+//                     <span>Total Price:</span> ${totalPrice}
+//                     </p>
+//                 </>
+//                 )}
+//             </div>
+//             <form className="reservation-form" onSubmit={handleSubmit}>
+//                 <ul>
+//                 <div className='reservation-price'>
+//                     <span>${listing.price}</span> per night 
+//                 </div>
+//                 <br/>
+//                 <div className="dates-container">
+//                     <div className="checkin">
+//                         <div>CHECK-IN</div>
+//                         <label>
+//                             <input className="start-date" type="date" value={startDate}
+//                             onChange={(e) => setStartDate(e.target.value)} required 
+//                             min={("YYYY-MM-DD")}/>
+//                         </label>
+//                         </div>
+//                     </div>
+//                     <br></br>
+//                     <div className="checkout">
+//                         <div>CHECKOUT</div>
+//                         <label>
+//                             <input className="end-date" type="date" value={endDate}
+//                             onChange={(e) => {
+//                                 setEndDate(e.target.value)
+//                             }} required 
+//                             min={startDate ? startDate : ("YYYY-MM-DD")}/>
+//                         </label>
+//                     </div>
+//                     <br></br>
+//                     <div className="guests">
+//                         <div>GUESTS</div>
+//                         <label>
+//                             <input type="number"
+//                             onChange={(e) => setNumGuests(e.target.value)} required
+//                             min="1" max={listing.maxGuests}  placeholder='1' />
+//                         </label>
+//                     </div>
+        
+//                 <br/>
+//                 <ul className="reservation-price">
+//                     <div>
+//                     ${listing.price} x {numNights} nights
+//                     </div>
+//                     <br></br>
+//                     <div className='total-cost'>
+//                     Total Cost: ${listing.price * numNights}
+//                     </div>
+//                 </ul>
+
+//                 <br/>
+//                 <ul className="form-errors">
+//                     {errors.map(error => <li key={error}>{error}</li>)}
+//                 </ul>
+//                 <br/>
+                
+//                 <button className="reservation-button" type="submit">Reserve</button>
+//                 </ul>
+                
+                
+//             </form>
+//             <div className="index-image-container">
+//                     {listing && (
+//                         <img
+//                         // src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
+//                         src={image}
+//                         alt=""
+//                         className="listing-pic"
+//                     />
+//                     )}
+//             </div>
+//         </div>
+//     );
+// }
+
+// export default UpdateReservation;
+
+import './ReservationForm.css';
+
+import React, { useEffect, useState } from "react";
+import * as sessionActions from "../../store/session";
+
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { getListing } from "../../store/listings";
+import { updateReservation, getReservation } from "../../store/reservations";
+import moment from 'moment';
+
+function UpdateReservation() {
+//   const { listingId } = useParams();
+  const { reservationId } = useParams();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const reservation = useSelector(getReservation(reservationId))
+  const currentUser = useSelector(state => state.session.user);
+  const listingId = reservation.listingId;
+  const listing = useSelector(getListing(listingId));
+
+  let guestId
+  
+  if (currentUser !== null) {
+    guestId = currentUser.id
+  }
+
+  let price = listing.price
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [numGuests, setNumGuests] = useState(1);
+  const [numNights, setNumNights] = useState(1);
+  const [errors, setErrors] = useState([]);
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setErrors([]);
+
+    if (isPastDate(startDate) || isPastDate(endDate)) {
+        setErrors(["Please select future dates."]);
+        return;
+    }
+
+    history.push('/user/reservations')
+    let totalPrice = numNights * listing.price;
+    return dispatch(updateReservation({ id: reservationId, listingId, guestId, numGuests, totalPrice, startDate, endDate }))
+      .catch(async (response) => {
+        let data;
+        try {
+          data = await response.clone().json();
+        } catch {
+          data = await response.text();
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([response.statusText]);
+      });
+  };
+
+  const currentDate = new Date()
+
+  const isPastDate = (date) => {
+    const selectedDate = new Date(date);
+    return selectedDate < currentDate;
+  };
+  
+  useEffect(() => {
+    const totalNights = moment(endDate).diff(startDate, 'days')
+    setNumNights(totalNights)
+  })
+
+
+  if (currentUser) {
+    return ( 
+        <div>           
+            <h1>Edit your Reservation</h1>
+            <form className="reservation-form" onSubmit={handleSubmit}>
+                <ul>
+                <div className='reservation-price'>
+                    <span>${listing.price}</span> per night 
+                </div>
+                <br/>
+                <div className="dates-container">
+                    <div className="checkin">
+                        <div>Current Check-in: {reservation.startDate}</div>
+                        <br></br>
+                        <div>NEW CHECK-IN</div>
+                        <label>
+                            <input className="start-date" type="date" value={startDate}
+                            onChange={(e) => setStartDate(e.target.value)} required 
+                            min={("YYYY-MM-DD")}
+                            placeholder={reservation.startDate}/>
+                        </label>
+                        </div>
+                    </div>
+                    <br></br>
+                    <div className="checkout">
+                        <div>Current Check-out: {reservation.endDate}</div>
+                        <br></br>
+                        <div>NEW CHECKOUT</div>
+                        <label>
+                            <input className="end-date" type="date" value={endDate}
+                            onChange={(e) => {
+                                setEndDate(e.target.value)
+                            }} required 
+                            min={startDate ? startDate : ("YYYY-MM-DD")}
+                            placeholder={reservation.endDate}/>
+                        </label>
+                    </div>
+                    <br></br>
+                    <div className="guests">
+                        <div>GUESTS</div>
+                        <label>
+                            <input type="number"
+                            onChange={(e) => setNumGuests(e.target.value)} required
+                            min="1" max={listing.maxGuests}  placeholder={reservation.numGuests} />
+                        </label>
+                    </div>
+        
+                <br/>
+                <ul className="reservation-price">
+                    <div>
+                    ${listing.price} x {numNights} nights
+                    </div>
+                    <br></br>
+                    <div className='total-cost'>
+                    Total Cost: ${listing.price * numNights}
+                    </div>
+                </ul>
+
+                <br/>
+                <ul className="form-errors">
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
+                <br/>
+                
+                <button className="reservation-button" type="submit">Change Reservation</button>
+                </ul>
+                
+                
+            </form>
+        </div> 
     );
+  } 
+
+  
 }
 
 export default UpdateReservation;

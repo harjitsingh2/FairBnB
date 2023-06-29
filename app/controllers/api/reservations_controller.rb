@@ -13,6 +13,16 @@ class Api::ReservationsController < ApplicationController
         end 
     end
 
+    # def show 
+    #     @reservation = Reservation.find_by(id: params[:id])
+    #     if @reservation
+    #       render :show 
+    #     else 
+    #       render json: { errors: ["The requested reservation does not exist"] }, status: 404
+    #     end 
+    # end
+      
+
     def create 
         # debugger
         listing = Listing.find_by(id: reservation_params[:listing_id])
@@ -36,7 +46,9 @@ class Api::ReservationsController < ApplicationController
     end
 
     def update
+        # debugger 
         # Check if reservation exists
+        @reservation = Reservation.find_by(id: params[:id])
         if @reservation
             # See if reservation belongs to current user
             if (@reservation.guest_id == current_user.id)
