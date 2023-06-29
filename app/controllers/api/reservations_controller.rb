@@ -56,8 +56,11 @@ class Api::ReservationsController < ApplicationController
 
     def destroy 
         # Check if reservation belongs to current user
+        # debugger 
+        @reservation = Reservation.find(params[:id])
         if (@reservation.guest_id == current_user.id)
             @reservation.destroy 
+            head :no_content
         else
             render json: { errors: ["Cannot delete a reservation that doesn't belong to you"]}, status: 401
         end

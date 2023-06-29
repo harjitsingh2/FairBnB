@@ -59,13 +59,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getListing } from '../../store/listings';
+import { deleteReservation } from '../../store/reservations';
 import './ReservationsIndex.css';
 import image from '../../image/image.webp'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { useDispatch } from 'react-redux';
 
 const ReservationsIndexItem = ({ reservation }) => {
     const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
     const listing = useSelector(getListing(listingId));
+    const dispatch = useDispatch();
+
+    const handleClick = (e) => {
+        dispatch(deleteReservation(reservation.id));
+    }
 
     return (
         <div className="reservation-index-item">
@@ -91,7 +98,7 @@ const ReservationsIndexItem = ({ reservation }) => {
                     <Link to={`reservations/${reservation.id}#edit`}>
                         <button type="submit" className='reservation-button'>Edit Reservation</button>
                     </Link>
-                    <button type="submit" className='reservation-button'>Delete Reservation</button>
+                    <button type="submit" className='reservation-button' onClick={handleClick}>Delete Reservation</button>
                 </>
                 )}
             </div>

@@ -101,7 +101,6 @@ export const deleteReservation = (reservationId) => async (dispatch) => {
     }
     )
     if (response.ok) {
-        const data = await response.json();
         dispatch(removeReservation(reservationId))
     } else {
         throw response
@@ -125,7 +124,8 @@ const reservationsReducer = (state = {}, action) => {
             // return newState
             return { ...newState, ...action.payload }
         case REMOVE_RESERVATION:
-            delete newState[action.payload.id];
+            delete newState[action.payload];
+            // delete newState[action.payload.id];
             return newState;
         default:
             return state;
