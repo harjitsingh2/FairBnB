@@ -78,16 +78,21 @@ function UpdateReservation() {
 
   if (currentUser) {
     return ( 
-        <div>           
+        <div className='update-reservation'>           
             <h1 id='edit-reservation-header'>Update your Reservation</h1>
             <form className="reservation-update-form" onSubmit={handleSubmit}>
-                <div className='reservation-info'>
+                <div className='old-reservation'>
+                    <div>Current Check-in: {reservation.startDate}</div>
+                    <br></br>
+                    <div>Current Check-out: {reservation.endDate}</div>
+                    <br></br>
+                    <div>Current Number of Guests: {reservation.numGuests}</div>
+                </div>
+                <div className='new-reservation'>
                     <ul>
 
                     <div className="dates-container">
                         <div className="checkin">
-                            <div>Current Check-in: {reservation.startDate}</div>
-                            <br></br>
                             <div>NEW CHECK-IN</div>
                             <label>
                                 <input className="start-date" type="date" value={startDate}
@@ -95,12 +100,9 @@ function UpdateReservation() {
                                 min={("YYYY-MM-DD")}
                                 placeholder={reservation.startDate}/>
                             </label>
-                            </div>
                         </div>
-                        <br></br>
+                    </div>
                         <div className="checkout">
-                            <div>Current Check-out: {reservation.endDate}</div>
-                            <br></br>
                             <div>NEW CHECKOUT</div>
                             <label>
                                 <input className="end-date" type="date" value={endDate}
@@ -113,11 +115,11 @@ function UpdateReservation() {
                         </div>
                         <br></br>
                         <div className="guests">
-                            <div>GUESTS</div>
+                            <div>NEW GUESTS</div>
                             <label>
-                                <input type="number"
+                                <input type="number" id='new-num-guests'
                                 onChange={(e) => setNumGuests(e.target.value)} required
-                                min="1" max={listing.maxGuests}  placeholder={reservation.numGuests} />
+                                min="1" max={listing.maxGuests} placeholder='0' />
                             </label>
                         </div>
             
@@ -148,7 +150,6 @@ function UpdateReservation() {
                     <div className='reservation-price'>
                         <span>${listing.price}</span> per night 
                     </div>
-                    <br/>
                     {listing && (
                         <img
                         // src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}

@@ -303,7 +303,7 @@ require "aws-sdk-s3"
     listing8 = Listing.create!(
       address: "789 Treehouse Ln",
       apt_num: "",
-      city: "Seattle",
+      city: "Oakville",
       state: "WA",
       zip_code: "98101",
       title: "Enchanting Treehouse Retreat",
