@@ -10,16 +10,15 @@ import logo from '../../image/Fairbnb-logo.png';
 function Navigation() {
 
   return (
-    <>
       <div className='navbar'>
-      <div className='threeicons'>
+        <div className='threeicons'>
 
-        <NavLink exact to="/"><img src={logo} className='logo' alt=''/></NavLink>
-        <div className='personal-links'>
-          <a href="https://github.com/harjitsingh2"><i className="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/harjitsingh2/"><i className="fa-brands fa-linkedin"></i></a>
+          <NavLink exact to="/"><img src={logo} className='logo' alt='home-page'/></NavLink>
+          <div className='personal-links'>
+            <a href="https://github.com/harjitsingh2"><i className="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/harjitsingh2/"><i className="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
-      </div>
       
         <ul id="nav-list">
           <li>
@@ -32,7 +31,6 @@ function Navigation() {
           </li>
         </ul>
       </div>
-    </>
   );
 }
 
