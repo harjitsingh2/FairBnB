@@ -64,6 +64,7 @@ import './ReservationsIndex.css';
 import image from '../../image/image.webp'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
+import './ReservationsIndex.css';
 
 const ReservationsIndexItem = ({ reservation }) => {
     const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
@@ -96,7 +97,7 @@ const ReservationsIndexItem = ({ reservation }) => {
                     <span>Total Price:</span> ${totalPrice}
                     </p>
                     <Link to={`reservations/${reservation.id}#edit`}>
-                        <button type="submit" className='reservation-button'>Edit Reservation</button>
+                        <button type="submit" className='reservation-button'>Update Reservation</button>
                     </Link>
                     <button type="submit" className='reservation-button' onClick={handleClick}>Delete Reservation</button>
                 </>
