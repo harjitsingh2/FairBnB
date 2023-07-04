@@ -11,6 +11,7 @@ import { updateReservation, getReservation } from "../../store/reservations";
 import moment from 'moment';
 import image from '../../image/image.webp';
 import './ReservationForm.css';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom';
 
 function UpdateReservation() {
 //   const { listingId } = useParams();
@@ -158,6 +159,7 @@ function UpdateReservation() {
                         className="listing-pic"
                     />
                     )}
+                    <NavLink to={`/listings/${listingId}`}>Go to listing</NavLink>
                 </div>
             </form>
             
