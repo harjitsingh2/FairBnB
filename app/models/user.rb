@@ -15,17 +15,17 @@ class User < ApplicationRecord
 
   has_many :listings, 
   foreign_key: :host_id,
-  class_name: :Listings,
+  class_name: :Listing,
   dependent: :destroy
 
   has_many :reservations,
   foreign_key: :guest_id,
-  class_name: :Reservations,
+  class_name: :Reservation,
   dependent: :destroy
 
   # has_many :reviews,
   # foreign_key: :reviewer_id,
-  # class_name: :Reviews,
+  # class_name: :Review,
   # dependent: :destroy 
 
   # Methods
