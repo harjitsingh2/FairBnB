@@ -8,6 +8,7 @@
 
 require "open-uri"
 require "aws-sdk-s3"
+require "faker"
 
 # ApplicationRecord.transaction do 
     puts "Destroying old tables..."
