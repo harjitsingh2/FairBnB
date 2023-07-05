@@ -667,48 +667,48 @@ require "faker"
     puts "Creating Reservations"
 
     reservation1 = Reservation.create!(
-      listing_id: 8,
+      listing_id: listing8.id,
       guest_id: 7,
       num_guests: 1,
       total_price: 150,
-      start_date: Date.new(2023, 7, 1),
-      end_date: Date.new(2023, 7, 2)
+      start_date: Date.new(2023, 9, 1),
+      end_date: Date.new(2023, 9, 2)
     )
 
     reservation2 = Reservation.create!(
-      listing_id: 7,
+      listing_id: listing7.id,
       guest_id: 1,
       num_guests: 2,
       total_price: 160,
-      start_date: Date.new(2023, 7, 1),
-      end_date: Date.new(2023, 7, 3)
+      start_date: Date.new(2023, 9, 1),
+      end_date: Date.new(2023, 9, 3)
     )
 
     reservation3 = Reservation.create!(
-      listing_id: 6,
+      listing_id: listing6.id,
       guest_id: 1,
       num_guests: 8,
       total_price: 1000,
-      start_date: Date.new(2023, 7, 4),
-      end_date: Date.new(2023, 7, 6)
+      start_date: Date.new(2023, 10, 4),
+      end_date: Date.new(2023, 10, 6)
     )
 
     reservation4 = Reservation.create!(
-      listing_id: 5,
+      listing_id: listing5.id,
       guest_id: 2,
       num_guests: 3,
       total_price: 540,
-      start_date: Date.new(2023, 7, 7),
-      end_date: Date.new(2023, 7, 10)
+      start_date: Date.new(2023, 10, 7),
+      end_date: Date.new(2023, 10, 10)
     )
 
     reservation5 = Reservation.create!(
-      listing_id: 3,
+      listing_id: listing3.id,
       guest_id: 1,
       num_guests: 2,
       total_price: 300,
-      start_date: Date.new(2023, 8, 1),
-      end_date: Date.new(2023, 8, 6)
+      start_date: Date.new(2023, 10, 1),
+      end_date: Date.new(2023, 10, 6)
       # start_date: "2023/08/01",
       # end_date: "2023/08/06"
     )
