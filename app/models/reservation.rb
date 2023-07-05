@@ -32,7 +32,10 @@ class Reservation < ApplicationRecord
         listing = Listing.find_by(id: listing_id)
         num_nights = (end_date-start_date).to_i 
 
-        self.total_price = listing.price * num_nights 
+        if listing 
+            self.total_price = listing.price * num_nights
+            return self.total_price 
+        end 
     end
 
     def overlapping_reservations
