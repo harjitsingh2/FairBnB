@@ -5,13 +5,15 @@ import ui from './ui';
 import listings from './listings';
 import host from './host';
 import reservations from './reservations';
+import reviews from './reviews';
 
 const rootReducer = combineReducers({
   session,
   ui,
   listings,
   host,
-  reservations
+  reservations,
+  reviews
 });
 
 let enhancer;
