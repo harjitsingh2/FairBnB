@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_151814) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_06_172054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -87,6 +87,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_151814) do
     t.index ["listing_id"], name: "index_reservations_on_listing_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.bigint "reservation_id", null: false
+    t.bigint "reviewer_id", null: false
+    t.float "rating", null: false
+    t.text "body"
+    t.integer "cleanliness", null: false
+    t.integer "communication", null: false
+    t.integer "checkin", null: false
+    t.integer "accuracy", null: false
+    t.integer "location", null: false
+    t.integer "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+  end
+
   create_table "table_name", force: :cascade do |t|
   end
 
@@ -107,4 +126,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_151814) do
   add_foreign_key "listings", "users", column: "host_id"
   add_foreign_key "reservations", "listings"
   add_foreign_key "reservations", "users", column: "guest_id"
+  add_foreign_key "reviews", "listings"
+  add_foreign_key "reviews", "reservations"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
 end
