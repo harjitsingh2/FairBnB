@@ -6,6 +6,7 @@ import image from '../../image/image.webp';
 import Amenities from "./amenities";
 import './ListingsShow.css';
 import ReservationForm from "../Reservations/ReservationForm";
+import ReviewsIndex from "../Reviews/ReviewsIndex";
 
 const ListingsShowPage = ( ) => {
     const dispatch = useDispatch();
@@ -140,7 +141,7 @@ const ListingsShowPage = ( ) => {
             </div>
             <br></br>
             <div className="show-reviews-container">
-                <p>Reviews Component</p>
+                <ReviewsIndex />
             </div>
             <div className="show-map-container">
                 <p>Map</p>
