@@ -735,7 +735,7 @@ require "faker"
 
     review1 = Review.create!(
       listing_id: listing1.id,
-      reservation_id: 6,
+      reservation_id: reservation6.id,
       reviewer_id:1,
       rating: 5,
       body: "This was an amazing location and house!",
@@ -749,7 +749,7 @@ require "faker"
 
     review2 = Review.create!(
       listing_id: listing1.id,
-      reservation_id: 7,
+      reservation_id: reservation7.id,
       reviewer_id:1,
       rating: 5,
       body: "We had such a great time during our first stay that we came again!",

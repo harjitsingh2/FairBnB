@@ -1,16 +1,33 @@
 class Api::ReviewsController < ApplicationController
-    def index 
-        listing = Listing.find_by(id: review_params[:listing_id])
+    # def index 
+    #     listing = Listing.find_by(id: review_params[:listing_id])
 
-        @reviews = Review.all.where(listing_id: listing.id)
-        render :index 
-    end
+    #     @reviews = Review.all.where(listing_id: listing.id)
+    #     render :index 
+    # end
+
+    def index
+        # debugger
+        listing = Listing.find_by(id: params[:listing_id])
+      
+        if listing
+          @reviews = listing.reviews
+        #   debugger
+          render :index
+        else
+          render json: { errors: ["Listing not found"] }, status: 404
+        end
+      end
+      
 
     def show 
-        reservation = Reservation.find_by(id: review_params[:reservation_id])
-
-        @review = Review.find_by(id: params[:id])
-        if @review 
+        # debugger
+        # reservation = Reservation.find_by(id: review_params[:reservation_id])
+        # @review = Review.find_by(listing_id: params[:id])
+        # @review = Review.find(params[:id])
+        @reviews = Review.where(listing_id: 1).all
+        # @review = Review.find_by(id: params[:id])
+        if @reviews 
             render :show 
         end 
     end
@@ -61,6 +78,7 @@ class Api::ReviewsController < ApplicationController
 
     private 
     def review_params 
+        # debugger
         params.require(:review).permit(:listing_id, :reservation_id, :reviewer_id, :rating, :body, :cleanliness, :communication, :checkin, :accuracy, :location, :value)
     end
 end

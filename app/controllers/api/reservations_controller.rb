@@ -77,6 +77,10 @@ class Api::ReservationsController < ApplicationController
             render json: { errors: ["Cannot delete a reservation that doesn't belong to you"]}, status: 401
         end
     end
+
+    # def review_params 
+    #     params.require(:review).permit(:listing_id, :reservation_id, :reviewer_id, :rating, :body, :cleanliness, :communication, :checkin, :accuracy, :location, :value)
+    # end
     
     private
     def reservation_params

@@ -141,7 +141,7 @@ const ListingsShowPage = ( ) => {
             </div>
             <br></br>
             <div className="show-reviews-container">
-                <ReviewsIndex />
+                <ReviewsIndex listingId2={listing.id} />
             </div>
             <div className="show-map-container">
                 <p>Map</p>
