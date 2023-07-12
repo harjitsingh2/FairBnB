@@ -6,6 +6,7 @@ class Api::ReviewsController < ApplicationController
     #     render :index 
     # end
 
+    # index is not being hit by fetchReviews
     def index
         # debugger
         listing = Listing.find_by(id: params[:listing_id])
@@ -19,13 +20,17 @@ class Api::ReviewsController < ApplicationController
         end
       end
       
-
+    # The api call goes to the show action because fetchReviews takes in listingId and that is a wildcard
+    # refactor later to make it go to index
     def show 
         # debugger
         # reservation = Reservation.find_by(id: review_params[:reservation_id])
         # @review = Review.find_by(listing_id: params[:id])
         # @review = Review.find(params[:id])
-        @reviews = Review.where(listing_id: 1).all
+        @reviews = Review.all.where(listing_id: params[:id])
+        
+        # this works for listing 1
+        # @reviews = Review.where(listing_id: 1).all
         # @review = Review.find_by(id: params[:id])
         if @reviews 
             render :show 

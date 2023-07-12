@@ -730,6 +730,30 @@ require "faker"
       start_date: Date.new(2023, 6, 1),
       end_date: Date.new(2023, 6, 4)
     )
+    reservation8 = Reservation.create!(
+      listing_id: listing2.id,
+      guest_id: 3,
+      num_guests: 2,
+      total_price: 180,
+      start_date: Date.new(2023, 6, 1),
+      end_date: Date.new(2023, 6, 2)
+    )
+    reservation9 = Reservation.create!(
+      listing_id: listing2.id,
+      guest_id: 4,
+      num_guests: 3,
+      total_price: 360,
+      start_date: Date.new(2023, 7, 1),
+      end_date: Date.new(2023, 7, 3)
+    )
+    reservation10 = Reservation.create!(
+      listing_id: listing3.id,
+      guest_id: 2,
+      num_guests: 1,
+      total_price: 240,
+      start_date: Date.new(2023, 6, 1),
+      end_date: Date.new(2023, 6, 5)
+    )
 
     puts "Creating Reviews"
 
@@ -758,6 +782,48 @@ require "faker"
       checkin: 5,
       accuracy: 5,
       location: 5,
+      value: 5   
+    )
+  
+    review3 = Review.create!(
+      listing_id: listing2.id,
+      reservation_id: reservation8.id,
+      reviewer_id:3,
+      rating: 5,
+      body: "The best Airbnb stay we've ever had!",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5   
+    )
+  
+    review4 = Review.create!(
+      listing_id: listing2.id,
+      reservation_id: reservation9.id,
+      reviewer_id:4,
+      rating: 4,
+      body: "Solid place and solid value.",
+      cleanliness: 4,
+      communication: 4,
+      checkin: 5,
+      accuracy: 4,
+      location: 4,
+      value: 5   
+    )
+
+    review5 = Review.create!(
+      listing_id: listing3.id,
+      reservation_id: reservation10.id,
+      reviewer_id:2,
+      rating: 3,
+      body: "The value was great. I'm not sure if I want to go camping next to a lake again though.",
+      cleanliness: 3,
+      communication: 5,
+      checkin: 4,
+      accuracy: 4,
+      location: 2,
       value: 5   
     )
   

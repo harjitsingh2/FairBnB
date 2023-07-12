@@ -41,11 +41,11 @@ export const fetchReview = (reviewId) => async (dispatch) => {
 
 export const fetchReviews = (listingId) => async (dispatch) => {
     const response = await csrfFetch(`/api/reviews/${listingId}`);
-    console.log(response);
+    // console.log(response);
     // const response = await csrfFetch('/api/reviews');
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
+    //   console.log(data);
       dispatch(receiveReviews(data.reviews));
     }
 };
