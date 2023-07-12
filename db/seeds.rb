@@ -712,6 +712,54 @@ require "faker"
       # start_date: "2023/08/01",
       # end_date: "2023/08/06"
     )
+
+    reservation6 = Reservation.create!(
+      listing_id: listing1.id,
+      guest_id: 1,
+      num_guests: 4,
+      total_price: 700,
+      start_date: Date.new(2023, 5, 1),
+      end_date: Date.new(2023, 5, 3)
+    )
+
+    reservation7 = Reservation.create!(
+      listing_id: listing1.id,
+      guest_id: 1,
+      num_guests: 4,
+      total_price: 1050,
+      start_date: Date.new(2023, 6, 1),
+      end_date: Date.new(2023, 6, 4)
+    )
+
+    puts "Creating Reviews"
+
+    review1 = Review.create!(
+      listing_id: listing1.id,
+      reservation_id: 6,
+      reviewer_id:1,
+      rating: 5,
+      body: "This was an amazing location and house!",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5   
+    )
+
+    review2 = Review.create!(
+      listing_id: listing1.id,
+      reservation_id: 7,
+      reviewer_id:1,
+      rating: 5,
+      body: "We had such a great time during our first stay that we came again!",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5   
+    )
   
     puts "Done!"
   # end
