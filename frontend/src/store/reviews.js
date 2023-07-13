@@ -40,7 +40,8 @@ export const fetchReview = (reviewId) => async (dispatch) => {
 }
 
 export const fetchReviews = (listingId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/reviews/${listingId}`);
+    // const response = await csrfFetch(`/api/reviews/${listingId}`);
+    const response = await csrfFetch(`/api/reviews?listing_id=${listingId}`);
     // console.log(response);
     // const response = await csrfFetch('/api/reviews');
     if (response.ok) {
