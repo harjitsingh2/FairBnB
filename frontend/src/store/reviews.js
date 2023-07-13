@@ -62,12 +62,14 @@ export const createReview = (review) => async (dispatch) => {
   )
   if (response.ok) {
     const data = await response.json();
+    // const createdReview = data.review;
+    // dispatch(receiveReview(createdReview));
     dispatch(receiveReview(data.review))
   } else {
     throw response
   }
 
-  return response;
+//   return response;
 };
 
 export const updateReview = (review) => async (dispatch) => {
@@ -110,6 +112,7 @@ const reviewsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_REVIEW:
+            // console.log(action.payload);
             newState[action.payload.id] = action.payload 
             return newState;
         case RECEIVE_REVIEWS:
