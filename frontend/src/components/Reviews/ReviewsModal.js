@@ -19,7 +19,7 @@ const ReviewsModal = ({ listingId }) => {
       <button onClick={openModal}>Leave a Review</button>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='review-modal'>
         <ReviewForm listingId={listingId} />
-        <button onClick={closeModal}>Close</button>
+        <button onClick={closeModal} className='close-review'>X</button>
       </Modal>
     </div>
   );
