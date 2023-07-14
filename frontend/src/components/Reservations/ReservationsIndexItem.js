@@ -77,6 +77,10 @@ const ReservationsIndexItem = ({ reservation }) => {
         dispatch(deleteReservation(reservation.id));
     }
 
+    // today's date converted to YYYY/MM/DD format
+    const today = (new Date()).toISOString().split('T')[0];
+    
+
     return (
         <div className="reservation-index-item">
             <div className="reservation-info">
@@ -102,7 +106,7 @@ const ReservationsIndexItem = ({ reservation }) => {
                         <button type="submit" className='reservation-button'>Update Reservation</button>
                     </Link>
                     <button type="submit" className='reservation-button' onClick={handleClick}>Delete Reservation</button>
-                    <ReviewsModal listingId={listingId} reservationId={reservationId}/>
+                    {today > endDate ? <ReviewsModal listingId={listingId} reservationId={reservationId}/> : null }
                 </>
                 )}
             </div>
