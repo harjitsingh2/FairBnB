@@ -42,6 +42,7 @@ class Api::ReviewsController < ApplicationController
 
         if reservation
             @review = Review.new(review_params)
+            @review.reviewer_id = current_user.id 
 
             if @review.save 
                 render :show 

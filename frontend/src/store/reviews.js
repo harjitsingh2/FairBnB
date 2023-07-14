@@ -53,15 +53,17 @@ export const fetchReviews = (listingId) => async (dispatch) => {
   
 
 export const createReview = (review) => async (dispatch) => {
-
+    // debugger;
   const response = await csrfFetch(`/api/reviews`, 
   {
     method: "POST",
-    body: JSON.stringify({review: review})
+    body: JSON.stringify({review})
+    // body: JSON.stringify({review: review})
   }
   )
   if (response.ok) {
     const data = await response.json();
+    // console.log(data);
     // const createdReview = data.review;
     // dispatch(receiveReview(createdReview));
     dispatch(receiveReview(data.review))
@@ -71,6 +73,9 @@ export const createReview = (review) => async (dispatch) => {
 
 //   return response;
 };
+
+
+  
 
 export const updateReview = (review) => async (dispatch) => {
 
@@ -112,7 +117,8 @@ const reviewsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_REVIEW:
-            // console.log(action.payload);
+        // console.log(action);    
+        // console.log(action.payload);
             newState[action.payload.id] = action.payload 
             return newState;
         case RECEIVE_REVIEWS:

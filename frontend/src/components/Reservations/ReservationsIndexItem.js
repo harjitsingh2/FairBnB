@@ -68,7 +68,8 @@ import './ReservationsIndex.css';
 import ReviewsModal from '../Reviews/ReviewsModal';
 
 const ReservationsIndexItem = ({ reservation }) => {
-    const { startDate, endDate, numGuests, totalPrice, listingId } = reservation;
+    const { startDate, endDate, numGuests, totalPrice, listingId, id: reservationId } = reservation;
+    // console.log(reservation);
     const listing = useSelector(getListing(listingId));
     const dispatch = useDispatch();
 
@@ -101,7 +102,7 @@ const ReservationsIndexItem = ({ reservation }) => {
                         <button type="submit" className='reservation-button'>Update Reservation</button>
                     </Link>
                     <button type="submit" className='reservation-button' onClick={handleClick}>Delete Reservation</button>
-                    <ReviewsModal />
+                    <ReviewsModal listingId={listingId} reservationId={reservationId}/>
                 </>
                 )}
             </div>

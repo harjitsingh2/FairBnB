@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
     # Validations
-    validates :listing_id, :reservation_id, :reviewer_id, :rating, presence: true
+    validates :listing_id, :reservation_id, presence: true
+    # validates :listing_id, :reservation_id, :reviewer_id, :rating, presence: true
     validates :cleanliness, :communication, :checkin, :accuracy, :location, :value, presence: true, inclusion: { in: 1..5 }
     validate :overall_rating
 

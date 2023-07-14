@@ -14,10 +14,10 @@ const ReviewsIndex = ({ listingId2 }) => {
   }, [dispatch]);
 
   const filteredReviews = reviews.filter((review) => review.listingId === listingId2);
-  console.log('reviews');
-  console.log(reviews);
-  console.log('filteredReviews');
-  console.log(filteredReviews);
+//   console.log('reviews');
+//   console.log(reviews);
+//   console.log('filteredReviews');
+//   console.log(filteredReviews);
   if (filteredReviews.length === 0) {
     return <div>No reviews found for this listing.</div>;
   }
