@@ -755,6 +755,24 @@ require "faker"
       end_date: Date.new(2023, 6, 5)
     )
 
+    reservation11 = Reservation.create!(
+      listing_id: listing9.id,
+      guest_id: 1,
+      num_guests: 8,
+      total_price: 1500,
+      start_date: Date.new(2023, 3, 1),
+      end_date: Date.new(2023, 3, 4)
+    )
+
+    reservation12 = Reservation.create!(
+      listing_id: listing12.id,
+      guest_id: 1,
+      num_guests: 1,
+      total_price: 300,
+      start_date: Date.new(2023, 4, 1),
+      end_date: Date.new(2023, 4, 2)
+    )
+
     puts "Creating Reviews"
 
     review1 = Review.create!(
