@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import ReviewForm from './ReviewForm';
 import './ReviewForm.css';
 
-const ReviewsModal = ({ listingId, reservationId }) => {
+const ReviewsModal = ({ listingId, reservationId, reviewed }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -22,11 +22,17 @@ const ReviewsModal = ({ listingId, reservationId }) => {
 
   return (
     <div>
-      <button onClick={openModal}>Leave a Review</button>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='review-modal' ariaHideApp={false}>
-        <ReviewForm listingId={listingId} reservationId={reservationId} closeModal={handleFormSubmit}/>
-        <button onClick={closeModal} className='close-review'>X</button>
-      </Modal>
+      { reviewed ? 
+        (<div> already reviewed </div>) :
+
+      (<div>
+        <button onClick={openModal}>Leave a Review</button>
+        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='review-modal' ariaHideApp={false}>
+            <ReviewForm listingId={listingId} reservationId={reservationId} closeModal={handleFormSubmit}/>
+            <button onClick={closeModal} className='close-review'>X</button>
+        </Modal>
+      </div>)
+      }
     </div>
   );
 

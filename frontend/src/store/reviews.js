@@ -50,7 +50,7 @@ export const fetchReviews = (listingId) => async (dispatch) => {
       dispatch(receiveReviews(data.reviews));
     }
 };
-  
+
 
 export const createReview = (review) => async (dispatch) => {
     // debugger;

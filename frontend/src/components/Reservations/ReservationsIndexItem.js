@@ -56,7 +56,7 @@
 
 // export default ReservationsIndexItem;
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { getListing } from '../../store/listings';
 import { deleteReservation } from '../../store/reservations';
@@ -66,6 +66,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
 import './ReservationsIndex.css';
 import ReviewsModal from '../Reviews/ReviewsModal';
+import { fetchReviews, getReviews } from '../../store/reviews';
 
 const ReservationsIndexItem = ({ reservation }) => {
     const { startDate, endDate, numGuests, totalPrice, listingId, id: reservationId } = reservation;
@@ -79,6 +80,22 @@ const ReservationsIndexItem = ({ reservation }) => {
 
     // today's date converted to YYYY/MM/DD format
     const today = (new Date()).toISOString().split('T')[0];
+
+    // logic for importing and filtering through reviews based on reservation
+    const reviews = useSelector(getReviews);
+    useEffect(() => {
+        dispatch(fetchReviews(listingId));
+      }, [dispatch]);
+    const filteredReviews = reviews.filter((review) => review.reservationId === reservationId);
+    // console.log(reviews)
+    console.log(filteredReviews)
+    // console.log(reservationId)
+    // console.log(reservation.id)
+
+    const alreadyReviewed = filteredReviews.some(function(obj) {
+        return obj.reservationId > 0;
+    });
+
     
 
     return (
@@ -106,7 +123,7 @@ const ReservationsIndexItem = ({ reservation }) => {
                         <button type="submit" className='reservation-button'>Update Reservation</button>
                     </Link>
                     <button type="submit" className='reservation-button' onClick={handleClick}>Delete Reservation</button>
-                    {today > endDate ? <ReviewsModal listingId={listingId} reservationId={reservationId}/> : null }
+                    {today > endDate ? <ReviewsModal listingId={listingId} reservationId={reservationId} reviewed={alreadyReviewed}/> : null }
                 </>
                 )}
             </div>
