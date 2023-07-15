@@ -73,12 +73,17 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy 
-        @review = Review.find(params[:id])
-        if (@review.reviewer_id == current_user.id)
-            @review.destroy 
-            head :no_content
-        else
-            render json: { errors: ["Cannot delete a review that doesn't belong to you"]}, status: 401
+        # debugger
+        @review = Review.find_by(id: params[:id])
+        if @review 
+            if (@review.reviewer_id == current_user.id)
+                @review.destroy 
+                head :no_content
+            else
+                render json: { errors: ["Cannot delete a review that doesn't belong to you"]}, status: 401
+            end
+        else 
+            render json: { errors: ["The requested review does not exist"] }, status: 404
         end
     end
 

@@ -14,6 +14,10 @@ class Review < ApplicationRecord
         class_name: :User,
         foreign_key: :reviewer_id
 
+    # belongs_to :reservation,
+    #     class_name: :Reservation,
+    #     foreign_key: :reservation_id
+
     # Methods
     def overall_rating
         self.rating = ((cleanliness + communication + checkin + accuracy + location + value) / 6.0).round(2)
