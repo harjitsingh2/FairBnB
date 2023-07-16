@@ -47,7 +47,9 @@ export const fetchReviews = (listingId) => async (dispatch) => {
     if (response.ok) {
       const data = await response.json();
     //   console.log(data);
-      dispatch(receiveReviews(data.reviews));
+    //   debugger;
+        dispatch(receiveReviews(data.reviews));
+      return data.reviews;
     }
 };
 

@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import './ReservationsIndex.css';
 import ReviewsModal from '../Reviews/ReviewsModal';
 import { fetchReviews, getReviews } from '../../store/reviews';
+import { useState } from 'react';
 
 const ReservationsIndexItem = ({ reservation }) => {
     const { startDate, endDate, numGuests, totalPrice, listingId, id: reservationId } = reservation;
@@ -25,10 +26,22 @@ const ReservationsIndexItem = ({ reservation }) => {
     const today = (new Date()).toISOString().split('T')[0];
 
     // logic for importing and filtering through reviews based on reservation
+    // const [reviews, setReviews] = useState();
     const reviews = useSelector(getReviews);
     useEffect(() => {
         dispatch(fetchReviews(listingId));
       }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(fetchReviews(listingId)).then(asyncReviews => {
+    //         setReviews(asyncReviews);
+    //     });
+    //   }, [dispatch]);
+    // if (!reviews) {
+    //     return (
+    //         <div>Loading</div>
+    //     )
+    //     }
+    // debugger
     const filteredReviews = reviews.filter((review) => review.reservationId === reservationId);
     // console.log(reviews)
     // debugger
