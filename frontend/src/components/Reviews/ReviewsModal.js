@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Modal from 'react-modal';
 import ReviewForm from './ReviewForm';
+import UpdateReview from './UpdateReviewForm';
 import './ReviewForm.css';
 import { deleteReview, getReview, fetchReview } from '../../store/reviews';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,7 +44,11 @@ const ReviewsModal = ({ listingId, reservationId, reviewed, reviewProp }) => {
     <div>
       { reviewed ? 
         (<div> 
-            <button>Update Review</button>
+            <button onClick={openModal}>Update Review</button>
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='review-modal' ariaHideApp={false}>
+            <UpdateReview listingId={listingId} reservationId={reservationId} reviewProp={reviewProp} closeModal={handleFormSubmit}/>
+            <button onClick={closeModal} className='close-review'>X</button>
+            </Modal>
             <br></br>
             <br></br>
             <button type='submit' onClick={clickDelete}>Delete Review</button>
