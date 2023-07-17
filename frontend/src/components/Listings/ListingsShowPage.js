@@ -12,9 +12,13 @@ const ListingsShowPage = ( ) => {
     const dispatch = useDispatch();
     const { listingId } = useParams();
     const [errors, setErrors] = useState([]);
+    const [overallRating, setOverallRating] = useState(0);
 
     const listing = useSelector((state) => state.listings[listingId]);
-    
+   
+    const handleOverallRatingChange = (rating) => {
+        setOverallRating(rating);
+    }
 
     useEffect(() => {
         // debugger 
@@ -73,7 +77,8 @@ const ListingsShowPage = ( ) => {
             <div className="show-heading-container">
                 <h1 className="listing-title-show">{listing.title}</h1>
                 <p>{listing.city}, {listing.state}</p>
-                {/* <p>Rating: {overallRating()}</p> */}
+                { overallRating !==0 ? <p>Rating: {overallRating}</p>: null }
+                {/* <p>Rating: {overallRating}</p> */}
             </div>
              
             <div className="show-pic-container">
@@ -142,7 +147,7 @@ const ListingsShowPage = ( ) => {
             </div>
             <br></br>
             <div className="show-reviews-container">
-                <ReviewsIndex listingId2={listing.id} />
+                <ReviewsIndex listingId2={listing.id} onOverallRatingChange={handleOverallRatingChange}/>
             </div>
             <div className="show-map-container">
                 <p>Map</p>
