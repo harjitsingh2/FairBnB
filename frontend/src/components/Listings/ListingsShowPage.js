@@ -73,6 +73,7 @@ const ListingsShowPage = ( ) => {
             <div className="show-heading-container">
                 <h1 className="listing-title-show">{listing.title}</h1>
                 <p>{listing.city}, {listing.state}</p>
+                {/* <p>Rating: {overallRating()}</p> */}
             </div>
              
             <div className="show-pic-container">
