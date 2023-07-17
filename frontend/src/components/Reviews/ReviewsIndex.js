@@ -3,6 +3,9 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchReviews, getReviews } from '../../store/reviews';
 import ReviewItem from './ReviewItem';
+import star from '../../image/star.png';
+
+
 
 const ReviewsIndex = ({ listingId2, onOverallRatingChange }) => {
   const dispatch = useDispatch();
@@ -38,17 +41,88 @@ const ReviewsIndex = ({ listingId2, onOverallRatingChange }) => {
     return overallRating;
   }
 
+  const overallCleanliness = () => {
+    if (filteredReviews.length === 0) {
+      return 0;
+    }
+
+    let total = 0;
+    filteredReviews.forEach(review => total += review.cleanliness)
+    return Math.round((total/filteredReviews.length) *100) / 100
+  }
+
+  const overallCommunication = () => {
+    if (filteredReviews.length === 0) {
+      return 0;
+    }
+
+    let total = 0;
+    filteredReviews.forEach(review => total += review.communication)
+    return Math.round((total/filteredReviews.length) *100) / 100
+  }
+  const overallCheckin = () => {
+    if (filteredReviews.length === 0) {
+      return 0;
+    }
+
+    let total = 0;
+    filteredReviews.forEach(review => total += review.checkin)
+    return Math.round((total/filteredReviews.length) *100) / 100
+  }
+  const overallAccuracy = () => {
+    if (filteredReviews.length === 0) {
+      return 0;
+    }
+
+    let total = 0;
+    filteredReviews.forEach(review => total += review.accuracy)
+    return Math.round((total/filteredReviews.length) *100) / 100
+  }
+  const overallLocation = () => {
+    if (filteredReviews.length === 0) {
+      return 0;
+    }
+
+    let total = 0;
+    filteredReviews.forEach(review => total += review.location)
+    return Math.round((total/filteredReviews.length) *100) / 100
+  }
+  const overallValue = () => {
+    if (filteredReviews.length === 0) {
+      return 0;
+    }
+
+    let total = 0;
+    filteredReviews.forEach(review => total += review.value)
+    return Math.round((total/filteredReviews.length) *100) / 100
+  }
+
   if (filteredReviews.length === 0) {
     return <div>No reviews found for this listing.</div>;
   }
 
   return (
     <div>
-      <div>Overall Rating: {overallRating()}</div>
+      {filteredReviews.length === 1 ? 
+      <div id='rating'><img src={star} className="star"/> {overallRating()} · {filteredReviews.length} Review</div> :
+      <div id='rating'><img src={star} className="star"/> {overallRating()} · {filteredReviews.length} Reviews</div>
+      }
+      
       <br></br>
-      {filteredReviews.map((review) => (
-        <ReviewItem key={review.id} review={review} />
-      ))}
+      <div className='categories'>
+        <li>Cleanliness: {overallCleanliness()}</li>
+        <li>Communication: {overallCommunication()}</li>
+        <li>Checkin: {overallCheckin()}</li>
+        <li>Accuracy: {overallAccuracy()}</li>
+        <li>Location: {overallLocation()}</li>
+        <li>Value: {overallValue()}</li>
+      </div>
+      <br></br>
+      <div className='review-item'>
+        {filteredReviews.map((review) => (
+          <ReviewItem key={review.id} review={review}/>
+        ))}
+      </div>
     </div>
   );
 };

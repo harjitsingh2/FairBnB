@@ -7,6 +7,7 @@ import Amenities from "./amenities";
 import './ListingsShow.css';
 import ReservationForm from "../Reservations/ReservationForm";
 import ReviewsIndex from "../Reviews/ReviewsIndex";
+import star from '../../image/star.png';
 
 const ListingsShowPage = ( ) => {
     const dispatch = useDispatch();
@@ -77,7 +78,7 @@ const ListingsShowPage = ( ) => {
             <div className="show-heading-container">
                 <h1 className="listing-title-show">{listing.title}</h1>
                 <p>{listing.city}, {listing.state}</p>
-                { overallRating !==0 ? <p>Rating: {overallRating}</p>: null }
+                { overallRating !==0 ? <p id="star-rating"><img src={star} className="star"/> {overallRating}</p>: null }
                 {/* <p>Rating: {overallRating}</p> */}
             </div>
              

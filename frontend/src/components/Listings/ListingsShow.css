@@ -16,6 +16,17 @@
     font-size: 20px;
 }
 
+.star {
+    max-width: 20px;
+}
+
+#star-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
 .show-pic-container {
     display: flex;
     flex-direction: row;

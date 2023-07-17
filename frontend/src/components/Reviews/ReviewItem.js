@@ -12,13 +12,14 @@ const ReviewItem = ({ review }) => {
         {/* <ReviewIdContext.Provider value={reviewId}>    
         <ReviewerIdContext.Provider value={reviewerId}>     */}
             {/* <h3>Rating: {review.rating}</h3> */}
+            <p>Reviewer: {review.reviewerId}</p>
             <p>Review: {review.body}</p>
-            <p>Cleanliness: {review.cleanliness}</p>
+            {/* <p>Cleanliness: {review.cleanliness}</p>
             <p>Communication: {review.communication}</p>
             <p>Checkin: {review.checkin}</p>
             <p>Accuracy: {review.accuracy}</p>
             <p>Location: {review.location}</p>
-            <p>Value: {review.value}</p>
+            <p>Value: {review.value}</p> */}
         {/* </ReviewerIdContext.Provider>
         </ReviewIdContext.Provider> */}
     </div>

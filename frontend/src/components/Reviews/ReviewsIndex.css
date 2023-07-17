@@ -1,0 +1,22 @@
+.review-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#rating {
+    font-size: 20px;
+    font-family: "AirbnbMed";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#rating .star {
+    margin-right: 5px;
+}
+
+.categories > li {
+    list-style: none;
+}
