@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { createReview } from '../../store/reviews';
-import StarRatingInput from './StarRating';
+import StarRating from './StarRating';
 import './ReviewForm.css';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -59,7 +59,7 @@ const ReviewsForm = ({ listingId, reservationId, closeModal }) => {
         <div>
           {/* <label>Cleanliness:</label> */}
           {/* <StarRating name="cleanliness" register={register} required onChange={(value) => handleRatingChange('rating', value)} /> */}
-          <StarRatingInput
+          <StarRating
             type="number"
             name="cleanliness"
             rating={cleanliness}
@@ -72,7 +72,7 @@ const ReviewsForm = ({ listingId, reservationId, closeModal }) => {
         </div>
         <div>
           {/* <label>Communication:</label> */}
-          <StarRatingInput
+          <StarRating
             type="number"
             name="communication"
             rating={communication}
@@ -85,7 +85,7 @@ const ReviewsForm = ({ listingId, reservationId, closeModal }) => {
         </div>
         <div>
           {/* <label>Checkin:</label> */}
-          <StarRatingInput
+          <StarRating
             type="number"
             name="checkin"
             rating={checkin}
@@ -98,7 +98,7 @@ const ReviewsForm = ({ listingId, reservationId, closeModal }) => {
         </div>
         <div>
           {/* <label>Accuracy:</label> */}
-          <StarRatingInput
+          <StarRating
             type="number"
             name="accuracy"
             rating={accuracy}
@@ -111,7 +111,7 @@ const ReviewsForm = ({ listingId, reservationId, closeModal }) => {
         </div>
         <div>
           {/* <label>Location:</label> */}
-          <StarRatingInput
+          <StarRating
             type="number"
             name="location"
             rating={location}
@@ -124,7 +124,7 @@ const ReviewsForm = ({ listingId, reservationId, closeModal }) => {
         </div>
         <div>
           {/* <label>Value:</label> */}
-          <StarRatingInput
+          <StarRating
             type="number"
             name="value"
             rating={value}
@@ -136,10 +136,12 @@ const ReviewsForm = ({ listingId, reservationId, closeModal }) => {
           {errors.value && <span>Please enter a rating between 1 and 5.</span>}
         </div>
         <div>
-          <label>Comments:</label>
-          <textarea name="body" onChange={(e) => setBody(e.target.value)} />
+          <div className='comment-container'>
+            <label>Comments:</label>
+            <textarea name="body" onChange={(e) => setBody(e.target.value)} />
+          </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className='review-button'>Submit</button>
       </form>
     </div>
   );

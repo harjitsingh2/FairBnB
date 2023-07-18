@@ -44,18 +44,18 @@ const ReviewsModal = ({ listingId, reservationId, reviewed, reviewProp }) => {
     <div>
       { reviewed ? 
         (<div> 
-            <button onClick={openModal}>Update Review</button>
+            <button className='reservation-button' onClick={openModal}>Update Review</button>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='review-modal' ariaHideApp={false}>
             <UpdateReview listingId={listingId} reservationId={reservationId} reviewProp={reviewProp} closeModal={handleFormSubmit}/>
             <button onClick={closeModal} className='close-review'>X</button>
             </Modal>
             <br></br>
             <br></br>
-            <button type='submit' onClick={clickDelete}>Delete Review</button>
+            <button className='reservation-button' type='submit' onClick={clickDelete}>Delete Review</button>
         </div>) :
 
       (<div>
-        <button onClick={openModal}>Leave a Review</button>
+        <button className='reservation-button' onClick={openModal}>Leave a Review</button>
         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='review-modal' ariaHideApp={false}>
             <ReviewForm listingId={listingId} reservationId={reservationId} closeModal={handleFormSubmit}/>
             <button onClick={closeModal} className='close-review'>X</button>

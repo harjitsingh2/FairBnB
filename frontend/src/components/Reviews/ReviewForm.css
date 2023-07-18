@@ -44,3 +44,29 @@
     /* margin: 0 auto; */
     z-index: 102;
 }
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#comment-box {
+    /* background-color: black; */
+    width: 500px;
+}
+
+.review-button {
+    color: #fff;
+    border: none;
+    width: 50%;
+    border-radius: 4px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    background-image: linear-gradient(to right, #fc365b, #db1064, #bb1e59);
+}
