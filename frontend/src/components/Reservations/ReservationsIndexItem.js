@@ -78,10 +78,16 @@ const ReservationsIndexItem = ({ reservation }) => {
                     <p>
                     <span>Total Price:</span> ${totalPrice}
                     </p>
+                    {
+                    today < startDate ?  
+                    <div className='reservation-button-container'>
                     <Link to={`reservations/${reservation.id}#edit`}>
                         <button type="submit" className='reservation-button'>Update Reservation</button>
                     </Link>
                     <button type="submit" className='reservation-button' onClick={handleClick}>Delete Reservation</button>
+                    </div>
+                    : null
+                    }
                     {today > endDate ? <ReviewsModal listingId={listingId} reservationId={reservationId} reviewed={alreadyReviewed} reviewProp={singleReview}/> : null }
                 </>
                 )}
