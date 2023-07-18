@@ -30,13 +30,14 @@
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
+    padding: 3%;
     z-index: 102;
 }
 
 .close-review {
     position: fixed;
-    top: 38%;
-    right: 30%;
+    top: 28%;
+    right: 28%;
     /* transform: translate(-50%, -50%); */
     /* background-color: #fff; */
     /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); */
