@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Modal from 'react-modal';
 import ReviewForm from './ReviewForm';
 import UpdateReview from './UpdateReviewForm';
@@ -26,6 +26,16 @@ const ReviewsModal = ({ listingId, reservationId, reviewed, reviewProp }) => {
     closeModal();
   };
 
+  // useEffect(() => {
+  //   const handleClickOutside = () => {
+  //     closeModal() 
+  //   };
+  
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [dispatch]);
 
 
   // Deleting review

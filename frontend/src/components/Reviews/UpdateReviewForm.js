@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { updateReview } from '../../store/reviews';
@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 const UpdateReview = ({ listingId, reservationId, closeModal, reviewProp }) => {
   const { register, formState: { errors } } = useForm();
   const dispatch = useDispatch();
+  const formRef = useRef();
 
   const [cleanliness, setCleanliness] = useState(reviewProp.cleanliness);
   const [communication, setCommunication] = useState(reviewProp.communication);
@@ -25,6 +26,20 @@ const UpdateReview = ({ listingId, reservationId, closeModal, reviewProp }) => {
     dispatch(updateReview(payload));
     closeModal();
   };
+
+  // logic for closing form when clicked outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        closeModal();
+      }
+    };
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeModal]);
 
   const handleRatingChange = (name, value) => {
     switch (name) {
@@ -57,7 +72,7 @@ const UpdateReview = ({ listingId, reservationId, closeModal, reviewProp }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className='reviewForm'>
+      <form onSubmit={handleSubmit} ref={formRef} className='reviewForm'>
         <h2>Update Review</h2>
         <br></br>
 
