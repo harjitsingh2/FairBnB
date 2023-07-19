@@ -10,13 +10,13 @@ const UpdateReview = ({ listingId, reservationId, closeModal, reviewProp }) => {
   const { register, formState: { errors } } = useForm();
   const dispatch = useDispatch();
 
-  const [cleanliness, setCleanliness] = useState(1);
-  const [communication, setCommunication] = useState(1);
-  const [checkin, setCheckin] = useState(1);
-  const [accuracy, setAccuracy] = useState(1);
-  const [location, setLocation] = useState(1);
-  const [value, setValue] = useState(1);
-  const [body, setBody] = useState("");
+  const [cleanliness, setCleanliness] = useState(reviewProp.cleanliness);
+  const [communication, setCommunication] = useState(reviewProp.communication);
+  const [checkin, setCheckin] = useState(reviewProp.checkin);
+  const [accuracy, setAccuracy] = useState(reviewProp.accuracy);
+  const [location, setLocation] = useState(reviewProp.location);
+  const [value, setValue] = useState(reviewProp.value);
+  const [body, setBody] = useState(reviewProp.body);
   const reviewId = reviewProp.id;
 
   const handleSubmit = (e) => {
@@ -46,6 +46,9 @@ const UpdateReview = ({ listingId, reservationId, closeModal, reviewProp }) => {
       case 'value':
         setValue(value);
         break;
+      case 'body':
+        setBody(value);
+        break;
       default:
         break;
     }
@@ -66,7 +69,8 @@ const UpdateReview = ({ listingId, reservationId, closeModal, reviewProp }) => {
             rating={cleanliness}
             min="1"
             max="5"
-            value={reviewProp.cleanliness}
+            value={cleanliness}
+            placeholder={reviewProp.cleanliness}
             handleChange={handleRatingChange}
             onChange={(e) => setCleanliness(e.target.value)} required
           />
@@ -123,7 +127,7 @@ const UpdateReview = ({ listingId, reservationId, closeModal, reviewProp }) => {
             handleChange={handleRatingChange}
             min="1"
             max="5"
-            value={reviewProp.location}
+            placeholder={reviewProp.location}
             onChange={(e) => setLocation(e.target.value)} required
           />
           {errors.location && <span>Please enter a rating between 1 and 5.</span>}
@@ -137,14 +141,14 @@ const UpdateReview = ({ listingId, reservationId, closeModal, reviewProp }) => {
             handleChange={handleRatingChange}
             min="1"
             max="5"
-            value={reviewProp.value}
+            // value={reviewProp.value}
             onChange={(e) => setValue(e.target.value)} required
           />
           {errors.value && <span>Please enter a rating between 1 and 5.</span>}
         </div>
         <div className='comment-container'>
           <label>Comments:</label>
-          <div id='comment-box'><textarea name="body" value={reviewProp.body} onChange={(e) => setBody(e.target.value)} /></div>
+          <div id='comment-box'><textarea name="body" placeholder={reviewProp.body} value={body} onChange={(e) => setBody(e.target.value)} /></div>
         </div>
         <button type="submit" className='review-button'>Update Review</button>
       </form>
