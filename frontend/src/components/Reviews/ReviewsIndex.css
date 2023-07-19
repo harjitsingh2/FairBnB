@@ -17,6 +17,48 @@
     margin-right: 5px;
 }
 
+/* .categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} */
+
+.categories {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
+
 .categories > li {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
 }
+
+/* ReviewsIndex.css */
+
+.rating-bar {
+    width: 20%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 10px;
+  }
+  
+  .rating-fill {
+    height: 100%;
+    background-color: #FDCC0D;
+    /* transition: width 0.3s; */
+  }
+  
+  .rating-value {
+    margin-left: 5px;
+  }
+  
+  .categories {
+    margin-bottom: 20px;
+  }
+  

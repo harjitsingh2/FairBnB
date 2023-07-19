@@ -27,6 +27,8 @@ const ReviewsIndex = ({ listingId2, onOverallRatingChange }) => {
 //   console.log('filteredReviews');
   // console.log(filteredReviews);
 
+  // Functions for calculating overall rating of each review category for the listing
+
   const overallRating = () => {
     if (filteredReviews.length === 0) {
       return 0;
@@ -110,12 +112,49 @@ const ReviewsIndex = ({ listingId2, onOverallRatingChange }) => {
       
       <br></br>
       <div className='categories'>
-        <li>Cleanliness: {overallCleanliness()}</li>
-        <li>Communication: {overallCommunication()}</li>
-        <li>Checkin: {overallCheckin()}</li>
-        <li>Accuracy: {overallAccuracy()}</li>
-        <li>Location: {overallLocation()}</li>
-        <li>Value: {overallValue()}</li>
+        {/* <li>Cleanliness: {overallCleanliness()}</li> */}
+        <li>
+          Cleanliness 
+          <div className="rating-bar">
+            <div className="rating-fill" style={{ width: `${(overallCleanliness() / 5) * 100}%` }}></div>
+          </div>
+          <span className="rating-value">{overallCleanliness()}</span>
+        </li>
+        <li>
+          Accuracy 
+          <div className="rating-bar">
+            <div className="rating-fill" style={{ width: `${(overallAccuracy() / 5) * 100}%` }}></div>
+          </div>
+          <span className="rating-value">{overallAccuracy()}</span>
+        </li>
+        <li>
+          Communication 
+          <div className="rating-bar">
+            <div className="rating-fill" style={{ width: `${(overallCommunication() / 5) * 100}%` }}></div>
+          </div>
+          <span className="rating-value">{overallCommunication()}</span>
+        </li>
+        <li>
+          Location 
+          <div className="rating-bar">
+            <div className="rating-fill" style={{ width: `${(overallLocation() / 5) * 100}%` }}></div>
+          </div>
+          <span className="rating-value">{overallLocation()}</span>
+        </li>
+        <li>
+          Checkin 
+          <div className="rating-bar">
+            <div className="rating-fill" style={{ width: `${(overallCheckin() / 5) * 100}%` }}></div>
+          </div>
+          <span className="rating-value">{overallCheckin()}</span>
+        </li>
+        <li>
+          Value 
+          <div className="rating-bar">
+            <div className="rating-fill" style={{ width: `${(overallValue() / 5) * 100}%` }}></div>
+          </div>
+          <span className="rating-value">{overallValue()}</span>
+        </li>
       </div>
       <br></br>
       <div className='review-item'>
