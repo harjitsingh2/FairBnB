@@ -164,8 +164,16 @@
 
 
 .show-map-container {
-    margin-top: 10px;
-    border: 2px solid black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* width: 50%;
+    height: 400px; */
+}
+
+#map-heading {
+    font-family: "Airbnbmed";
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {

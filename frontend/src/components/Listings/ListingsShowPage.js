@@ -152,7 +152,7 @@ const ListingsShowPage = ( ) => {
                 <ReviewsIndex listingId2={listing.id} onOverallRatingChange={handleOverallRatingChange}/>
             </div>
             <div className="show-map-container">
-                <p>Map</p>
+                <h2 id="map-heading">Where you'll be</h2>
                 <MapComponent listing={listing} />
             </div>
         </div>

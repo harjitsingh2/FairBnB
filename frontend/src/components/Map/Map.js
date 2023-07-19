@@ -9,7 +9,7 @@ const MapComponent = ({ google, listing }) => {
       google={google}
       zoom={14}
       initialCenter={{ lat: latitude, lng: longitude }}
-      style={{ width: '100%', height: '400px' }}
+      style={{ width: '60%', height: '400px' }}
     >
       <Marker position={{ lat: latitude, lng: longitude }} />
     </Map>
