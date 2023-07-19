@@ -7,6 +7,7 @@ import Amenities from "./amenities";
 import './ListingsShow.css';
 import ReservationForm from "../Reservations/ReservationForm";
 import ReviewsIndex from "../Reviews/ReviewsIndex";
+import MapComponent from '../Map/Map';
 import star from '../../image/star.png';
 
 const ListingsShowPage = ( ) => {
@@ -152,6 +153,7 @@ const ListingsShowPage = ( ) => {
             </div>
             <div className="show-map-container">
                 <p>Map</p>
+                <MapComponent listing={listing} />
             </div>
         </div>
     )
