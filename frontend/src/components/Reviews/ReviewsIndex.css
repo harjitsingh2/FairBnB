@@ -27,6 +27,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
 .categories > li {
@@ -37,7 +38,6 @@
     gap: 5px;
 }
 
-/* ReviewsIndex.css */
 
 .rating-bar {
     width: 20%;
@@ -46,19 +46,14 @@
     border-radius: 5px;
     overflow: hidden;
     margin-left: 10px;
-  }
+}
   
-  .rating-fill {
+.rating-fill {
     height: 100%;
     background-color: #FDCC0D;
-    /* transition: width 0.3s; */
-  }
+}
   
-  .rating-value {
+.rating-value {
     margin-left: 5px;
-  }
-  
-  .categories {
-    margin-bottom: 20px;
-  }
+}
   
