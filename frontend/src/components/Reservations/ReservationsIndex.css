@@ -48,6 +48,12 @@
     object-fit: cover;
 }
 
+.reservation-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .reservation-button {
     /* color: #fff; */
     color: #fff;

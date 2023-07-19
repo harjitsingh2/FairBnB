@@ -1,0 +1,59 @@
+.review-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#rating {
+    font-size: 20px;
+    font-family: "AirbnbMed";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#rating .star {
+    margin-right: 5px;
+}
+
+/* .categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} */
+
+.categories {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.categories > li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
+}
+
+
+.rating-bar {
+    width: 20%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+  
+.rating-fill {
+    height: 100%;
+    background-color: #FDCC0D;
+}
+  
+.rating-value {
+    margin-left: 5px;
+}
+  

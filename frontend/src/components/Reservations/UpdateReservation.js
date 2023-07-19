@@ -31,9 +31,9 @@ function UpdateReservation() {
   }
 
   let price = listing.price
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [numGuests, setNumGuests] = useState(1);
+  const [startDate, setStartDate] = useState(reservation.startDate);
+  const [endDate, setEndDate] = useState(reservation.endDate);
+  const [numGuests, setNumGuests] = useState(reservation.numGuests);
   const [numNights, setNumNights] = useState(1);
   const [errors, setErrors] = useState([]);
 
@@ -99,7 +99,8 @@ function UpdateReservation() {
                                 <input className="start-date" type="date" value={startDate}
                                 onChange={(e) => setStartDate(e.target.value)} required 
                                 min={("YYYY-MM-DD")}
-                                placeholder={reservation.startDate}/>
+                                placeholder={reservation.startDate}
+                                />
                             </label>
                         </div>
                     </div>
@@ -111,7 +112,8 @@ function UpdateReservation() {
                                     setEndDate(e.target.value)
                                 }} required 
                                 min={startDate ? startDate : ("YYYY-MM-DD")}
-                                placeholder={reservation.endDate}/>
+                                placeholder={reservation.endDate}
+                                />
                             </label>
                         </div>
                         <br></br>
@@ -120,7 +122,7 @@ function UpdateReservation() {
                             <label>
                                 <input type="number" id='new-num-guests'
                                 onChange={(e) => setNumGuests(e.target.value)} required
-                                min="1" max={listing.maxGuests} placeholder='0' />
+                                min="1" max={listing.maxGuests} placeholder={reservation.numGuests} />
                             </label>
                         </div>
             
