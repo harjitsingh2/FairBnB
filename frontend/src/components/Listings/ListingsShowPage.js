@@ -83,7 +83,7 @@ const ListingsShowPage = ( ) => {
                 {/* <p>Rating: {overallRating}</p> */}
             </div>
              
-            <div className="show-pic-container">
+            {/* <div className="show-pic-container">
                 <div className="show-main-pic">
                     <img src={image} className="show-main-pic" alt="" />
                 </div>
@@ -103,8 +103,8 @@ const ListingsShowPage = ( ) => {
                     
 
                 </div>
-            </div>
-            {/* <div className="show-pic-container">
+            </div> */}
+            <div className="show-pic-container">
                 <div className="show-main-pic">
                     <img src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image } className="show-main-pic" alt="" />
                 </div>
@@ -124,7 +124,7 @@ const ListingsShowPage = ( ) => {
                     
 
                 </div>
-            </div> */}
+            </div>
             <div className="show-body-container">
                 <div className="show-body-info">
                     <div className="host-information">
