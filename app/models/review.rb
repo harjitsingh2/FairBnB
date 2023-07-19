@@ -14,9 +14,9 @@ class Review < ApplicationRecord
         class_name: :User,
         foreign_key: :reviewer_id
 
-    # belongs_to :reservation,
-    #     class_name: :Reservation,
-    #     foreign_key: :reservation_id
+    belongs_to :reservation,
+        class_name: :Reservation,
+        foreign_key: :reservation_id
 
     # Methods
     def overall_rating

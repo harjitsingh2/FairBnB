@@ -17,6 +17,11 @@ class Reservation < ApplicationRecord
         class_name: :User,
         foreign_key: :guest_id
 
+    has_many :reviews,
+        foreign_key: :reservation_id,
+        class_name: :Review,
+        dependent: :destroy
+
     # Methods
 
     # ensure end date is after start date of reservation
