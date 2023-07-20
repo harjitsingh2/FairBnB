@@ -94,12 +94,14 @@ const ReservationsIndexItem = ({ reservation }) => {
             </div>
             <div className="index-image-container">
                     {listing && (
-                        <img
-                        src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
-                        // src={image}
-                        alt=""
-                        className="listing-pic"
-                    />
+                        <Link to={`/listings/${listing.id}`}>
+                            <img
+                            src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
+                            // src={image}
+                            alt=""
+                            className="listing-pic"
+                            />
+                        </Link>
                     )}
             </div>
         </div>

@@ -47,15 +47,15 @@ const ReservationsIndex = () => {
 
     return (
         <div className='reservations-index'>
-            <div className='upcoming-trips'>
+            <div className='upcoming-trips-container'>
                 <h1 id='reservation-header'>View Your Upcoming Trips</h1>
-                <div>
+                <div id='upcoming-trips'>
                     {upcomingTrips}
                 </div>
             </div>
-            <div className='past-trips'>
+            <div className='past-trips-container'>
                 <h1 id='reservation-header'>View Your Past Trips</h1>
-                <div>
+                <div id='past-trips'>
                     {pastTrips}
                 </div>
             </div>
