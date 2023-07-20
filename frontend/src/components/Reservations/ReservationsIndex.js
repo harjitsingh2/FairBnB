@@ -19,19 +19,45 @@ const ReservationsIndex = () => {
         
     }, [dispatch])
     // debugger;
-    const reservationItems = reservations.map((reservation) => (
+
+    // Sort and filter reservations
+    const today = (new Date()).toISOString().split('T')[0];
+    
+    const sortedReservations = [...reservations].sort((b, a) => {
+        return (new Date(a.startDate) - new Date(b.startDate));
+    });
+
+    const newReservations = sortedReservations.filter(
+        (reservation) => reservation.startDate > today
+    )
+
+    const oldReservations = sortedReservations.filter(
+        (reservation) => reservation.startDate < today
+    )   
+
+    const upcomingTrips = newReservations.map((reservation) => (
         <ReservationsIndexItem key={reservation.id} reservation={reservation}/>
 
     ))
 
+    const pastTrips = oldReservations.map((reservation) => (
+        <ReservationsIndexItem key={reservation.id} reservation={reservation}/>
+
+    ))
 
     return (
         <div className='reservations-index'>
-            <h1 id='reservation-header'>View Your Reservations</h1>
-            <div>
-                {reservationItems}
-                {/* <ReservationsIndexItem /> */}
-                {/* <p>hello</p> */}
+            <div className='upcoming-trips'>
+                <h1 id='reservation-header'>View Your Upcoming Trips</h1>
+                <div>
+                    {upcomingTrips}
+                </div>
+            </div>
+            <div className='past-trips'>
+                <h1 id='reservation-header'>View Your Past Trips</h1>
+                <div>
+                    {pastTrips}
+                </div>
             </div>
 
         </div>
