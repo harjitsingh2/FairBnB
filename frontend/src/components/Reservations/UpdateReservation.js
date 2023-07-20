@@ -82,13 +82,13 @@ function UpdateReservation() {
         <div className='update-reservation'>           
             <h1 id='edit-reservation-header'>Update your Reservation</h1>
             <form className="reservation-update-form" onSubmit={handleSubmit}>
-                <div className='old-reservation'>
+                {/* <div className='old-reservation'>
                     <div>Current Check-in: {reservation.startDate}</div>
                     <br></br>
                     <div>Current Check-out: {reservation.endDate}</div>
                     <br></br>
                     <div>Current Number of Guests: {reservation.numGuests}</div>
-                </div>
+                </div> */}
                 <div className='new-reservation'>
                     <ul>
 
@@ -155,13 +155,13 @@ function UpdateReservation() {
                     </div>
                     {listing && (
                         <img
-                        // src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
-                        src={image}
+                        src={listing.photoUrls.length > 0 ? listing.photoUrls[0] : image}
+                        // src={image}
                         alt=""
                         className="listing-pic"
                     />
                     )}
-                    <NavLink to={`/listings/${listingId}`}>Go to listing</NavLink>
+                    <NavLink to={`/listings/${listingId}`} className='reservation-button' id='listing-button-update-reservation'>Go to listing</NavLink>
                 </div>
             </form>
             
