@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import beachfront from '../../image/categories/beachfront.png';
 import cabin from '../../image/categories/cabin.png';
 import camping from '../../image/categories/camping.png';
@@ -13,12 +13,15 @@ import './ListingsIndex.css';
 const CategoryBar = () => {
     const history = useHistory();
 
+
+
     const handleCategoryClick = (selectedCategory) => {
         history.push(`/listings/category/${selectedCategory}`)
     };
+
     
     return (
-        <div className="category-bar">
+        <div className='category-bar'>
 
             {/* <div className="category-icon-container"> */}
 

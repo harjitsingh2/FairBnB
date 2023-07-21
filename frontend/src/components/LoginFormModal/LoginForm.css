@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 101;
+    z-index: 9999;
 }
 
 .form-header {
@@ -28,7 +28,7 @@
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
-    z-index: 102;
+    z-index: 9999;
 }
 
 .error-msg {
@@ -118,6 +118,6 @@
     text-align: center;
 }
 
-.demo-login :hover {
-    background-image: linear-gradient(to left, #fc365b, #db1064, #bb1e59);
+.demo-login:hover {
+    background-image: linear-gradient(to right, #bb1e59 , #db1064, #fc365b);
 }
