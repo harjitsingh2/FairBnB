@@ -81,10 +81,47 @@ require "faker"
       last_name: 'Taylor',
       password: 'password8'
     )
+    user9 = User.create!(
+      email: 'user9@mail.com',
+      first_name: 'Gurpreet',
+      last_name: 'Kaur',
+      password: 'password9'
+    )
+    user10 = User.create!(
+      email: 'user10@mail.com',
+      first_name: 'Raminder',
+      last_name: 'Singh',
+      password: 'password10'
+    )
+    user11 = User.create!(
+      email: 'user11@mail.com',
+      first_name: 'Deonte',
+      last_name: 'Harris',
+      password: 'password11'
+    )
+    user12 = User.create!(
+      email: 'user12@mail.com',
+      first_name: 'Melinda',
+      last_name: 'Banks',
+      password: 'password12'
+    )
+    user13 = User.create!(
+      email: 'user13@mail.com',
+      first_name: 'Jessica',
+      last_name: 'Martinez',
+      password: 'password13'
+    )
+    user14 = User.create!(
+      email: 'user14@mail.com',
+      first_name: 'Stan',
+      last_name: 'Lee',
+      password: 'password14'
+    )
+
     
   
     puts "Creating random users"
-    10.times do 
+    5.times do 
       User.create!({
         email: Faker::Internet.unique.email,
         first_name: Faker::Name.unique.first_name,
@@ -773,6 +810,198 @@ require "faker"
       end_date: Date.new(2023, 4, 2)
     )
 
+    reservation13 = Reservation.create!(
+      listing_id: listing4.id,
+      guest_id: 8,
+      num_guests: 2,
+      total_price: 300,
+      start_date: Date.new(2023, 9, 10),
+      end_date: Date.new(2023, 9, 12)
+    )
+
+    reservation14 = Reservation.create!(
+      listing_id: listing5.id,
+      guest_id: 9,
+      num_guests: 3,
+      total_price: 480,
+      start_date: Date.new(2023, 9, 15),
+      end_date: Date.new(2023, 9, 18)
+    )
+
+    reservation15 = Reservation.create!(
+      listing_id: listing6.id,
+      guest_id: 10,
+      num_guests: 8,
+      total_price: 1200,
+      start_date: Date.new(2023, 9, 20),
+      end_date: Date.new(2023, 9, 25)
+    )
+
+    reservation16 = Reservation.create!(
+      listing_id: listing7.id,
+      guest_id: 11,
+      num_guests: 2,
+      total_price: 160,
+      start_date: Date.new(2023, 10, 2),
+      end_date: Date.new(2023, 10, 5)
+    )
+
+    reservation17 = Reservation.create!(
+      listing_id: listing8.id,
+      guest_id: 12,
+      num_guests: 1,
+      total_price: 150,
+      start_date: Date.new(2023, 10, 15),
+      end_date: Date.new(2023, 10, 16)
+    )
+
+    reservation18 = Reservation.create!(
+      listing_id: listing1.id,
+      guest_id: 13,
+      num_guests: 3,
+      total_price: 450,
+      start_date: Date.new(2023, 7, 10),
+      end_date: Date.new(2023, 7, 15)
+    )
+
+    reservation19 = Reservation.create!(
+      listing_id: listing2.id,
+      guest_id: 14,
+      num_guests: 2,
+      total_price: 360,
+      start_date: Date.new(2023, 6, 5),
+      end_date: Date.new(2023, 6, 7)
+    )
+
+    reservation20 = Reservation.create!(
+      listing_id: listing3.id,
+      guest_id: 15,
+      num_guests: 1,
+      total_price: 60,
+      start_date: Date.new(2023, 7, 1),
+      end_date: Date.new(2023, 7, 3)
+    )
+
+    reservation21 = Reservation.create!(
+      listing_id: listing4.id,
+      guest_id: 6,
+      num_guests: 4,
+      total_price: 800,
+      start_date: Date.new(2023, 6, 20),
+      end_date: Date.new(2023, 6, 25)
+    )
+
+    reservation22 = Reservation.create!(
+      listing_id: listing5.id,
+      guest_id: 7,
+      num_guests: 2,
+      total_price: 360,
+      start_date: Date.new(2023, 5, 12),
+      end_date: Date.new(2023, 5, 15)
+    )
+
+    reservation23 = Reservation.create!(
+      listing_id: listing6.id,
+      guest_id: 8,
+      num_guests: 6,
+      total_price: 900,
+      start_date: Date.new(2023, 5, 20),
+      end_date: Date.new(2023, 5, 23)
+    )
+
+    reservation24 = Reservation.create!(
+      listing_id: listing7.id,
+      guest_id: 9,
+      num_guests: 1,
+      total_price: 80,
+      start_date: Date.new(2023, 4, 10),
+      end_date: Date.new(2023, 4, 12)
+    )
+
+    reservation25 = Reservation.create!(
+      listing_id: listing8.id,
+      guest_id: 14,
+      num_guests: 2,
+      total_price: 250,
+      start_date: Date.new(2023, 6, 10),
+      end_date: Date.new(2023, 6, 12)
+    )
+
+    reservation26 = Reservation.create!(
+      listing_id: listing9.id,
+      guest_id: 13,
+      num_guests: 5,
+      total_price: 1000,
+      start_date: Date.new(2023, 7, 5),
+      end_date: Date.new(2023, 7, 8)
+    )
+
+    reservation27 = Reservation.create!(
+      listing_id: listing10.id,
+      guest_id: 12,
+      num_guests: 3,
+      total_price: 600,
+      start_date: Date.new(2023, 6, 10),
+      end_date: Date.new(2023, 6, 14)
+    )
+
+    reservation28 = Reservation.create!(
+      listing_id: listing11.id,
+      guest_id: 10,
+      num_guests: 2,
+      total_price: 200,
+      start_date: Date.new(2023, 7, 20),
+      end_date: Date.new(2023, 7, 22)
+    )
+
+    reservation29 = Reservation.create!(
+      listing_id: listing12.id,
+      guest_id: 11,
+      num_guests: 1,
+      total_price: 150,
+      start_date: Date.new(2023, 8, 1),
+      end_date: Date.new(2023, 8, 2)
+    )
+
+    reservation30 = Reservation.create!(
+      listing_id: listing13.id,
+      guest_id: 9,
+      num_guests: 6,
+      total_price: 900,
+      start_date: Date.new(2023, 8, 10),
+      end_date: Date.new(2023, 8, 15)
+    )
+
+    reservation31 = Reservation.create!(
+      listing_id: listing14.id,
+      guest_id: 8,
+      num_guests: 3,
+      total_price: 900,
+      start_date: Date.new(2023, 7, 5),
+      end_date: Date.new(2023, 7, 7)
+    )
+
+    reservation32 = Reservation.create!(
+      listing_id: listing15.id,
+      guest_id: 7,
+      num_guests: 2,
+      total_price: 200,
+      start_date: Date.new(2023, 8, 5),
+      end_date: Date.new(2023, 8, 7)
+    )
+
+    reservation33 = Reservation.create!(
+      listing_id: listing16.id,
+      guest_id: 6,
+      num_guests: 4,
+      total_price: 600,
+      start_date: Date.new(2023, 8, 15),
+      end_date: Date.new(2023, 8, 18)
+    )
+
+
+    ###########################################################################
+
     puts "Creating Reviews"
 
     review1 = Review.create!(
@@ -843,6 +1072,118 @@ require "faker"
       accuracy: 4,
       location: 2,
       value: 5   
+    )
+
+    review6 = Review.create!(
+      listing_id: listing4.id,
+      reservation_id: reservation13.id,
+      reviewer_id: 8,
+      rating: 4,
+      body: "Great cabin and location! Had a wonderful time.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 4,
+      accuracy: 5,
+      location: 4,
+      value: 4
+    )
+    
+    review7 = Review.create!(
+      listing_id: listing5.id,
+      reservation_id: reservation14.id,
+      reviewer_id: 9,
+      rating: 5,
+      body: "Beautiful countryside retreat. Perfect for a peaceful getaway.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+    
+    review8 = Review.create!(
+      listing_id: listing6.id,
+      reservation_id: reservation15.id,
+      reviewer_id: 10,
+      rating: 4,
+      body: "Lovely historic mansion. The decor was amazing.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 4,
+      accuracy: 5,
+      location: 5,
+      value: 4
+    )
+    
+    review9 = Review.create!(
+      listing_id: listing7.id,
+      reservation_id: reservation16.id,
+      reviewer_id: 11,
+      rating: 3,
+      body: "Tiny home was cute but a bit cramped for two people.",
+      cleanliness: 3,
+      communication: 4,
+      checkin: 4,
+      accuracy: 3,
+      location: 4,
+      value: 3
+    )
+    
+    review10 = Review.create!(
+      listing_id: listing8.id,
+      reservation_id: reservation17.id,
+      reviewer_id: 12,
+      rating: 4,
+      body: "Enchanting treehouse experience. Loved the peaceful surroundings.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 5,
+      accuracy: 4,
+      location: 5,
+      value: 4
+    )
+
+    review11 = Review.create!(
+      listing_id: listing1.id,
+      reservation_id: reservation18.id,
+      reviewer_id: 13,
+      rating: 5,
+      body: "Beautiful beachfront villa with stunning views. Highly recommended!",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+    
+    review12 = Review.create!(
+      listing_id: listing2.id,
+      reservation_id: reservation19.id,
+      reviewer_id: 14,
+      rating: 4,
+      body: "Cozy cabin with a rustic charm. Enjoyed our stay!",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 4,
+      accuracy: 5,
+      location: 5,
+      value: 4
+    )
+    
+    review13 = Review.create!(
+      listing_id: listing3.id,
+      reservation_id: reservation20.id,
+      reviewer_id: 15,
+      rating: 5,
+      body: "Perfect camping spot near the lake. Had a peaceful time.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
     )
   
     puts "Done!"
