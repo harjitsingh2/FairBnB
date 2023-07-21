@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchListing } from "../../store/listings";
+import { getReviews } from '../../store/reviews';
 import image from '../../image/image.webp';
 import Amenities from "./amenities";
 import './ListingsShow.css';
@@ -17,6 +18,10 @@ const ListingsShowPage = ( ) => {
     const [overallRating, setOverallRating] = useState(0);
 
     const listing = useSelector((state) => state.listings[listingId]);
+
+    const reviews = useSelector(getReviews);
+    const filteredReviews = reviews.filter((review) => review.listingId === listing.id);
+
    
     const handleOverallRatingChange = (rating) => {
         setOverallRating(rating);
@@ -72,14 +77,20 @@ const ListingsShowPage = ( ) => {
             listingType = (listing.category.charAt(0).toUpperCase() + listing.category.slice(1));
     }
 
-
+    
     
     return (
         <div className="listings-show">
             <div className="show-heading-container">
                 <h1 className="listing-title-show">{listing.title}</h1>
                 <p>{listing.city}, {listing.state}</p>
-                { overallRating !==0 ? <p id="star-rating"><img src={star} className="star"/> {overallRating}</p>: null }
+                {/* { overallRating !==0 ? <p id="star-rating"><img src={star} className="star"/> {overallRating}</p>: null } */}
+                {overallRating !==0 ? 
+                    filteredReviews.length === 1 ? 
+                    <div id='rating'><img src={star} className="star"/> {overallRating} · {filteredReviews.length} Review</div> :
+                    <div id='rating'><img src={star} className="star"/> {overallRating} · {filteredReviews.length} Reviews</div>
+                    : <div>No reviews</div>
+                }
                 {/* <p>Rating: {overallRating}</p> */}
             </div>
              

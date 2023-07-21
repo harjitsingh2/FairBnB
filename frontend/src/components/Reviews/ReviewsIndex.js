@@ -100,7 +100,7 @@ const ReviewsIndex = ({ listingId2, onOverallRatingChange }) => {
   }
 
   if (filteredReviews.length === 0) {
-    return <div>No reviews found for this listing.</div>;
+    return <div>This listing has not been reviewed yet.</div>;
   }
 
   return (
