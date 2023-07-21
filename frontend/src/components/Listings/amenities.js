@@ -51,7 +51,7 @@ const Amenities = () => {
                 )}
             </div>    
             <div className="amenities-list">
-                {listing.washer_dryer && (
+                {listing.washerDryer && (
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={washer} alt="" />
@@ -71,7 +71,7 @@ const Amenities = () => {
                 )}
             </div>    
             <div className="amenities-list">
-                {listing.air_conditioning && (
+                {listing.airConditioning && (
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={ac} alt="" />
@@ -101,7 +101,7 @@ const Amenities = () => {
                 )}
             </div>    
             <div className="amenities-list">
-                {listing.hot_tub && (
+                {listing.hotTub && (
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={tub} alt="" />
@@ -111,7 +111,7 @@ const Amenities = () => {
                 )}
             </div>    
             <div className="amenities-list">
-                {listing.fire_pit && (
+                {listing.firePit && (
                 <div className="amenity-column">
                     <div className='amenity-item'>
                     <img src={firepit} alt="" />
