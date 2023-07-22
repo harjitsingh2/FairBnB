@@ -1185,6 +1185,65 @@ require "faker"
       location: 5,
       value: 5
     )
+
+
+    review14 = Review.create!(
+      listing_id: listing4.id,
+      reservation_id: reservation21.id,
+      reviewer_id: 5,
+      rating: 4,
+      body: "Enjoyed our city stay. The loft was modern and convenient.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 4,
+      accuracy: 4,
+      location: 5,
+      value: 4
+    )
+
+    review15 = Review.create!(
+      listing_id: listing5.id,
+      reservation_id: reservation22.id,
+      reviewer_id: 6,
+      rating: 5,
+      body: "The countryside retreat was peaceful and relaxing.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+
+    review16 = Review.create!(
+      listing_id: listing6.id,
+      reservation_id: reservation23.id,
+      reviewer_id: 7,
+      rating: 5,
+      body: "The historic mansion was beautifully restored. A grand experience.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+
+    review17 = Review.create!(
+      listing_id: listing7.id,
+      reservation_id: reservation24.id,
+      reviewer_id: 8,
+      rating: 4,
+      body: "Enjoyed the tiny home experience. It was a unique stay.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 4,
+      accuracy: 4,
+      location: 5,
+      value: 4
+)
+
+
   
     puts "Done!"
   # end
