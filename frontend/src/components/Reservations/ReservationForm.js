@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { getListing } from "../../store/listings";
 import { createReservation } from "../../store/reservations";
-import moment from 'moment';
+import moment, { defaultFormat } from 'moment';
 
 function ReservationForm() {
   const { listingId } = useParams();
@@ -23,8 +23,9 @@ function ReservationForm() {
   }
 
   let price = listing.price
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const today = (new Date()).toISOString().split('T')[0];
+  const [startDate, setStartDate] = useState(today);
+  const [endDate, setEndDate] = useState(today);
   const [numGuests, setNumGuests] = useState(1);
   const [numNights, setNumNights] = useState(1);
   const [errors, setErrors] = useState([]);
@@ -57,6 +58,7 @@ function ReservationForm() {
   };
 
   const currentDate = new Date()
+  
 
   const isPastDate = (date) => {
     const selectedDate = new Date(date);
@@ -84,7 +86,9 @@ function ReservationForm() {
                         <label>
                             <input className="start-date" type="date" value={startDate}
                             onChange={(e) => setStartDate(e.target.value)} required 
-                            min={("YYYY-MM-DD")}/>
+                            min={("YYYY-MM-DD")}
+                            placeholder={today}
+                            /> 
                         </label>
                         </div>
                     </div>
@@ -96,7 +100,8 @@ function ReservationForm() {
                             onChange={(e) => {
                                 setEndDate(e.target.value)
                             }} required 
-                            min={startDate ? startDate : ("YYYY-MM-DD")}/>
+                            min={startDate ? startDate : ("YYYY-MM-DD")}
+                            placeholder={today}/>
                         </label>
                     </div>
                     <br></br>
@@ -105,7 +110,7 @@ function ReservationForm() {
                         <label>
                             <input type="number"
                             onChange={(e) => setNumGuests(e.target.value)} required
-                            min="1" max={listing.maxGuests}  placeholder='1' />
+                            min="1" max={listing.maxGuests}  placeholder='0' />
                         </label>
                     </div>
         
