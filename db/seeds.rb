@@ -999,6 +999,90 @@ require "faker"
       end_date: Date.new(2023, 8, 18)
     )
 
+    puts "Creating Reservations"
+
+    reservation34 = Reservation.create!(
+      listing_id: listing8.id,
+      guest_id: 18,
+      num_guests: 2,
+      total_price: 750,
+      start_date: Date.new(2022, 8, 10),
+      end_date: Date.new(2022, 8, 15)
+    )
+
+    reservation35 = Reservation.create!(
+      listing_id: listing9.id,
+      guest_id: 19,
+      num_guests: 8,
+      total_price: 1500,
+      start_date: Date.new(2023, 7, 11),
+      end_date: Date.new(2023, 7, 14)
+    )
+
+    reservation36 = Reservation.create!(
+      listing_id: listing10.id,
+      guest_id: 17,
+      num_guests: 4,
+      total_price: 600,
+      start_date: Date.new(2023, 6, 15),
+      end_date: Date.new(2023, 6, 18)
+    )
+
+    reservation37 = Reservation.create!(
+      listing_id: listing11.id,
+      guest_id: 19,
+      num_guests: 2,
+      total_price: 100,
+      start_date: Date.new(2023, 5, 20),
+      end_date: Date.new(2023, 5, 22)
+    )
+
+    reservation38 = Reservation.create!(
+      listing_id: listing12.id,
+      guest_id: 18,
+      num_guests: 1,
+      total_price: 200,
+      start_date: Date.new(2023, 4, 5),
+      end_date: Date.new(2023, 4, 7)
+    )
+
+    reservation39 = Reservation.create!(
+      listing_id: listing13.id,
+      guest_id: 19,
+      num_guests: 6,
+      total_price: 900,
+      start_date: Date.new(2023, 3, 10),
+      end_date: Date.new(2023, 3, 13)
+    )
+
+    reservation40 = Reservation.create!(
+      listing_id: listing14.id,
+      guest_id: 17,
+      num_guests: 12,
+      total_price: 2400,
+      start_date: Date.new(2023, 2, 15),
+      end_date: Date.new(2023, 2, 20)
+    )
+
+    reservation41 = Reservation.create!(
+      listing_id: listing15.id,
+      guest_id: 18,
+      num_guests: 2,
+      total_price: 180,
+      start_date: Date.new(2023, 1, 20),
+      end_date: Date.new(2023, 1, 22)
+    )
+
+    reservation42 = Reservation.create!(
+      listing_id: listing16.id,
+      guest_id: 19,
+      num_guests: 2,
+      total_price: 200,
+      start_date: Date.new(2022, 12, 5),
+      end_date: Date.new(2022, 12, 7)
+    )
+
+
 
     ###########################################################################
 
@@ -1241,7 +1325,133 @@ require "faker"
       accuracy: 4,
       location: 5,
       value: 4
-)
+    )  
+    
+    review18 = Review.create!(
+      listing_id: listing8.id,
+      reservation_id: reservation34.id,
+      reviewer_id: 18,
+      rating: 4,
+      body: "The treehouse retreat was a unique experience. Loved staying in the woods and enjoying the tranquility.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 4,
+      accuracy: 4,
+      location: 5,
+      value: 4
+    )
+    
+    review19 = Review.create!(
+      listing_id: listing9.id,
+      reservation_id: reservation35.id,
+      reviewer_id: 19,
+      rating: 5,
+      body: "Luxurious beachfront villa. Had a wonderful time with family.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+    
+    review20 = Review.create!(
+      listing_id: listing10.id,
+      reservation_id: reservation36.id,
+      reviewer_id: 17,
+      rating: 5,
+      body: "Beautiful mountain cabin. Loved the scenic views and the cozy fireplace.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+    
+    review21 = Review.create!(
+      listing_id: listing11.id,
+      reservation_id: reservation37.id,
+      reviewer_id: 19,
+      rating: 4,
+      body: "The city loft was comfortable and conveniently located near great restaurants.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 4,
+      accuracy: 4,
+      location: 5,
+      value: 4
+    )
+    
+    review22 = Review.create!(
+      listing_id: listing12.id,
+      reservation_id: reservation38.id,
+      reviewer_id: 18,
+      rating: 5,
+      body: "Had a peaceful countryside stay. Loved the rustic charm.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+    
+    review23 = Review.create!(
+      listing_id: listing13.id,
+      reservation_id: reservation39.id,
+      reviewer_id: 19,
+      rating: 5,
+      body: "Grand historic mansion. The place was magnificent and filled with history.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+    
+    review24 = Review.create!(
+      listing_id: listing14.id,
+      reservation_id: reservation40.id,
+      reviewer_id: 17,
+      rating: 4,
+      body: "Enjoyed staying in the charming tiny home. The tiny home experience was unforgettable.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 4,
+      accuracy: 4,
+      location: 5,
+      value: 4
+    )
+    
+    review25 = Review.create!(
+      listing_id: listing15.id,
+      reservation_id: reservation41.id,
+      reviewer_id: 18,
+      rating: 5,
+      body: "The treehouse retreat was a magical experience. Nature at its best!",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+    
+    review26 = Review.create!(
+      listing_id: listing16.id,
+      reservation_id: reservation42.id,
+      reviewer_id: 19,
+      rating: 5,
+      body: "Enchanting treehouse. Loved being close to nature and waking up to the birdsong.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
 
 
   
