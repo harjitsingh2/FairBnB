@@ -53,10 +53,11 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* position: fixed; */
-    /* top: 0px; */
+    /* position: relative; */
+    /* top: 40px; */
     gap: 60px;
     width: 100%;
+    /* background-color: aqua; */
     /* z-index: -100; */
     /* display: none; */
 }
@@ -67,11 +68,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    /* position: relative; */
     max-width: 60px;
     height: auto;
     padding: 2%;
     cursor: pointer;
+    /* z-index: -1; */
+    /* background-color: blueviolet; */
 
 }
 
@@ -83,12 +86,18 @@
     bottom: -2px;
     width: 100%;
     height: 2px;
+    /* background-color: rgb(131, 28, 28); */
     background-color: lightgray;
 }
 
   .category-icon:hover .category-name {
     /* font-weight: 900; */
     font-family: "AirbnbMed";
+    
+}
+
+.category-icon:hover {
+    border-bottom: 2px solid rgb(183, 182, 182);
 }
 
 
