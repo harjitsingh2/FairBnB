@@ -16,7 +16,7 @@ In **Fairbnb**, users will be able to:
 - Reserve a listing for specific dates
 - Leave reviews for listings they have stayed at
 
-![](frontend/public/images/Fairbnb_Listing_Page.gif)
+![Fairbnb Listing Page](frontend/src/image/Fairbnb_Listing_Page.gif)
 
 ---
 
