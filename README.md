@@ -1,6 +1,6 @@
 # Fairbnb
 
-Welcome to **Fairbnb**. Are you tired of high priced rentals and high fees? Then you’ve come to the right place. Fairbnb is an online marketplace where users can find fair and reasonably priced rentals for their short and long-term needs. That way you can travel more and live your life to its fullest. Make an account, login, and start exploring the thousands of fair and reasonably priced listings at Fairbnb.
+Welcome to **Fairbnb**. Are you tired of high priced rentals and high fees? Then you’ve come to the right place. Fairbnb is an online marketplace where users can find fair and reasonably priced rentals with no hidden fees. That way you can travel more and live your life to its fullest. Make an account, login, and start exploring dazzling listings at Fairbnb.
 
 [Fairbnb's Live Website](https://fairbnb-jcgn.onrender.com/)
 
@@ -15,6 +15,8 @@ In **Fairbnb**, users will be able to:
 - Search listings by categories they are interested in
 - Reserve a listing for specific dates
 - Leave reviews for listings they have stayed at
+
+![](frontend/public/images/Fairbnb_Listing_Page.gif)
 
 ---
 
