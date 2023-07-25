@@ -26,22 +26,11 @@ const ReservationsIndexItem = ({ reservation }) => {
     const today = (new Date()).toISOString().split('T')[0];
 
     // logic for importing and filtering through reviews based on reservation
-    // const [reviews, setReviews] = useState();
     const reviews = useSelector(getReviews);
     useEffect(() => {
         dispatch(fetchReviews(listingId));
       }, [dispatch]);
-    // useEffect(() => {
-    //     dispatch(fetchReviews(listingId)).then(asyncReviews => {
-    //         setReviews(asyncReviews);
-    //     });
-    //   }, [dispatch]);
-    // if (!reviews) {
-    //     return (
-    //         <div>Loading</div>
-    //     )
-    //     }
-    // debugger
+
     const filteredReviews = reviews.filter((review) => review.reservationId === reservationId);
     // console.log(reviews)
     // debugger
@@ -49,8 +38,10 @@ const ReservationsIndexItem = ({ reservation }) => {
     // console.log(reservationId)
     // console.log(reservation.id)
 
+    // filteredReviews returns an array. take first element so I can pass object as prop to ReviewsModal
     const singleReview = filteredReviews[0];
-
+    
+    // logic for if the reservation has a review or not
     const alreadyReviewed = filteredReviews.some(function(obj) {
         return obj.reservationId > 0;
     });

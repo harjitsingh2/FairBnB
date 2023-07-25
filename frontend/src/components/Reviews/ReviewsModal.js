@@ -26,23 +26,6 @@ const ReviewsModal = ({ listingId, reservationId, reviewed, reviewProp }) => {
     closeModal();
   };
 
-  // useEffect(() => {
-  //   const handleClickOutside = () => {
-  //     closeModal() 
-  //   };
-  
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, [dispatch]);
-
-
-  // Deleting review
-//   const reviewId = useContext(ReviewIdContext)
-//   const reviewerId = useContext(ReviewerIdContext)
-
-// debugger
 
   const clickDelete = (e) => {
     // console.log(reviewProp)
@@ -75,24 +58,6 @@ const ReviewsModal = ({ listingId, reservationId, reviewed, reviewProp }) => {
     </div>
   );
 
-// return (
-//     <div>
-//       <button onClick={openModal}>Leave a Review</button>
-//       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='review-modal'>
-//         {formSubmitted ? (
-//           <div className="form-submitted-message">
-//             <p>Review submitted successfully!</p>
-//             <button onClick={closeModal} className='close-review'>X</button>
-//           </div>
-//         ) : (
-//           <div>
-//               <ReviewForm listingId={listingId} reservationId={reservationId} closeModal={handleFormSubmit} />
-//               <button onClick={closeModal} className='close-review'>X</button>
-//           </div>
-//         )}
-//       </Modal>
-//     </div>
-//   );
 };
 
 export default ReviewsModal;

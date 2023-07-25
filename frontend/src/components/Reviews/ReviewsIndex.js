@@ -15,20 +15,13 @@ const ReviewsIndex = ({ listingId2, onOverallRatingChange }) => {
   useEffect(() => {
     dispatch(fetchReviews(listingId2));
   }, [dispatch]);
-  // useEffect(() => {
-  //   dispatch(fetchReviews(listingId2));
-  //   const rating = overallRating();
-  //   onOverallRatingChange(rating)
-  // }, [dispatch, onOverallRatingChange]);
+
 
   const filteredReviews = reviews.filter((review) => review.listingId === listingId2);
-//   console.log('reviews');
-//   console.log(reviews);
-//   console.log('filteredReviews');
+  // console.log(reviews);
   // console.log(filteredReviews);
 
   // Functions for calculating overall rating of each review category for the listing
-
   const overallRating = () => {
     if (filteredReviews.length === 0) {
       return 0;
@@ -112,7 +105,6 @@ const ReviewsIndex = ({ listingId2, onOverallRatingChange }) => {
       
       <br></br>
       <div className='categories'>
-        {/* <li>Cleanliness: {overallCleanliness()}</li> */}
         <li>
           Cleanliness 
           <div className="rating-bar">
