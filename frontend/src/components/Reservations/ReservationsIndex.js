@@ -27,7 +27,11 @@ const ReservationsIndex = () => {
         return (new Date(a.startDate) - new Date(b.startDate));
     });
 
-    const newReservations = sortedReservations.filter(
+    const sortedNewReservations = [...reservations].sort((a,b) => {
+        return (new Date(a.startDate) - new Date(b.startDate));
+    });
+
+    const newReservations = sortedNewReservations.filter(
         (reservation) => reservation.startDate > today
     )
 
