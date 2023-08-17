@@ -57,6 +57,7 @@
     /* top: 40px; */
     gap: 60px;
     width: 100%;
+    max-height: 150px;
     /* background-color: aqua; */
     /* z-index: -100; */
     /* display: none; */
