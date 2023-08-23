@@ -117,6 +117,36 @@ require "faker"
       last_name: 'Lee',
       password: 'password14'
     )
+    user15 = User.create!(
+      email: 'user15@mail.com',
+      first_name: 'Daenerys',
+      last_name: 'Targaryen',
+      password: 'password'
+    )
+    user16 = User.create!(
+      email: 'user16@mail.com',
+      first_name: 'Jon',
+      last_name: 'Snow',
+      password: 'password'
+    )
+    user17 = User.create!(
+      email: 'user17@mail.com',
+      first_name: 'Arya',
+      last_name: 'Stark',
+      password: 'password'
+    )
+    user18 = User.create!(
+      email: 'user18@mail.com',
+      first_name: 'Bran',
+      last_name: 'Stark',
+      password: 'password'
+    )
+    user19 = User.create!(
+      email: 'user19@mail.com',
+      first_name: 'Missandei',
+      last_name: 'Naath',
+      password: 'password'
+    )
 
     
   
@@ -139,26 +169,26 @@ require "faker"
       state: "FL",
       zip_code: "33131",
       title: "Stunning Beachfront Villa",
-      description: "Wake up to breathtaking ocean views in our beachfront villa.",
+      description: "Wake up to breathtaking ocean views in our beachfront villa. This house has everything you need and more. Whether you are looking to vacation near the beach or are hosting a special event in Miami, stay with us and have an unforgettable experience. Our home is directly on the water and is a 10-minute drive from Downtwon Miami.",
       category: "beachfront",
       price: 350,
-      max_guests: 6,
-      num_bedrooms: 3,
-      num_beds: 4,
-      num_bathrooms: 2,
+      max_guests: 10,
+      num_bedrooms: 5,
+      num_beds: 6,
+      num_bathrooms: 4,
       kitchen: true,
       wifi: true,
       tv: true,
       washer_dryer: true,
       parking: true,
       air_conditioning: true,
-      heating: false,
+      heating: true,
       pool: true,
-      hot_tub: false,
-      fire_pit: true,
-      latitude: 25.7617,
-      longitude: -80.1918,
-      host_id: 3
+      hot_tub: true,
+      fire_pit: false,
+      latitude: 25.7361,
+      longitude: -80.2235,
+      host_id: 4
     )
 
     listing2 = Listing.create!(
@@ -306,7 +336,7 @@ require "faker"
       fire_pit: false,
       latitude: 37.7749,
       longitude: -122.4194,
-      host_id: 4
+      host_id: 3
     )
 
     listing7 = Listing.create!(
@@ -761,11 +791,11 @@ require "faker"
 
     reservation7 = Reservation.create!(
       listing_id: listing1.id,
-      guest_id: 1,
+      guest_id: user16.id,
       num_guests: 4,
       total_price: 1050,
-      start_date: Date.new(2023, 6, 1),
-      end_date: Date.new(2023, 6, 4)
+      start_date: Date.new(2023, 1, 1),
+      end_date: Date.new(2023, 1, 4)
     )
     reservation8 = Reservation.create!(
       listing_id: listing2.id,
@@ -1090,38 +1120,42 @@ require "faker"
 
     review1 = Review.create!(
       listing_id: listing1.id,
+      reservation_id: reservation7.id,
+      reviewer_id: user16.id,
+      rating: 5,
+      body: "The North gets awfully cold this time of year. I had heard that Miami is a great place to relax and so I reserved Emily's home. My siblings and I absolutely enjoyed our time here. We even brought our direwolves along and they loved running around the beach. We will definitely be coming back next winter.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5,
+      # created_at: Sat, 14 Jan 2023 18:50:09.13439000 UTC +00:00
+      created_at: Date.new(2023, 01, 14)
+    )
+    
+    review2 = Review.create!(
+      listing_id: listing1.id,
       reservation_id: reservation6.id,
       reviewer_id:1,
       rating: 5,
-      body: "This was an amazing location and house!",
+      body: "This was an amazing location and house! I cannot recommend it enough! It is probably the best Fairbnb I have ever stayed at.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
       accuracy: 5,
       location: 5,
-      value: 5   
+      value: 5,
+      created_at: Date.new(2023, 07, 01)   
     )
 
-    review2 = Review.create!(
-      listing_id: listing1.id,
-      reservation_id: reservation7.id,
-      reviewer_id:1,
-      rating: 5,
-      body: "We had such a great time during our first stay that we came again!",
-      cleanliness: 5,
-      communication: 5,
-      checkin: 5,
-      accuracy: 5,
-      location: 5,
-      value: 5   
-    )
   
     review3 = Review.create!(
       listing_id: listing2.id,
       reservation_id: reservation8.id,
       reviewer_id:3,
       rating: 5,
-      body: "The best Airbnb stay we've ever had!",
+      body: "The best Fairbnb stay we've ever had!",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
@@ -1233,13 +1267,14 @@ require "faker"
       reservation_id: reservation18.id,
       reviewer_id: 13,
       rating: 5,
-      body: "Beautiful beachfront villa with stunning views. Highly recommended!",
+      body: "Beautiful beachfront villa with stunning views. Highly recommended! Emily was a great host and communicated well throughout. This place is such a great location. You can wake up and see the sunrise over the water and there are so many places to check out nearby.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
       accuracy: 5,
       location: 5,
-      value: 5
+      value: 5,
+      created_at: Date.new(2023, 8, 14)
     )
     
     review12 = Review.create!(
