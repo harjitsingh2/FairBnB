@@ -28,8 +28,8 @@ require "faker"
     puts "Creating additional users"
     user1 = User.create!(
       email: 'user1@mail.com',
-      first_name: 'User',
-      last_name: 'One',
+      first_name: 'Tormund',
+      last_name: 'Giantsbane',
       password: 'password1'
     )
     
@@ -198,7 +198,7 @@ require "faker"
       state: "Minnesota",
       zip_code: "12345",
       title: "Rustic Cabin Getaway",
-      description: "Escape to a cozy cabin in the serene countryside of the Midwest.",
+      description: "Escape to a cozy cabin in the serene countryside of the Midwest. This cabin is beautiful year-round and fully equipped for various seasonal activities. We have purposely kept this cabin an electronics and wifi-free zone so that you may disconnect from technology and connect with nature. There are various hikes just minutes away and friendly outdoor neighbors and critters for you to meet. Just be aware of the zombies and white walkers.",
       category: "cabin",
       price: 180,
       max_guests: 4,
@@ -215,8 +215,8 @@ require "faker"
       pool: false,
       hot_tub: false,
       fire_pit: true,
-      latitude: 39.1234,
-      longitude: -91.5678,
+      latitude: 48.3642,
+      longitude: -93.5968,
       host_id: 2
     )
   
@@ -799,11 +799,11 @@ require "faker"
     )
     reservation8 = Reservation.create!(
       listing_id: listing2.id,
-      guest_id: 3,
+      guest_id: user17.id,
       num_guests: 2,
       total_price: 180,
       start_date: Date.new(2023, 6, 1),
-      end_date: Date.new(2023, 6, 2)
+      end_date: Date.new(2023, 6, 2),
     )
     reservation9 = Reservation.create!(
       listing_id: listing2.id,
@@ -1153,15 +1153,16 @@ require "faker"
     review3 = Review.create!(
       listing_id: listing2.id,
       reservation_id: reservation8.id,
-      reviewer_id:3,
+      reviewer_id: user17.id,
       rating: 5,
-      body: "The best Fairbnb stay we've ever had!",
+      body: "I grew up in the north and Tormund's cabin was the perfect getaway for me. My traveling companion, Sandor Clegane, and I have been travelling for months and really needed a nice, peaceful place where we could disconnect and put our feet up. The cabin did not disappoint! I highly recommend it for anyone who is looking for peace and quiet and isn't afraid of hearing strange sounds at night coming from the woods.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
       accuracy: 5,
       location: 5,
-      value: 5   
+      value: 5,
+      created_at: Date.new(2023, 6, 5)   
     )
   
     review4 = Review.create!(
@@ -1169,13 +1170,14 @@ require "faker"
       reservation_id: reservation9.id,
       reviewer_id:4,
       rating: 4,
-      body: "Solid place and solid value.",
+      body: "The best Fairbnb stay I've ever had!",
       cleanliness: 4,
       communication: 4,
       checkin: 5,
       accuracy: 4,
       location: 4,
-      value: 5   
+      value: 5,
+      created_at: Date.new(2023, 7, 5)   
     )
 
     review5 = Review.create!(
@@ -1282,13 +1284,14 @@ require "faker"
       reservation_id: reservation19.id,
       reviewer_id: 14,
       rating: 4,
-      body: "Cozy cabin with a rustic charm. Enjoyed our stay!",
+      body: "This was a very cozy cabin with a rustic charm. Enjoyed our stay!",
       cleanliness: 4,
       communication: 5,
       checkin: 4,
       accuracy: 5,
       location: 5,
-      value: 4
+      value: 4,
+      created_at: Date.new(2023, 8, 5)
     )
     
     review13 = Review.create!(
