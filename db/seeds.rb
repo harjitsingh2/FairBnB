@@ -1123,7 +1123,7 @@ require "faker"
       reservation_id: reservation7.id,
       reviewer_id: user16.id,
       rating: 5,
-      body: "The North gets awfully cold this time of year. I had heard that Miami is a great place to relax and so I reserved Emily's home. My siblings and I absolutely enjoyed our time here. We even brought our direwolves along and they loved running around the beach. We will definitely be coming back next winter.",
+      body: "The North gets awfully cold this time of year. I had heard that Miami is a great place to relax and so I reserved Emily's home. My siblings and I absolutely enjoyed our time here. We even brought our direwolves along and they loved running around the beach. We will definitely be coming back next winter because as you know, winter is coming.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
