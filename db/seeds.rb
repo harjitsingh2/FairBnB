@@ -287,7 +287,7 @@ require "faker"
       state: "TX",
       zip_code: "78701",
       title: "Serene Countryside Retreat",
-      description: "Get away from the hustle and bustle at our peaceful countryside retreat.",
+      description: "Get away from the hustle and bustle of the city by staying at our peaceful countryside retreat. You will have the entire guest home and pool to yourself. If you want to see our animals, we are available to give you a tour of the ranch.",
       category: "countryside",
       price: 180,
       max_guests: 4,
@@ -301,11 +301,11 @@ require "faker"
       parking: true,
       air_conditioning: true,
       heating: true,
-      pool: false,
+      pool: true,
       hot_tub: false,
       fire_pit: true,
-      latitude: 30.2672,
-      longitude: -97.7431,
+      latitude: 30.1243,
+      longitude: -98.0355,
       host_id: 5
     )
     
@@ -1328,7 +1328,7 @@ require "faker"
       reservation_id: reservation22.id,
       reviewer_id: 6,
       rating: 5,
-      body: "The countryside retreat was peaceful and relaxing.",
+      body: "The countryside retreat was peaceful and relaxing. I'll be coming back next year when I need to get away and see some animals.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
