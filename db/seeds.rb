@@ -313,11 +313,11 @@ require "faker"
     listing6 = Listing.create!(
       address: "987 Mansion Ave",
       apt_num: "",
-      city: "Los Angeles",
+      city: "Beverly Hills",
       state: "CA",
-      zip_code: "94102",
+      zip_code: "90210",
       title: "Grand Historic Mansion",
-      description: "Experience the grandeur of a meticulously restored historic mansion.",
+      description: "Experience the grandeur of a meticulously restored historic mansion. Explore the Hollywood Hills, drive to Downtown LA, or stay inddors! Since this mansion has all the amenities you need, you may not feel the need to leave.",
       category: "mansion",
       price: 500,
       max_guests: 10,
@@ -334,8 +334,8 @@ require "faker"
       pool: false,
       hot_tub: true,
       fire_pit: false,
-      latitude: 37.7749,
-      longitude: -122.4194,
+      latitude: 34.0728,
+      longitude: -118.4185,
       host_id: 3
     )
 
@@ -1227,7 +1227,7 @@ require "faker"
       reservation_id: reservation15.id,
       reviewer_id: 10,
       rating: 4,
-      body: "Lovely historic mansion. The decor was amazing.",
+      body: "This was a lovely historic mansion. People won't know how great it is until they stayed here.",
       cleanliness: 4,
       communication: 5,
       checkin: 4,
@@ -1342,7 +1342,7 @@ require "faker"
       reservation_id: reservation23.id,
       reviewer_id: 7,
       rating: 5,
-      body: "The historic mansion was beautifully restored. A grand experience.",
+      body: "The historic mansion was beautifully restored. A grand experience fit for royalty. My 9 closest friends and I had a wonderful getaway while visiting LA and staying here.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
