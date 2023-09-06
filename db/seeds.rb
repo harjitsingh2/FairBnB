@@ -1199,13 +1199,13 @@ require "faker"
       reservation_id: reservation13.id,
       reviewer_id: 8,
       rating: 4,
-      body: "Great cabin and location! Had a wonderful time.",
-      cleanliness: 4,
+      body: "Daniel's apartment was beautiful and so clean. It's location is also really great because it is near a lot of great restaurants and shops. It was just a little bit out of my budget. It was a nice treat but I can't afford too many days.",
+      cleanliness: 5,
       communication: 5,
       checkin: 4,
       accuracy: 5,
-      location: 4,
-      value: 4
+      location: 5,
+      value: 3
     )
     
     review7 = Review.create!(
@@ -1314,13 +1314,13 @@ require "faker"
       reservation_id: reservation21.id,
       reviewer_id: 5,
       rating: 4,
-      body: "Enjoyed our city stay. The loft was modern and convenient.",
-      cleanliness: 4,
+      body: "My partner and I enjoyed our city stay. The loft was modern and convenient. It was the perfect place to stay as we explored Chicago.",
+      cleanliness: 5,
       communication: 5,
       checkin: 4,
-      accuracy: 4,
+      accuracy: 5,
       location: 5,
-      value: 4
+      value: 5
     )
 
     review15 = Review.create!(
