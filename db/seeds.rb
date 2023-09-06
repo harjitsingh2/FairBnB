@@ -228,7 +228,7 @@ require "faker"
       state: "NY",
       zip_code: "14550",
       title: "Camping near a New York Lake",
-      description: "Stay in a comfortable and well-maintained campsite located near New York's Silver Lake.",
+      description: "Stay in a comfortable and well-maintained campsite located near New York's Silver Lake. Camping is a great way to truly disconnect from technology and connect to the natural world. The experience at this campsite is the closest you can get to sleeping outdoors. The advantage of camping at our site is that you have access to a shared bathroom and shower facility.",
       category: "camping",
       price: 60,
       max_guests: 2,
@@ -1184,13 +1184,13 @@ require "faker"
       listing_id: listing3.id,
       reservation_id: reservation10.id,
       reviewer_id:2,
-      rating: 3,
-      body: "The value was great. I'm not sure if I want to go camping next to a lake again though.",
-      cleanliness: 3,
+      rating: 5,
+      body: "Why did no one tell me about camping before?! This was an amazing experience and the campsite was cleaner than my actual home.",
+      cleanliness: 5,
       communication: 5,
-      checkin: 4,
-      accuracy: 4,
-      location: 2,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
       value: 5   
     )
 
@@ -1298,13 +1298,13 @@ require "faker"
       listing_id: listing3.id,
       reservation_id: reservation20.id,
       reviewer_id: 15,
-      rating: 5,
-      body: "Perfect camping spot near the lake. Had a peaceful time.",
-      cleanliness: 5,
+      rating: 4,
+      body: "The value was great and the host was nice. I'm not sure if I want to go camping next to a lake again though.",
+      cleanliness: 4,
       communication: 5,
       checkin: 5,
-      accuracy: 5,
-      location: 5,
+      accuracy: 4,
+      location: 2,
       value: 5
     )
 
