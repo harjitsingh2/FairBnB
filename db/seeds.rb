@@ -344,14 +344,14 @@ require "faker"
       apt_num: "",
       city: "Portland",
       state: "OR",
-      zip_code: "97201",
+      zip_code: "97239",
       title: "Quaint Tiny Home Getaway",
-      description: "Experience minimalist living in our charming tiny home.",
+      description: "Experience minimalist living in our charming tiny home. You'll be close to a bunch of great hikes and only 15 minutes from downtown Portland.",
       category: "tiny home",
       price: 80,
       max_guests: 2,
-      num_bedrooms: 1,
-      num_beds: 1,
+      num_bedrooms: 0,
+      num_beds: 2,
       num_bathrooms: 1,
       kitchen: true,
       wifi: false,
@@ -363,8 +363,8 @@ require "faker"
       pool: false,
       hot_tub: false,
       fire_pit: false,
-      latitude: 45.5155,
-      longitude: -122.6793,
+      latitude: 45.4887,
+      longitude: -122.6963,
       host_id: 6
     )
     
@@ -1241,13 +1241,13 @@ require "faker"
       reservation_id: reservation16.id,
       reviewer_id: 11,
       rating: 3,
-      body: "Tiny home was cute but a bit cramped for two people.",
+      body: "Tiny home was cute but a bit cramped for two people plus a baby. I think it would be great for a solo traveler or couple, not for kids.",
       cleanliness: 3,
       communication: 4,
       checkin: 4,
       accuracy: 3,
       location: 4,
-      value: 3
+      value: 5
     )
     
     review10 = Review.create!(
@@ -1356,7 +1356,7 @@ require "faker"
       reservation_id: reservation24.id,
       reviewer_id: 8,
       rating: 4,
-      body: "Enjoyed the tiny home experience. It was a unique stay.",
+      body: "Enjoyed the tiny home experience. It was a unique stay. I got to check out a lot of local hikes and explore beautiful parks.",
       cleanliness: 4,
       communication: 5,
       checkin: 4,
