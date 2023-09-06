@@ -375,7 +375,7 @@ require "faker"
       state: "WA",
       zip_code: "98101",
       title: "Enchanting Treehouse Retreat",
-      description: "Escape to a magical treehouse nestled in the woods.",
+      description: "Escape to a magical treehouse nestled in the woods. Located in the Olympic National Forest, you will be completely immersed with nature and wildlife in my treehouse.",
       category: "treehouse",
       price: 150,
       max_guests: 2,
@@ -392,8 +392,8 @@ require "faker"
       pool: false,
       hot_tub: false,
       fire_pit: false,
-      latitude: 47.6062,
-      longitude: -122.3321,
+      latitude: 46.8321,
+      longitude: -123.2503,
       host_id: 8
     )
 
@@ -404,7 +404,7 @@ require "faker"
       state: "CA",
       zip_code: "90265",
       title: "Luxurious Beachfront Villa",
-      description: "Experience luxury living with direct beach access at our stunning beachfront villa.",
+      description: "Experience luxury living with direct beach access at our stunning beachfront villa. With 4 bedrooms, 4 bathrooms, and nearly every amenity that can be listed on Fairbnb, you and your companions have everything you need. Come for you much-needed vacation, stay for the once-in-a-lifetime experience.",
       category: "beachfront",
       price: 500,
       max_guests: 8,
@@ -421,8 +421,8 @@ require "faker"
       pool: true,
       hot_tub: true,
       fire_pit: true,
-      latitude: 34.0307,
-      longitude: -118.7798,
+      latitude: 34.0231,
+      longitude: -118.7805,
       host_id: 9
     )
     
@@ -433,7 +433,7 @@ require "faker"
       state: "NC",
       zip_code: "28803",
       title: "Rustic Mountain Cabin",
-      description: "Escape to a cozy cabin nestled in the breathtaking mountains of Asheville.",
+      description: "Escape to a cozy cabin nestled in the breathtaking mountains of Asheville. You can get away from  society without having to sacrifice comfort and amenities. The hot tub is available year-round and feels amazing when outside temperatures drop below freezing.",
       category: "cabin",
       price: 200,
       max_guests: 4,
@@ -824,7 +824,7 @@ require "faker"
 
     reservation11 = Reservation.create!(
       listing_id: listing9.id,
-      guest_id: 1,
+      guest_id: 17,
       num_guests: 8,
       total_price: 1500,
       start_date: Date.new(2023, 3, 1),
@@ -1255,7 +1255,7 @@ require "faker"
       reservation_id: reservation17.id,
       reviewer_id: 12,
       rating: 4,
-      body: "Enchanting treehouse experience. Loved the peaceful surroundings.",
+      body: "I had an enchanting treehouse experience. I have never camped or been out in nature before. I loved the peaceful surroundings.",
       cleanliness: 4,
       communication: 5,
       checkin: 5,
@@ -1370,7 +1370,7 @@ require "faker"
       reservation_id: reservation34.id,
       reviewer_id: 18,
       rating: 4,
-      body: "The treehouse retreat was a unique experience. Loved staying in the woods and enjoying the tranquility.",
+      body: "I came all the way from Braavos to stay in Sophia's treehouse. I have to say, I was not disappointed. Loved staying in the woods and enjoying the tranquility. I even saw Nymeria wandering around with her pack!",
       cleanliness: 4,
       communication: 5,
       checkin: 4,
@@ -1384,7 +1384,7 @@ require "faker"
       reservation_id: reservation35.id,
       reviewer_id: 19,
       rating: 5,
-      body: "Luxurious beachfront villa. Had a wonderful time with family.",
+      body: "After battling with the White Walkers and protecting the Seven Kingdoms from extinction, my family and I needed a vacation. Michael's beachfront house was perfect for us northern kids who were raised in harsh winters. Once we got to the house, we only left to go to the beach. It was everything we wanted.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
@@ -1398,7 +1398,7 @@ require "faker"
       reservation_id: reservation36.id,
       reviewer_id: 17,
       rating: 5,
-      body: "Beautiful mountain cabin. Loved the scenic views and the cozy fireplace.",
+      body: "Beautiful mountain cabin. Loved the scenic views and the cozy fireplace. My family and I will be coming back this winter.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
@@ -1491,6 +1491,33 @@ require "faker"
       value: 5
     )
 
+    review27 = Review.create!(
+      listing_id: listing9.id,
+      reservation_id: reservation11.id,
+      reviewer_id: 17,
+      rating: 5,
+      body: "The views were breathtaking and the house itself was exquisite. The place is a bit expensive but it is a nice treat if you're willing to spend.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 4
+    )
+
+    review28 = Review.create!(
+      listing_id: listing10.id,
+      reservation_id: reservation27.id,
+      reviewer_id: 12,
+      rating: 5,
+      body: "Gurpreet definitely has a beautiful cabin. The listing is accurate and actually better than the pictures. Considering the remote location, I just wish the price were a bit cheaper so that I could stay longer.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 4,
+      value: 3
+    )
 
   
     puts "Done!"
