@@ -462,7 +462,7 @@ require "faker"
       state: "WY",
       zip_code: "82190",
       title: "Scenic Camping Experience",
-      description: "Immerse yourself in the beauty of nature with a camping adventure near Yellowstone National Park.",
+      description: "Immerse yourself in the beauty of nature with a camping adventure near Yellowstone National Park. Take the stressful part of having to set up a tent out of your camping experience. As you're exploring Yellowstone, not only do you get a pre-set tent by staying with me, but you also get a modest glamping experience.",
       category: "camping",
       price: 80,
       max_guests: 2,
@@ -491,7 +491,7 @@ require "faker"
       state: "NY",
       zip_code: "10001",
       title: "Modern City Apartment",
-      description: "Stay in a sleek and modern apartment in the heart of vibrant New York City.",
+      description: "Stay in a sleek and modern apartment in vibrant Chelsea neighborhood of New York City. You'll be right next to Chelsea Market, Chelsea Piers, and The High Line. There is so much to see, so book today and discover New York!",
       category: "city",
       price: 300,
       max_guests: 2,
@@ -514,15 +514,15 @@ require "faker"
     )
     
     listing13 = Listing.create!(
-      address: "456 Countryside Lane",
+      address: "456 Healing Lane",
       apt_num: "",
       city: "Sedona",
       state: "AZ",
       zip_code: "86336",
       title: "Tranquil Countryside Retreat",
-      description: "Escape the hustle and bustle and unwind in the serene countryside of Sedona.",
+      description: "Sedona is an excellent place to unwind and connect with your deeper self. You don't have to do it alone! Stay at my countryside home and bring your friends and family with you! There are many spiritual retreats and healing centers nearby for you to visit.",
       category: "countryside",
-      price: 150,
+      price: 120,
       max_guests: 6,
       num_bedrooms: 3,
       num_beds: 4,
@@ -549,7 +549,7 @@ require "faker"
       state: "CA",
       zip_code: "90210",
       title: "Luxurious Mansion",
-      description: "Live like royalty in a breathtaking mansion located in the prestigious neighborhood of Beverly Hills.",
+      description: "Live like royalty in a breathtaking mansion located in the prestigious neighborhood of Beverly Hills. Our home may look familiar because it is often rented out for film and tv shoots. Now you can experience that as well!",
       category: "mansion",
       price: 2000,
       max_guests: 12,
@@ -1013,7 +1013,7 @@ require "faker"
 
     reservation32 = Reservation.create!(
       listing_id: listing15.id,
-      guest_id: 7,
+      guest_id: 8,
       num_guests: 2,
       total_price: 200,
       start_date: Date.new(2023, 8, 5),
@@ -1096,7 +1096,7 @@ require "faker"
 
     reservation41 = Reservation.create!(
       listing_id: listing15.id,
-      guest_id: 18,
+      guest_id: 7,
       num_guests: 2,
       total_price: 180,
       start_date: Date.new(2023, 1, 20),
@@ -1412,13 +1412,13 @@ require "faker"
       reservation_id: reservation37.id,
       reviewer_id: 19,
       rating: 4,
-      body: "The city loft was comfortable and conveniently located near great restaurants.",
+      body: "This camping experience was very nice. But since I'm traveling with my buddy Hodor, the tent was a bit small for us.",
       cleanliness: 4,
       communication: 5,
       checkin: 4,
-      accuracy: 4,
+      accuracy: 3,
       location: 5,
-      value: 4
+      value: 3
     )
     
     review22 = Review.create!(
@@ -1426,12 +1426,12 @@ require "faker"
       reservation_id: reservation38.id,
       reviewer_id: 18,
       rating: 5,
-      body: "Had a peaceful countryside stay. Loved the rustic charm.",
+      body: "I'm not much of a city girl but I enjoyed my stay in Deonte's apartment. I had a great time exploring and seeing faces to add to my collection. I even met up with my friend, Gendry, and we tried ice skating at Chelsea Piers.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
       accuracy: 5,
-      location: 5,
+      location: 4,
       value: 5
     )
     
@@ -1440,7 +1440,7 @@ require "faker"
       reservation_id: reservation39.id,
       reviewer_id: 19,
       rating: 5,
-      body: "Grand historic mansion. The place was magnificent and filled with history.",
+      body: "When the Three-Eye Raven told me I need to visit Sedona to open up my third eye, I needed a place to stay. I'm so glad I found Melinda's home. It was affordable and close to all the sites I needed to visit on my journey.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
@@ -1454,21 +1454,21 @@ require "faker"
       reservation_id: reservation40.id,
       reviewer_id: 17,
       rating: 4,
-      body: "Enjoyed staying in the charming tiny home. The tiny home experience was unforgettable.",
-      cleanliness: 4,
+      body: "Jessica's mansion was breathtaking. I had a great time. Ygritte and I spent most of our time in the hot tub because it reminded us of the cave where we fell in love. My only complaint was the price. Being King of the North isn't as lucrative as it sounds. Staying in Beverly Hills broke my bank account.",
+      cleanliness: 5,
       communication: 5,
-      checkin: 4,
-      accuracy: 4,
+      checkin: 5,
+      accuracy: 5,
       location: 5,
-      value: 4
+      value: 2
     )
     
     review25 = Review.create!(
       listing_id: listing15.id,
       reservation_id: reservation41.id,
-      reviewer_id: 18,
+      reviewer_id: 7,
       rating: 5,
-      body: "The treehouse retreat was a magical experience. Nature at its best!",
+      body: "No frills, no extras. Just a great value tiny home in downtown Portland.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
@@ -1519,6 +1519,89 @@ require "faker"
       value: 3
     )
 
+    review29 = Review.create!(
+      listing_id: listing11.id,
+      reservation_id: reservation28.id,
+      reviewer_id: 10,
+      rating: 4,
+      body: "I usually don't like camping but this was great. Raminder's tent was comfortable and spacious for one person.",
+      cleanliness: 4,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 4
+    )
+
+    review30 = Review.create!(
+      listing_id: listing12.id,
+      reservation_id: reservation12.id,
+      reviewer_id: 1,
+      rating: 5,
+      body: "Phenomenal apartment and unforgettable city. This trip was magical. I love New York!",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
+
+    review31 = Review.create!(
+      listing_id: listing12.id,
+      reservation_id: reservation29.id,
+      reviewer_id: 11,
+      rating: 5,
+      body: "Why is New York so expensive?! Don't get me wrong, the apartment was nice but I paid so much for it. Although, it was cheaper than prices I found on other sites. I guess I will just have to visit more affordable cities.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 4,
+      value: 2
+    )
+
+    review32 = Review.create!(
+      listing_id: listing13.id,
+      reservation_id: reservation30.id,
+      reviewer_id: 9,
+      rating: 5,
+      body: "Sedona was nice and this place was a great value stay. Everything was fairly accurate, except I thought I would have a personal fire pit to make s'mores. The fire pit is shared among a few homes in the area.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 3,
+      location: 4,
+      value: 5
+    )
+
+    review33 = Review.create!(
+      listing_id: listing14.id,
+      reservation_id: reservation31.id,
+      reviewer_id: 8,
+      rating: 4,
+      body: "The place itself was exquisite. It was a good once-in-a-lifetime experience. But I think that the next time I visit Los Angeles I will stay closer to downtwon and somewhere less expensive.",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 4,
+      value: 3
+    )
+
+    review34 = Review.create!(
+      listing_id: listing15.id,
+      reservation_id: reservation32.id,
+      reviewer_id: 8,
+      rating: 5,
+      body: "The tiny home was actually bigger than I expected. It had everything I needed and was so close to downtown! Plus, it was way cheaper than any hotel in the area. Thank you Fairbnb for helping me find this!",
+      cleanliness: 5,
+      communication: 5,
+      checkin: 5,
+      accuracy: 5,
+      location: 5,
+      value: 5
+    )
   
     puts "Done!"
   # end
