@@ -35,15 +35,15 @@ require "faker"
     
     user2 = User.create!(
       email: 'user2@mail.com',
-      first_name: 'John',
-      last_name: 'Doe',
+      first_name: 'Carlos',
+      last_name: 'Djokovic',
       password: 'password2'
     )
     
     user3 = User.create!(
       email: 'user3@mail.com',
-      first_name: 'Emily',
-      last_name: 'Smith',
+      first_name: 'Serena',
+      last_name: 'Gauff',
       password: 'password3'
     )
     
@@ -603,13 +603,13 @@ require "faker"
     listing16 = Listing.create!(
       address: "456 Treehouse Rd",
       apt_num: "",
-      city: "Seattle",
+      city: "Bainbridge Island",
       state: "WA",
-      zip_code: "98101",
-      title: "Enchanting Treehouse Retreat",
+      zip_code: "98110",
+      title: "Enchanting Treehouse Retreat near Seattle",
       description: "Escape to a magical treehouse retreat surrounded by nature and tranquility.",
       category: "treehouse",
-      price: 250,
+      price: 150,
       max_guests: 2,
       num_bedrooms: 1,
       num_beds: 1,
@@ -624,8 +624,8 @@ require "faker"
       pool: false,
       hot_tub: false,
       fire_pit: true,
-      latitude: 47.6062,
-      longitude: -122.3321,
+      latitude: 47.5837,
+      longitude: -122.4916,
       host_id: 16
     )
     
@@ -824,7 +824,7 @@ require "faker"
 
     reservation11 = Reservation.create!(
       listing_id: listing9.id,
-      guest_id: 17,
+      guest_id: 3,
       num_guests: 8,
       total_price: 1500,
       start_date: Date.new(2023, 3, 1),
@@ -1105,7 +1105,7 @@ require "faker"
 
     reservation42 = Reservation.create!(
       listing_id: listing16.id,
-      guest_id: 19,
+      guest_id: 20,
       num_guests: 2,
       total_price: 200,
       start_date: Date.new(2022, 12, 5),
@@ -1123,7 +1123,7 @@ require "faker"
       reservation_id: reservation7.id,
       reviewer_id: user16.id,
       rating: 5,
-      body: "The North gets awfully cold this time of year. I had heard that Miami is a great place to relax and so I reserved Emily's home. My siblings and I absolutely enjoyed our time here. We even brought our direwolves along and they loved running around the beach. We will definitely be coming back next winter because as you know, winter is coming.",
+      body: "The North gets awfully cold this time of year. I had heard that Miami is a great place to relax and so I reserved Serena's home. My siblings and I absolutely enjoyed our time here. We even brought our direwolves along and they loved running around the beach. We will definitely be coming back next winter because as you know, winter is coming.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
@@ -1269,7 +1269,7 @@ require "faker"
       reservation_id: reservation18.id,
       reviewer_id: 13,
       rating: 5,
-      body: "Beautiful beachfront villa with stunning views. Highly recommended! Emily was a great host and communicated well throughout. This place is such a great location. You can wake up and see the sunrise over the water and there are so many places to check out nearby.",
+      body: "Beautiful beachfront villa with stunning views. Highly recommended! Serena was a great host and communicated well throughout. This place is such a great location. You can wake up and see the sunrise over the water and there are so many places to check out nearby.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
@@ -1370,7 +1370,7 @@ require "faker"
       reservation_id: reservation34.id,
       reviewer_id: 18,
       rating: 4,
-      body: "I came all the way from Braavos to stay in Sophia's treehouse. I have to say, I was not disappointed. Loved staying in the woods and enjoying the tranquility. I even saw Nymeria wandering around with her pack!",
+      body: "I came all the way from Braavos to stay in Olivia's treehouse. I have to say, I was not disappointed. Loved staying in the woods and enjoying the tranquility. I even saw Nymeria wandering around with her pack!",
       cleanliness: 4,
       communication: 5,
       checkin: 4,
@@ -1480,9 +1480,9 @@ require "faker"
     review26 = Review.create!(
       listing_id: listing16.id,
       reservation_id: reservation42.id,
-      reviewer_id: 19,
+      reviewer_id: 20,
       rating: 5,
-      body: "Enchanting treehouse. Loved being close to nature and waking up to the birdsong.",
+      body: "The treehouse was lovely and so close to Seattle. Greyworm and I loved being in nature and waking up to the birdsong.",
       cleanliness: 5,
       communication: 5,
       checkin: 5,
@@ -1495,7 +1495,7 @@ require "faker"
       listing_id: listing9.id,
       reservation_id: reservation11.id,
       reviewer_id: 17,
-      rating: 5,
+      rating: 3,
       body: "The views were breathtaking and the house itself was exquisite. The place is a bit expensive but it is a nice treat if you're willing to spend.",
       cleanliness: 5,
       communication: 5,

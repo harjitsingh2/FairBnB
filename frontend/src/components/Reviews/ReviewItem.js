@@ -29,7 +29,7 @@ const ReviewItem = ({ review }) => {
         <ReviewerIdContext.Provider value={reviewerId}>     */}
 
             {/* <p>Reviewer: {review.reviewerId}</p> */}
-            <p id='reviewer-name'>{review.reviewer.first_name}</p>
+            <p id='reviewer-name'>{review.reviewer.first_name} {review.reviewer.last_name}</p>
             <p id='review-date'>{reviewDate()}</p>
             <p>{review.body}</p>
 
