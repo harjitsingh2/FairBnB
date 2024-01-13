@@ -16,7 +16,7 @@ function Navigation() {
           <NavLink exact to="/"><img src={logo} className='logo' alt='home-page'/></NavLink>
           <div className='personal-links'>
             <a href="https://github.com/harjitsingh2"><i className="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/harjitsingh2/"><i className="fa-brands fa-linkedin"></i></a>
+            {/* <a href="https://www.linkedin.com/in/harjitsingh2/"><i className="fa-brands fa-linkedin"></i></a> */}
           </div>
         </div>
       
